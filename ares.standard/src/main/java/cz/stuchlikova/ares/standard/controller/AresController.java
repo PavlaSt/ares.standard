@@ -25,7 +25,7 @@ public class AresController {
     private SoapClient soapClient;
 
     @RequestMapping(value = "/ico", method = RequestMethod.GET)
-    public List<Odpoved> showResponse(@RequestParam String ico) throws DatatypeConfigurationException {
+    public List<Odpoved> showResponseIco(@RequestParam String ico) throws DatatypeConfigurationException {
         ObjectFactory objectFactory = new ObjectFactory();
 
         AresDotazy aresDotazy = objectFactory.createAresDotazy();
@@ -50,6 +50,44 @@ public class AresController {
 
         KlicovePolozky polozky = objectFactory.createKlicovePolozky();
         polozky.setICO(ico);
+
+        dotaz.setKlicovePolozky(polozky);
+
+        aresDotazy.getDotaz().add(dotaz);
+
+        AresOdpovedi response = soapClient.getAresOdpovedi(
+                "http://wwwinfo.mfcr.cz/cgi-bin/ares/xar.cgi", aresDotazy);
+
+        return response.getOdpoved();
+
+
+    }    @RequestMapping(value = "/firma", method = RequestMethod.GET)
+    public List<Odpoved> showResponseFirma(@RequestParam String firma) throws DatatypeConfigurationException {
+        ObjectFactory objectFactory = new ObjectFactory();
+
+        AresDotazy aresDotazy = objectFactory.createAresDotazy();
+
+        //LocalDate to xmlGregorianCalendar
+        LocalDate date = LocalDate.now();
+        GregorianCalendar gcal = GregorianCalendar.from(date.atStartOfDay(ZoneId.systemDefault()));
+        XMLGregorianCalendar xcal = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
+
+        aresDotazy.setDotazDatumCas(xcal);
+        aresDotazy.setDotazPocet(1);
+        aresDotazy.setDotazTyp(AresDotazTyp.STANDARD);
+        aresDotazy.setVystupFormat(VystupFormat.XML);
+        aresDotazy.setValidationXSLT("http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_request/v_1.0.0/ares_request.xsl");
+        aresDotazy.setUserMail("stuchlikova.pavla@post.cz");
+        aresDotazy.setAnswerNamespaceRequired("http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1");
+        aresDotazy.setId("ares_dotaz");
+
+        Dotaz dotaz = objectFactory.createDotaz();
+        dotaz.setPomocneID(1);
+        dotaz.setTypVyhledani(AresVyberTyp.FREE);
+        dotaz.setMaxPocet(100);
+
+        KlicovePolozky polozky = objectFactory.createKlicovePolozky();
+        polozky.setObchodniFirma(firma);
 
         dotaz.setKlicovePolozky(polozky);
 
