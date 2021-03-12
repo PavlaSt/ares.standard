@@ -23,30 +23,20 @@ public class AresController {
 
     @Autowired
     private SoapClient soapClient;
-
-
-    private ObjectFactory objectFactory;
-    private AresDotazy aresDotazy;
-    private Dotaz dotaz;
-    private KlicovePolozky polozky;
+    private final ObjectFactory objectFactory;
 
     public AresController() {
-
         objectFactory = new ObjectFactory();
-        aresDotazy = objectFactory.createAresDotazy();
-        dotaz = objectFactory.createDotaz();
-        polozky = objectFactory.createKlicovePolozky();
-
     }
 
 
     @RequestMapping(value = "/ico", method = RequestMethod.GET)
     public List<Odpoved> showResponseIco(@RequestParam String ico) throws DatatypeConfigurationException {
 
-        setAresDotazy();
+        KlicovePolozky polozky = objectFactory.createKlicovePolozky();
         polozky.setICO(ico);
-        dotaz.setKlicovePolozky(polozky);
-        aresDotazy.getDotaz().add(dotaz);
+
+        AresDotazy aresDotazy = setAresDotazy(polozky);
 
         AresOdpovedi response = soapClient.getAresOdpovedi(
                 "http://wwwinfo.mfcr.cz/cgi-bin/ares/xar.cgi", aresDotazy);
@@ -58,11 +48,10 @@ public class AresController {
     @RequestMapping(value = "/firma", method = RequestMethod.GET)
     public List<Odpoved> showResponseFirma(@RequestParam String firma) throws DatatypeConfigurationException {
 
-        setAresDotazy();
-        dotaz.setMaxPocet(100);
+        KlicovePolozky polozky = objectFactory.createKlicovePolozky();
         polozky.setObchodniFirma(firma);
-        dotaz.setKlicovePolozky(polozky);
-        aresDotazy.getDotaz().add(dotaz);
+
+        AresDotazy aresDotazy = setAresDotazy(polozky);
 
         AresOdpovedi response = soapClient.getAresOdpovedi(
                 "http://wwwinfo.mfcr.cz/cgi-bin/ares/xar.cgi", aresDotazy);
@@ -71,7 +60,11 @@ public class AresController {
 
     }
 
-    public void setAresDotazy() throws DatatypeConfigurationException {
+    public AresDotazy setAresDotazy(KlicovePolozky polozky) throws DatatypeConfigurationException {
+
+        AresDotazy aresDotazy = objectFactory.createAresDotazy();
+        Dotaz dotaz = objectFactory.createDotaz();
+
         //LocalDate to xmlGregorianCalendar
         LocalDate date = LocalDate.now();
         GregorianCalendar gcal = GregorianCalendar.from(date.atStartOfDay(ZoneId.systemDefault()));
@@ -88,5 +81,11 @@ public class AresController {
 
         dotaz.setPomocneID(1);
         dotaz.setTypVyhledani(AresVyberTyp.FREE);
+        dotaz.setMaxPocet(100);
+        dotaz.setKlicovePolozky(polozky);
+
+        aresDotazy.getDotaz().add(dotaz);
+
+        return aresDotazy;
     }
 }
