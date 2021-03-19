@@ -1,7 +1,7 @@
 package cz.stuchlikova.ares.standard.controller;
 
-import cz.stuchlikova.ares.standard.SoapClient;
-import cz.stuchlikova.ares.standard.stub.*;
+import cz.stuchlikova.ares.standard.service.AresOdpovediService;
+import cz.stuchlikova.ares.standard.stub.Odpoved;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,11 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 @RestController
@@ -22,70 +17,18 @@ import java.util.List;
 public class AresController {
 
     @Autowired
-    private SoapClient soapClient;
-    private final ObjectFactory objectFactory;
-
-    public AresController() {
-        objectFactory = new ObjectFactory();
-    }
-
+    private AresOdpovediService service;
 
     @RequestMapping(value = "/ico", method = RequestMethod.GET)
-    public List<Odpoved> showResponseIco(@RequestParam String ico) throws DatatypeConfigurationException {
-
-        KlicovePolozky polozky = objectFactory.createKlicovePolozky();
-        polozky.setICO(ico);
-
-        AresDotazy aresDotazy = setAresDotazy(polozky);
-
-        AresOdpovedi response = soapClient.getAresOdpovedi(
-                "http://wwwinfo.mfcr.cz/cgi-bin/ares/xar.cgi", aresDotazy);
-        return response.getOdpoved();
-
-
+    public List<Odpoved> getResponseByIco(@RequestParam String ico) throws DatatypeConfigurationException {
+        return service.getResponseByIco(ico);
     }
 
     @RequestMapping(value = "/firma", method = RequestMethod.GET)
-    public List<Odpoved> showResponseFirma(@RequestParam String firma) throws DatatypeConfigurationException {
+    public List<Odpoved> getResponseByFirmName(@RequestParam String firma) throws DatatypeConfigurationException {
 
-        KlicovePolozky polozky = objectFactory.createKlicovePolozky();
-        polozky.setObchodniFirma(firma);
-
-        AresDotazy aresDotazy = setAresDotazy(polozky);
-
-        AresOdpovedi response = soapClient.getAresOdpovedi(
-                "http://wwwinfo.mfcr.cz/cgi-bin/ares/xar.cgi", aresDotazy);
-        return response.getOdpoved();
-
+        return service.getResponseByFirmName(firma);
 
     }
 
-    public AresDotazy setAresDotazy(KlicovePolozky polozky) throws DatatypeConfigurationException {
-
-        AresDotazy aresDotazy = objectFactory.createAresDotazy();
-        Dotaz dotaz = objectFactory.createDotaz();
-
-        //LocalDate to xmlGregorianCalendar
-        LocalDate date = LocalDate.now();
-        GregorianCalendar gcal = GregorianCalendar.from(date.atStartOfDay(ZoneId.systemDefault()));
-        XMLGregorianCalendar xcal = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
-
-        aresDotazy.setDotazDatumCas(xcal);
-        aresDotazy.setDotazPocet(1);
-        aresDotazy.setDotazTyp(AresDotazTyp.STANDARD);
-        aresDotazy.setVystupFormat(VystupFormat.XML);
-        aresDotazy.setValidationXSLT("http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_request/v_1.0.0/ares_request.xsl");
-        aresDotazy.setUserMail("stuchlikova.pavla@post.cz");
-        aresDotazy.setAnswerNamespaceRequired("http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1");
-        aresDotazy.setId("ares_dotaz");
-
-        dotaz.setPomocneID(1);
-        dotaz.setTypVyhledani(AresVyberTyp.FREE);
-        dotaz.setMaxPocet(100);
-        dotaz.setKlicovePolozky(polozky);
-
-        aresDotazy.getDotaz().add(dotaz);
-
-        return aresDotazy;
-    }
 }
