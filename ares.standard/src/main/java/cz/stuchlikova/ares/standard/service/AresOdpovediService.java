@@ -1,5 +1,6 @@
 package cz.stuchlikova.ares.standard.service;
 
+import cz.stuchlikova.ares.standard.dto.AresResponseDto;
 import cz.stuchlikova.ares.standard.repository.AresResponseRepository;
 import cz.stuchlikova.ares.standard.stub.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -24,6 +26,15 @@ public class AresOdpovediService {
     public AresOdpovediService() {
         objectFactory = new ObjectFactory();
     }
+
+    /*public AresResponseDto getResponseByIco(List<Odpoved> responses) {
+        List<Zaznam> records = new ArrayList<>();
+
+        for (Odpoved item: responses) {
+            Zaznam zaznam = item.getZaznam();
+
+        }
+    }*/
 
     public List<Odpoved> getResponseByIco(String ico) throws DatatypeConfigurationException {
 

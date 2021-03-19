@@ -19,7 +19,7 @@ public class AresResponseRepository {
 
     public List<Odpoved> getAresResponse(AresDotazy aresDotazy) {
 
-        AresOdpovedi response = soapClient.getAresOdpovedi(
+        AresOdpovedi response = soapClient.getAresResponse(
                 "http://wwwinfo.mfcr.cz/cgi-bin/ares/xar.cgi", aresDotazy);
         return response.getOdpoved();
     }
