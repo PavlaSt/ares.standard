@@ -1,32 +1,35 @@
 package cz.stuchlikova.ares.standard.dto;
 
 public class AresResponseDto {
-//název firmy, ulice, číslo domovní a orientační, psč a název obce a IČO
 
-private String nazevFirmy;
-private String ico;
-private String ulice;
-private String cisloDomovni;
-private String cisloOrientacni;
-private String psc;
-private String nazevObce;
 
-    public AresResponseDto(String nazevFirmy, String ico, String ulice, String cisloDomovni, String cisloOrientacni, String psc, String nazevObce) {
-        this.nazevFirmy = nazevFirmy;
+    private String obchodniFirma;
+    private String ico;
+    private String nazevUlice;
+    private Integer cisloDomovni;
+    private String cisloOrientacni;
+    private String psc;
+    private String nazevObce;
+    private String nazevCastiObce;
+
+    public AresResponseDto(String obchodniFirma, String ico, String nazevUlice, Integer cisloDomovni, String cisloOrientacni, String psc, String nazevObce, String nazevCastiObce) {
+        this.obchodniFirma = obchodniFirma;
         this.ico = ico;
-        this.ulice = ulice;
+        this.nazevUlice = nazevUlice;
         this.cisloDomovni = cisloDomovni;
         this.cisloOrientacni = cisloOrientacni;
         this.psc = psc;
         this.nazevObce = nazevObce;
+        this.nazevCastiObce = nazevCastiObce;
     }
 
-    public String getNazevFirmy() {
-        return nazevFirmy;
+
+    public String getObchodniFirma() {
+        return obchodniFirma;
     }
 
-    public void setNazevFirmy(String nazevFirmy) {
-        this.nazevFirmy = nazevFirmy;
+    public void setObchodniFirma(String obchodniFirma) {
+        this.obchodniFirma = obchodniFirma;
     }
 
     public String getIco() {
@@ -37,19 +40,19 @@ private String nazevObce;
         this.ico = ico;
     }
 
-    public String getUlice() {
-        return ulice;
+    public String getNazevUlice() {
+        return nazevUlice;
     }
 
-    public void setUlice(String ulice) {
-        this.ulice = ulice;
+    public void setNazevUlice(String nazevUlice) {
+        this.nazevUlice = nazevUlice;
     }
 
-    public String getCisloDomovni() {
+    public Integer getCisloDomovni() {
         return cisloDomovni;
     }
 
-    public void setCisloDomovni(String cisloDomovni) {
+    public void setCisloDomovni(Integer cisloDomovni) {
         this.cisloDomovni = cisloDomovni;
     }
 
@@ -75,5 +78,13 @@ private String nazevObce;
 
     public void setNazevObce(String nazevObce) {
         this.nazevObce = nazevObce;
+    }
+
+    public String getNazevCastiObce() {
+        return nazevCastiObce;
+    }
+
+    public void setNazevCastiObce(String nazevCastiObce) {
+        this.nazevCastiObce = nazevCastiObce;
     }
 }

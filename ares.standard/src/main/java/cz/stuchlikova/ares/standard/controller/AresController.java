@@ -1,7 +1,7 @@
 package cz.stuchlikova.ares.standard.controller;
 
+import cz.stuchlikova.ares.standard.dto.AresResponseDto;
 import cz.stuchlikova.ares.standard.service.AresOdpovediService;
-import cz.stuchlikova.ares.standard.stub.Odpoved;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,14 +20,14 @@ public class AresController {
     private AresOdpovediService service;
 
     @RequestMapping(value = "/ico", method = RequestMethod.GET)
-    public List<Odpoved> getResponseByIco(@RequestParam String ico) throws DatatypeConfigurationException {
-        return service.getResponseByIco(ico);
+    public List<AresResponseDto> getResponseByIco(@RequestParam String ico) throws DatatypeConfigurationException {
+        return service.getDtoResponseByIco(ico);
     }
 
     @RequestMapping(value = "/firma", method = RequestMethod.GET)
-    public List<Odpoved> getResponseByFirmName(@RequestParam String firma) throws DatatypeConfigurationException {
+    public List<AresResponseDto> getResponseByFirmName(@RequestParam String firma) throws DatatypeConfigurationException {
 
-        return service.getResponseByFirmName(firma);
+        return service.getDtoResponseByFirmName(firma);
 
     }
 
