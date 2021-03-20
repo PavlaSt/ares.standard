@@ -2,7 +2,6 @@ package cz.stuchlikova.ares.standard.dto;
 
 public class AresResponseDto {
 
-
     private String obchodniFirma;
     private String ico;
     private String nazevUlice;
