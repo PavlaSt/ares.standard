@@ -51,17 +51,17 @@
 					</execution>
 				</executions>
 				<configuration>
-
 					<args>
 						<arg>-XautoNameResolution</arg>
 					</args>
-
+					<catalog>src/main/resources/catalog.cat</catalog>
 					<schemaLanguage>WSDL</schemaLanguage>
 					<generatePackage>cz.stuchlikova.ares.standard.stub</generatePackage>
 					<generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-					<schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
+					<schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
 					<schemaIncludes>
 						<include>*.wsdl</include>
+						<include>*.xsd</include>
 					</schemaIncludes>
 				</configuration>
 			</plugin>
