@@ -54,6 +54,7 @@
 					<args>
 						<arg>-XautoNameResolution</arg>
 					</args>
+					<strict>false</strict>
 					<catalog>src/main/resources/catalog.cat</catalog>
 					<schemaLanguage>WSDL</schemaLanguage>
 					<generatePackage>cz.stuchlikova.ares.standard.stub</generatePackage>
