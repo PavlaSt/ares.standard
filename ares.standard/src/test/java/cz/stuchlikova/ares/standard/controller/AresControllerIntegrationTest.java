@@ -35,5 +35,9 @@ public class AresControllerIntegrationTest {
 
     @Test
     void getResponseByFirmName() {
+        ResponseEntity<List> response =
+                this.restTemplate.getForEntity("http://localhost:" + port + "/firma/?firma=Etnetera", List.class);
+
+        assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
     }
 }
