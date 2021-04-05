@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
 @Configuration
-@Primary
+
 public class BeanConfig {
     @Bean
     public Jaxb2Marshaller marshaller() {
@@ -15,6 +15,7 @@ public class BeanConfig {
         return marshaller;
     }
     @Bean
+    //@Primary
     public SoapClient soapConnector(Jaxb2Marshaller marshaller) {
         SoapClientImpl client = new SoapClientImpl();
         client.setDefaultUri("http://wwwinfo.mfcr.cz/cgi-bin/ares/xar.cgi");

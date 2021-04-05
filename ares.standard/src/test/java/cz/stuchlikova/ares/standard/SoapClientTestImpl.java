@@ -17,7 +17,6 @@ public class SoapClientTestImpl implements SoapClient {
 
         File file = new File("src/test/resources/answer.xml");
         JAXBContext jaxbContext = JAXBContext.newInstance(AresOdpovedi.class);
-
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
         AresOdpovedi response = (AresOdpovedi) jaxbUnmarshaller.unmarshal(file);
 

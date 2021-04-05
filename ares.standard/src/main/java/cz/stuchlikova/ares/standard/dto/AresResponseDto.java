@@ -89,18 +89,14 @@ public class AresResponseDto {
 
     @Override
     public String toString() {
-        return "{obchodniFirma='" + obchodniFirma + '\'' +
-                ", ico='" + ico + '\'' +
-                ", nazevUlice='" + nazevUlice + '\'' +
-                ", cisloDomovni=" + cisloDomovni +
-                ", cisloOrientacni='" + cisloOrientacni + '\'' +
-                ", psc='" + psc + '\'' +
-                ", nazevObce='" + nazevObce + '\'' +
-                ", nazevCastiObce='" + nazevCastiObce + '\'' +
+        return "{\"obchodniFirma\":\"" + obchodniFirma + '\"' +
+                ",\"ico\":\"" + ico + '\"' +
+                ",\"nazevUlice\":\"" + nazevUlice + '\"' +
+                ",\"cisloDomovni\":" + cisloDomovni +
+                ",\"cisloOrientacni\":\"" + cisloOrientacni + '\"' +
+                ",\"psc\":\"" + psc + '\"' +
+                ",\"nazevObce\":\"" + nazevObce + '\"' +
+                ",\"nazevCastiObce\":\"" + nazevCastiObce + '\"' +
                 '}';
     }
-
-
-    String string =
-            "{\"obchodniFirma\":\"Asseco Central Europe, a.s.\",\"ico\":\"27074358\",\"nazevUlice\":\"Budějovická\",\"cisloDomovni\":778,\"cisloOrientacni\":\"3a\",\"psc\":\"14000\",\"nazevObce\":\"Praha\",\"nazevCastiObce\":\"Michle\"}";
 }
