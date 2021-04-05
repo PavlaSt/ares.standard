@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.xml.bind.JAXBException;
 import javax.xml.datatype.DatatypeConfigurationException;
 import java.util.List;
 
@@ -20,12 +21,12 @@ public class AresController {
     private AresOdpovediService service;
 
     @RequestMapping(value = "/ico", method = RequestMethod.GET)
-    public List<AresResponseDto> getResponseByIco(@RequestParam String ico) throws DatatypeConfigurationException {
+    public List<AresResponseDto> getResponseByIco(@RequestParam String ico) throws DatatypeConfigurationException, JAXBException {
         return service.getDtoResponseByIco(ico);
     }
 
     @RequestMapping(value = "/firma", method = RequestMethod.GET)
-    public List<AresResponseDto> getResponseByFirmName(@RequestParam String firma) throws DatatypeConfigurationException {
+    public List<AresResponseDto> getResponseByFirmName(@RequestParam String firma) throws DatatypeConfigurationException, JAXBException {
         return service.getDtoResponseByFirmName(firma);
     }
 

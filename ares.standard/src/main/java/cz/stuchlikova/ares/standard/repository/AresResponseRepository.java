@@ -7,6 +7,7 @@ import cz.stuchlikova.ares.standard.stub.Odpoved;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.xml.bind.JAXBException;
 import java.util.List;
 
 @Repository
@@ -17,11 +18,15 @@ public class AresResponseRepository {
     private SoapClient soapClient;
 
 
-    public List<Odpoved> getAresResponse(AresDotazy aresDotazy) {
+
+
+    public List<Odpoved> getAresResponse(AresDotazy aresDotazy) throws JAXBException {
 
         AresOdpovedi response = soapClient.getAresResponse(
                 "http://wwwinfo.mfcr.cz/cgi-bin/ares/xar.cgi", aresDotazy);
         return response.getOdpoved();
     }
+
+
 
 }

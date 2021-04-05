@@ -6,6 +6,7 @@ import cz.stuchlikova.ares.standard.stub.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.xml.bind.JAXBException;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -27,34 +28,34 @@ public class AresOdpovediService {
         objectFactory = new ObjectFactory();
     }
 
-    public List<AresResponseDto> getDtoResponseByIco(String ico) throws DatatypeConfigurationException {
+    public List<AresResponseDto> getDtoResponseByIco(String ico) throws DatatypeConfigurationException, JAXBException {
 
         List<Odpoved> responses = getResponseByIco(ico);
         return transformResponseToDto(responses);
     }
 
-    public List<AresResponseDto> getDtoResponseByFirmName(String firmName) throws DatatypeConfigurationException {
+    public List<AresResponseDto> getDtoResponseByFirmName(String firmName) throws DatatypeConfigurationException, JAXBException {
 
         List<Odpoved> responses = getResponseByFirmName(firmName);
         return transformResponseToDto(responses);
     }
 
 
-    private List<Odpoved> getResponseByIco(String ico) throws DatatypeConfigurationException {
+    private List<Odpoved> getResponseByIco(String ico) throws DatatypeConfigurationException, JAXBException {
 
         KlicovePolozky polozky = objectFactory.createKlicovePolozky();
         polozky.setICO(ico);
         return repository.getAresResponse(createAresDotazy(polozky));
     }
 
-    private List<Odpoved> getResponseByFirmName(String firmName) throws DatatypeConfigurationException {
+    private List<Odpoved> getResponseByFirmName(String firmName) throws DatatypeConfigurationException, JAXBException {
 
         KlicovePolozky polozky = objectFactory.createKlicovePolozky();
         polozky.setObchodniFirma(firmName);
         return repository.getAresResponse(createAresDotazy(polozky));
     }
 
-    private List<AresResponseDto> transformResponseToDto(List<Odpoved> responses) {
+    public List<AresResponseDto> transformResponseToDto(List<Odpoved> responses) {
         List<AresResponseDto> responseDtos = new ArrayList<>();
 
         for (Odpoved response : responses) {
