@@ -36,7 +36,5 @@ public class AresClientImpl extends WebServiceGatewaySupport implements AresClie
     private AresOdpovedi unmarshalStringToObject(String xmlResult) {
         return JAXB.unmarshal(new StringReader(xmlResult), AresOdpovedi.class);
     }
-    //InputStream xmlResult = new FileInputStream(new File(xml_file_path));
-
 
 }

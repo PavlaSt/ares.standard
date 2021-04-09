@@ -6,13 +6,11 @@ import cz.stuchlikova.ares.standard.stub.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.xml.bind.JAXBException;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -20,37 +18,43 @@ import java.util.List;
 public class AresOdpovediService {
 
     private final ObjectFactory objectFactory;
-    private Transformation transformation;
+    private final Transformation transformation;
+    private final RequestCreator creator;
 
     @Autowired
     private AresResponseRepository repository;
 
     public AresOdpovediService() {
+        creator = new RequestCreator();
         objectFactory = new ObjectFactory();
         transformation = new Transformation();
     }
+    //nemůže být ve fieldu, protože pro každý dotaz se musí vytvořit znovu
+    //AresDotazy aresDotazy = objectFactory.createAresDotazy();
+    //Dotaz dotaz = objectFactory.createDotaz();
 
-    public List<AresResponseDto> getDtoResponseByIco(String ico) throws DatatypeConfigurationException, JAXBException {
+    public List<AresResponseDto> getDtoResponseByIco(String ico) throws DatatypeConfigurationException {
+
 
         List<Odpoved> responses = getResponseByIco(ico);
         return transformation.transformResponseToDto(responses);
     }
 
-    public List<AresResponseDto> getDtoResponseByFirmName(String firmName) throws DatatypeConfigurationException, JAXBException {
+    public List<AresResponseDto> getDtoResponseByFirmName(String firmName) throws DatatypeConfigurationException {
 
         List<Odpoved> responses = getResponseByFirmName(firmName);
         return transformation.transformResponseToDto(responses);
     }
 
 
-    private List<Odpoved> getResponseByIco(String ico) throws DatatypeConfigurationException, JAXBException {
-
-        KlicovePolozky polozky = objectFactory.createKlicovePolozky();
+    private List<Odpoved> getResponseByIco(String ico) throws DatatypeConfigurationException {
+        KlicovePolozky polozky = creator.createAndSetPolozkyIco(ico);
+        //KlicovePolozky polozky = objectFactory.createKlicovePolozky();
         polozky.setICO(ico);
-        return repository.getAresResponse(createAresDotazy(polozky));
+        return repository.getAresResponse(creator.createAresDotazy(polozky));
     }
 
-    private List<Odpoved> getResponseByFirmName(String firmName) throws DatatypeConfigurationException, JAXBException {
+    private List<Odpoved> getResponseByFirmName(String firmName) throws DatatypeConfigurationException {
 
         KlicovePolozky polozky = objectFactory.createKlicovePolozky();
         polozky.setObchodniFirma(firmName);
@@ -113,6 +117,5 @@ public class AresOdpovediService {
 
         return aresDotazy;
     }
-
 
 }

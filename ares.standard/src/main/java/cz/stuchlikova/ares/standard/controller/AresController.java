@@ -23,12 +23,12 @@ public class AresController {
     @RequestMapping(value = "/ico", method = RequestMethod.GET)
     //public List<AresResponseDto> getResponseByIco(@Valid @Pattern(regexp = "[0-9]{8}") @RequestParam("ico") String ico)
     public List<AresResponseDto> getResponseByIco(@RequestParam String ico)
-            throws DatatypeConfigurationException, JAXBException {
+            throws DatatypeConfigurationException{
         return service.getDtoResponseByIco(ico);
     }
 
     @RequestMapping(value = "/firma", method = RequestMethod.GET)
-    public List<AresResponseDto> getResponseByFirmName(@RequestParam String firma) throws DatatypeConfigurationException, JAXBException {
+    public List<AresResponseDto> getResponseByFirmName(@RequestParam String firma) throws DatatypeConfigurationException {
         return service.getDtoResponseByFirmName(firma);
     }
 
