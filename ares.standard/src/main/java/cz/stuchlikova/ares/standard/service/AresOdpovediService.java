@@ -11,7 +11,6 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -19,32 +18,40 @@ import java.util.List;
 public class AresOdpovediService {
 
     private final ObjectFactory objectFactory;
+    private final Transformation transformation;
+    private final RequestCreator creator;
 
     @Autowired
     private AresResponseRepository repository;
 
     public AresOdpovediService() {
+        creator = new RequestCreator();
         objectFactory = new ObjectFactory();
+        transformation = new Transformation();
     }
+    //nemůže být ve fieldu, protože pro každý dotaz se musí vytvořit znovu
+    //AresDotazy aresDotazy = objectFactory.createAresDotazy();
+    //Dotaz dotaz = objectFactory.createDotaz();
 
     public List<AresResponseDto> getDtoResponseByIco(String ico) throws DatatypeConfigurationException {
 
+
         List<Odpoved> responses = getResponseByIco(ico);
-        return transformResponseToDto(responses);
+        return transformation.transformResponseToDto(responses);
     }
 
     public List<AresResponseDto> getDtoResponseByFirmName(String firmName) throws DatatypeConfigurationException {
 
         List<Odpoved> responses = getResponseByFirmName(firmName);
-        return transformResponseToDto(responses);
+        return transformation.transformResponseToDto(responses);
     }
 
 
     private List<Odpoved> getResponseByIco(String ico) throws DatatypeConfigurationException {
-
-        KlicovePolozky polozky = objectFactory.createKlicovePolozky();
+        KlicovePolozky polozky = creator.createAndSetPolozkyIco(ico);
+        //KlicovePolozky polozky = objectFactory.createKlicovePolozky();
         polozky.setICO(ico);
-        return repository.getAresResponse(createAresDotazy(polozky));
+        return repository.getAresResponse(creator.createAresDotazy(polozky));
     }
 
     private List<Odpoved> getResponseByFirmName(String firmName) throws DatatypeConfigurationException {
@@ -54,7 +61,8 @@ public class AresOdpovediService {
         return repository.getAresResponse(createAresDotazy(polozky));
     }
 
-    private List<AresResponseDto> transformResponseToDto(List<Odpoved> responses) {
+/*
+    public List<AresResponseDto> transformResponseToDto(List<Odpoved> responses) {
         List<AresResponseDto> responseDtos = new ArrayList<>();
 
         for (Odpoved response : responses) {
@@ -79,7 +87,7 @@ public class AresOdpovediService {
 
         }
         return responseDtos;
-    }
+    }*/
 
     private AresDotazy createAresDotazy(KlicovePolozky polozky) throws DatatypeConfigurationException {
 
@@ -109,6 +117,5 @@ public class AresOdpovediService {
 
         return aresDotazy;
     }
-
 
 }

@@ -31,7 +31,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
@@ -51,17 +56,20 @@
 					</execution>
 				</executions>
 				<configuration>
-
 					<args>
 						<arg>-XautoNameResolution</arg>
 					</args>
+					<strict>false</strict>
+					<catalog>src/main/resources/catalog.cat</catalog>
 
 					<schemaLanguage>WSDL</schemaLanguage>
 					<generatePackage>cz.stuchlikova.ares.standard.stub</generatePackage>
 					<generateDirectory>${project.basedir}/src/main/java</generateDirectory>
 					<schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
+
 					<schemaIncludes>
 						<include>*.wsdl</include>
+
 					</schemaIncludes>
 				</configuration>
 			</plugin>
