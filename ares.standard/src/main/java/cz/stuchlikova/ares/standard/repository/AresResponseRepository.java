@@ -1,6 +1,6 @@
 package cz.stuchlikova.ares.standard.repository;
 
-import cz.stuchlikova.ares.standard.SoapClient;
+import cz.stuchlikova.ares.standard.AresClient;
 import cz.stuchlikova.ares.standard.stub.AresDotazy;
 import cz.stuchlikova.ares.standard.stub.AresOdpovedi;
 import cz.stuchlikova.ares.standard.stub.Odpoved;
@@ -15,14 +15,14 @@ public class AresResponseRepository {
 
 
     @Autowired
-    private SoapClient soapClient;
+    private AresClient aresClient;
 
 
 
 
     public List<Odpoved> getAresResponse(AresDotazy aresDotazy) throws JAXBException {
 
-        AresOdpovedi response = soapClient.getAresResponse(
+        AresOdpovedi response = aresClient.getAresResponse(
                 "http://wwwinfo.mfcr.cz/cgi-bin/ares/xar.cgi", aresDotazy);
         return response.getOdpoved();
     }

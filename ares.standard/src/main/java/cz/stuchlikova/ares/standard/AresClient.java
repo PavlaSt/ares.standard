@@ -5,6 +5,6 @@ import cz.stuchlikova.ares.standard.stub.AresOdpovedi;
 
 import javax.xml.bind.JAXBException;
 
-public interface SoapClient {
+public interface AresClient {
     AresOdpovedi getAresResponse(String url, AresDotazy request) throws JAXBException;
 }

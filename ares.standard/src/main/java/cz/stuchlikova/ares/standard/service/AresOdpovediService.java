@@ -20,24 +20,26 @@ import java.util.List;
 public class AresOdpovediService {
 
     private final ObjectFactory objectFactory;
+    private Transformation transformation;
 
     @Autowired
     private AresResponseRepository repository;
 
     public AresOdpovediService() {
         objectFactory = new ObjectFactory();
+        transformation = new Transformation();
     }
 
     public List<AresResponseDto> getDtoResponseByIco(String ico) throws DatatypeConfigurationException, JAXBException {
 
         List<Odpoved> responses = getResponseByIco(ico);
-        return transformResponseToDto(responses);
+        return transformation.transformResponseToDto(responses);
     }
 
     public List<AresResponseDto> getDtoResponseByFirmName(String firmName) throws DatatypeConfigurationException, JAXBException {
 
         List<Odpoved> responses = getResponseByFirmName(firmName);
-        return transformResponseToDto(responses);
+        return transformation.transformResponseToDto(responses);
     }
 
 
@@ -55,6 +57,7 @@ public class AresOdpovediService {
         return repository.getAresResponse(createAresDotazy(polozky));
     }
 
+/*
     public List<AresResponseDto> transformResponseToDto(List<Odpoved> responses) {
         List<AresResponseDto> responseDtos = new ArrayList<>();
 
@@ -80,7 +83,7 @@ public class AresOdpovediService {
 
         }
         return responseDtos;
-    }
+    }*/
 
     private AresDotazy createAresDotazy(KlicovePolozky polozky) throws DatatypeConfigurationException {
 

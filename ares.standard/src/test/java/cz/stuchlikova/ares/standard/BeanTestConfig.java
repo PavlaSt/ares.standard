@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Configuration
 @Primary
-public class BeanConfigTest {
+public class BeanTestConfig {
 
    /* @Bean
     public Jaxb2Marshaller marshaller() {

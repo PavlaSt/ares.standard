@@ -12,7 +12,7 @@ import java.io.File;
 
 @Component
 @Primary
-public class SoapClientTestImpl implements SoapClient {
+public class AresClientTestImpl implements AresClient {
 
     public AresOdpovedi getAresResponse(String url, AresDotazy request) throws JAXBException {
 
