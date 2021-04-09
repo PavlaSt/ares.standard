@@ -2,12 +2,16 @@ package cz.stuchlikova.ares.standard;
 
 import cz.stuchlikova.ares.standard.stub.AresDotazy;
 import cz.stuchlikova.ares.standard.stub.AresOdpovedi;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 
+@Component
+@Primary
 public class SoapClientTestImpl implements SoapClient {
 
     public AresOdpovedi getAresResponse(String url, AresDotazy request) throws JAXBException {

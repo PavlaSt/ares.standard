@@ -21,7 +21,9 @@ public class AresController {
     private AresOdpovediService service;
 
     @RequestMapping(value = "/ico", method = RequestMethod.GET)
-    public List<AresResponseDto> getResponseByIco(@RequestParam String ico) throws DatatypeConfigurationException, JAXBException {
+    //public List<AresResponseDto> getResponseByIco(@Valid @Pattern(regexp = "[0-9]{8}") @RequestParam("ico") String ico)
+    public List<AresResponseDto> getResponseByIco(@RequestParam String ico)
+            throws DatatypeConfigurationException, JAXBException {
         return service.getDtoResponseByIco(ico);
     }
 

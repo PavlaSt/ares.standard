@@ -8,7 +8,7 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 @Configuration
 
 public class BeanConfig {
-    @Bean
+    /*@Bean
     public Jaxb2Marshaller marshaller() {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
         marshaller.setContextPath("cz.stuchlikova.ares.standard.stub");
@@ -22,6 +22,6 @@ public class BeanConfig {
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
         return client;
-    }
+    }*/
 
 }

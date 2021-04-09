@@ -8,6 +8,7 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.stereotype.Component;
 
 @Configuration
+@Primary
 public class BeanConfigTest {
 
    /* @Bean
@@ -15,13 +16,13 @@ public class BeanConfigTest {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
         marshaller.setContextPath("cz.stuchlikova.ares.standard.stub");
         return marshaller;
-    }*/
+    }
 
     @Bean
-    @Primary
+
     public SoapClient soapConnector(Jaxb2Marshaller marshaller) {
 
         return new SoapClientTestImpl();
     }
-
+    */
 }
