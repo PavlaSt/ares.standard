@@ -21,20 +21,16 @@ import static org.hamcrest.Matchers.equalTo;
 @SpringBootTest(properties = "spring.main.allow-bean-definition-overriding=true")
 class AresResponseRepositoryTest {
 
-
     @Autowired
     private AresClient aresClient;
-
     private final Transformation transformation = new Transformation();
-
-
     final String jsonIcoAnswer = "[{\"obchodniFirma\":\"Asseco Central Europe, a.s.\",\"ico\":\"27074358\",\"nazevUlice\":\"Budějovická\",\"cisloDomovni\":778,\"cisloOrientacni\":\"3a\",\"psc\":\"14000\",\"nazevObce\":\"Praha\",\"nazevCastiObce\":\"Michle\"}]";
 
 
     @Test
     void getAresResponse_fromSavedXmlAnswer_jsonIsreturned() {
 
-        AresOdpovedi odpovedi = aresClient.getAresResponse("cokoliv", new AresDotazy());
+        AresOdpovedi odpovedi = aresClient.getAresResponse("src/test/resources/answerIco.xml", new AresDotazy());
 
         List<AresResponseDto> responseDtos = transformation.transformResponseToDto(odpovedi.getOdpoved());
 
@@ -45,7 +41,7 @@ class AresResponseRepositoryTest {
     @Test
     void getAresResponse_fromSavedXmlAnswer_rightObjectIsReturned() {
 
-        AresOdpovedi odpovedi = aresClient.getAresResponse("cokoliv", new AresDotazy());
+        AresOdpovedi odpovedi = aresClient.getAresResponse("src/test/resources/answerIco.xml", new AresDotazy());
 
         List<Odpoved> odpovedList = odpovedi.getOdpoved();
         Odpoved odpoved = odpovedList.get(0);
@@ -54,8 +50,11 @@ class AresResponseRepositoryTest {
 
 
         assertThat(zaznam1.getObchodniFirma(), equalTo("Asseco Central Europe, a.s."));
+        assertThat(zaznam1.getICO(), equalTo("27074358"));
+        assertThat(zaznamList.size(), equalTo(1));
+
+
 
 
     }
-
 }

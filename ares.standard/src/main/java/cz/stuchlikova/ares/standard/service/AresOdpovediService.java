@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class AresOdpovediService {
 
-    private final ObjectFactory objectFactory;
+    //private final ObjectFactory objectFactory;
     private final Transformation transformation;
     private final RequestCreator creator;
 
@@ -26,7 +26,7 @@ public class AresOdpovediService {
 
     public AresOdpovediService() {
         creator = new RequestCreator();
-        objectFactory = new ObjectFactory();
+        //objectFactory = new ObjectFactory();
         transformation = new Transformation();
     }
     //nemůže být ve fieldu, protože pro každý dotaz se musí vytvořit znovu
@@ -42,54 +42,26 @@ public class AresOdpovediService {
 
     public List<AresResponseDto> getDtoResponseByFirmName(String firmName) throws DatatypeConfigurationException {
 
-        List<Odpoved> responses = getResponseByFirmName(firmName);
+        List<Odpoved> responses = getResponseByCompanyName(firmName);
         return transformation.transformResponseToDto(responses);
     }
 
 
     private List<Odpoved> getResponseByIco(String ico) throws DatatypeConfigurationException {
+        //create polozky
         KlicovePolozky polozky = creator.createAndSetPolozkyIco(ico);
-        //KlicovePolozky polozky = objectFactory.createKlicovePolozky();
-        polozky.setICO(ico);
+        //create request and send to Ares SOAP WS
         return repository.getAresResponse(creator.createAresDotazy(polozky));
     }
 
-    private List<Odpoved> getResponseByFirmName(String firmName) throws DatatypeConfigurationException {
+    private List<Odpoved> getResponseByCompanyName(String companyName) throws DatatypeConfigurationException {
 
-        KlicovePolozky polozky = objectFactory.createKlicovePolozky();
-        polozky.setObchodniFirma(firmName);
-        return repository.getAresResponse(createAresDotazy(polozky));
+        KlicovePolozky polozky = creator.createAndSetPolozkyCompanyName(companyName);
+        return repository.getAresResponse(creator.createAresDotazy(polozky));
     }
 
-/*
-    public List<AresResponseDto> transformResponseToDto(List<Odpoved> responses) {
-        List<AresResponseDto> responseDtos = new ArrayList<>();
 
-        for (Odpoved response : responses) {
-            List<Zaznam> records = response.getZaznam();
-            for (Zaznam record : records) {
-                String obchodniFirma = record.getObchodniFirma();
-                String ico = record.getICO();
-
-                Identifikace identifikace = record.getIdentifikace();
-                AdresaARES2 adresa = identifikace.getAdresaARES();
-                String nazevObce = adresa.getNazevObce();
-                String nazevCastiObce = adresa.getNazevCastiObce();
-                String nazevUlice = adresa.getNazevUlice();
-                Integer cisloDomovni = adresa.getCisloDomovni();
-                String cisloOrientacni = adresa.getCisloOrientacni();
-                String psc = adresa.getPSC();
-
-                AresResponseDto responseDto = new AresResponseDto(obchodniFirma, ico, nazevUlice, cisloDomovni,
-                        cisloOrientacni, psc, nazevObce, nazevCastiObce);
-                responseDtos.add(responseDto);
-            }
-
-        }
-        return responseDtos;
-    }*/
-
-    private AresDotazy createAresDotazy(KlicovePolozky polozky) throws DatatypeConfigurationException {
+    /*private AresDotazy createAresDotazy(KlicovePolozky polozky) throws DatatypeConfigurationException {
 
         AresDotazy aresDotazy = objectFactory.createAresDotazy();
         Dotaz dotaz = objectFactory.createDotaz();
@@ -117,5 +89,5 @@ public class AresOdpovediService {
 
         return aresDotazy;
     }
-
+*/
 }
