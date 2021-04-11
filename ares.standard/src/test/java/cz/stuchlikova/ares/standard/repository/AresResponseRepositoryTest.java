@@ -2,7 +2,6 @@ package cz.stuchlikova.ares.standard.repository;
 
 import cz.stuchlikova.ares.standard.AresClient;
 import cz.stuchlikova.ares.standard.dto.AresResponseDto;
-import cz.stuchlikova.ares.standard.service.AresOdpovediService;
 import cz.stuchlikova.ares.standard.service.Transformation;
 import cz.stuchlikova.ares.standard.stub.AresDotazy;
 import cz.stuchlikova.ares.standard.stub.AresOdpovedi;
@@ -15,7 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
 
 
 @SpringBootTest(properties = "spring.main.allow-bean-definition-overriding=true")
@@ -39,7 +38,7 @@ class AresResponseRepositoryTest {
     }
 
     @Test
-    void getAresResponse_fromSavedXmlAnswer_rightObjectIsReturned() {
+    void getAresResponse_fromSavedXmlAnswerIco_rightObjectIsReturned() {
 
         AresOdpovedi odpovedi = aresClient.getAresResponse("src/test/resources/answerIco.xml", new AresDotazy());
 
@@ -48,13 +47,27 @@ class AresResponseRepositoryTest {
         List<Zaznam> zaznamList = odpoved.getZaznam();
         Zaznam zaznam1 = zaznamList.get(0);
 
-
+        assertThat(zaznamList.size(), equalTo(1));
         assertThat(zaznam1.getObchodniFirma(), equalTo("Asseco Central Europe, a.s."));
         assertThat(zaznam1.getICO(), equalTo("27074358"));
-        assertThat(zaznamList.size(), equalTo(1));
 
+    }
 
+    @Test
+    void getAresResponse_fromSavedXmlAnswerCompanyName_rightObjectIsReturned() {
 
+        AresOdpovedi odpovedi = aresClient.getAresResponse("src/test/resources/answerCompanyName.xml", new AresDotazy());
+
+        List<Odpoved> odpovedList = odpovedi.getOdpoved();
+        Odpoved odpoved = odpovedList.get(0);
+        List<Zaznam> zaznamList = odpoved.getZaznam();
+        Zaznam zaznam1 = zaznamList.get(0);
+
+        assertThat(zaznamList.size(), equalTo(4));
+        assertThat(zaznam1.getObchodniFirma(), startsWith("Etnetera"));
+        //assertThat(zaznam1.getObchodniFirma(), containsStringIgnoringCase("Etnetera"));
+        assertThat(zaznam1.getObchodniFirma(), containsString("Etnetera"));
+        assertThat(zaznam1.getICO(), equalTo("24133272"));
 
     }
 }
