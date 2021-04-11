@@ -2,6 +2,7 @@ package cz.stuchlikova.ares.standard;
 
 import cz.stuchlikova.ares.standard.stub.AresDotazy;
 import cz.stuchlikova.ares.standard.stub.AresOdpovedi;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.xml.transform.StringResult;
@@ -11,6 +12,7 @@ import javax.xml.bind.JAXB;
 import java.io.StringReader;
 import java.io.StringWriter;
 
+//@Primary
 @Component
 public class AresClientImpl extends WebServiceGatewaySupport implements AresClient {
 
