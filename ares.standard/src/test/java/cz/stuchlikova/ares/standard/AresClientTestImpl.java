@@ -18,13 +18,8 @@ public class AresClientTestImpl implements AresClient {
     public AresOdpovedi getAresResponse(String url, AresDotazy request) {
 
         File answer = new File(url);
-
-        //TO DO
-        //if requests Name contains Ico => "src/test/resources/answerIco.xml", else answerCompanyNameName.xml (add)
-
         try {
             InputStream xmlResult = new FileInputStream(answer);
-            //InputStream xmlResult = new FileInputStream(new File("src/test/resources/answerIco.xml"));
             return unmarshalStringToObject(xmlResult);
 
         } catch (FileNotFoundException e) {

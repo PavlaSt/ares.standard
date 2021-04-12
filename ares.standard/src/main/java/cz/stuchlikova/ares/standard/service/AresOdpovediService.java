@@ -17,7 +17,6 @@ import java.util.List;
 @Service
 public class AresOdpovediService {
 
-    //private final ObjectFactory objectFactory;
     private final Transformation transformation;
     private final RequestCreator creator;
 
@@ -26,12 +25,8 @@ public class AresOdpovediService {
 
     public AresOdpovediService() {
         creator = new RequestCreator();
-        //objectFactory = new ObjectFactory();
         transformation = new Transformation();
     }
-    //nemůže být ve fieldu, protože pro každý dotaz se musí vytvořit znovu
-    //AresDotazy aresDotazy = objectFactory.createAresDotazy();
-    //Dotaz dotaz = objectFactory.createDotaz();
 
     public List<AresResponseDto> getDtoResponseByIco(String ico) throws DatatypeConfigurationException {
 
@@ -61,33 +56,5 @@ public class AresOdpovediService {
     }
 
 
-    /*private AresDotazy createAresDotazy(KlicovePolozky polozky) throws DatatypeConfigurationException {
 
-        AresDotazy aresDotazy = objectFactory.createAresDotazy();
-        Dotaz dotaz = objectFactory.createDotaz();
-
-        //LocalDate to xmlGregorianCalendar
-        LocalDate date = LocalDate.now();
-        GregorianCalendar gcal = GregorianCalendar.from(date.atStartOfDay(ZoneId.systemDefault()));
-        XMLGregorianCalendar xcal = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
-
-        aresDotazy.setDotazDatumCas(xcal);
-        aresDotazy.setDotazPocet(1);
-        aresDotazy.setDotazTyp(AresDotazTyp.STANDARD);
-        aresDotazy.setVystupFormat(VystupFormat.XML);
-        aresDotazy.setValidationXSLT("http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_request/v_1.0.0/ares_request.xsl");
-        aresDotazy.setUserMail("stuchlikova.pavla@post.cz");
-        aresDotazy.setAnswerNamespaceRequired("http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1");
-        aresDotazy.setId("ares_dotaz");
-
-        dotaz.setPomocneID(1);
-        dotaz.setTypVyhledani(AresVyberTyp.FREE);
-        dotaz.setMaxPocet(100);
-        dotaz.setKlicovePolozky(polozky);
-
-        aresDotazy.getDotaz().add(dotaz);
-
-        return aresDotazy;
-    }
-*/
 }

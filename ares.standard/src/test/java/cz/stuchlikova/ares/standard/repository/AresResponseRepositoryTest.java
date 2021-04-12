@@ -65,7 +65,6 @@ class AresResponseRepositoryTest {
 
         assertThat(zaznamList.size(), equalTo(4));
         assertThat(zaznam1.getObchodniFirma(), startsWith("Etnetera"));
-        //assertThat(zaznam1.getObchodniFirma(), containsStringIgnoringCase("Etnetera"));
         assertThat(zaznam1.getObchodniFirma(), containsString("Etnetera"));
         assertThat(zaznam1.getICO(), equalTo("24133272"));
 
