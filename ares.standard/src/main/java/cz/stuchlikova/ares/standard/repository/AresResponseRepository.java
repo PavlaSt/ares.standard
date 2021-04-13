@@ -28,10 +28,10 @@ public class AresResponseRepository {
                 "http://wwwinfo.mfcr.cz/cgi-bin/ares/xar.cgi", aresDotazy);
         return response.getOdpoved();
     }
-    private AresOdpovedi unmarshalStringToObject(String xmlResult) {
+    /*private AresOdpovedi unmarshalStringToObject(String xmlResult) {
         return JAXB.unmarshal(new StringReader(xmlResult), AresOdpovedi.class);
     }
-
+*/
 
 
 }
