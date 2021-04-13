@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
 import javax.xml.bind.JAXBException;
 import javax.xml.datatype.DatatypeConfigurationException;
 import java.util.List;
@@ -21,8 +23,9 @@ public class AresController {
     private AresOdpovediService service;
 
     @RequestMapping(value = "/ico", method = RequestMethod.GET)
-    //public List<AresResponseDto> getResponseByIco(@Valid @Pattern(regexp = "[0-9]{8}") @RequestParam("ico") String ico)
-    public List<AresResponseDto> getResponseByIco(@RequestParam String ico)
+    public List<AresResponseDto> getResponseByIco(@Valid @Pattern(regexp = "[0-9]{8}", message = "must be of 8 digit")
+                                                      @RequestParam("ico") String ico)
+    //public List<AresResponseDto> getResponseByIco(@RequestParam String ico)
             throws DatatypeConfigurationException{
         return service.getDtoResponseByIco(ico);
     }
