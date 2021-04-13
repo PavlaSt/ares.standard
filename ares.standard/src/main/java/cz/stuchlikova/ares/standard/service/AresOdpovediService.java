@@ -14,41 +14,39 @@ import java.util.List;
 public class AresOdpovediService {
 
     private final Transformation transformation;
-    private final RequestCreator creator;
+    private final RequestFactory requestFactory;
 
     @Autowired
     private AresResponseRepository repository;
 
     public AresOdpovediService() {
-        creator = new RequestCreator();
+        requestFactory = new RequestFactory();
         transformation = new Transformation();
     }
 
     public List<AresResponseDto> getDtoResponseByIco(String ico) throws DatatypeConfigurationException {
-
-
         List<Odpoved> responses = getResponseByIco(ico);
         return transformation.transformResponseToDto(responses);
     }
 
     public List<AresResponseDto> getDtoResponseByFirmName(String firmName) throws DatatypeConfigurationException {
-
         List<Odpoved> responses = getResponseByCompanyName(firmName);
         return transformation.transformResponseToDto(responses);
     }
 
+    //------------------------------------------------------------------------------------------
+
 
     private List<Odpoved> getResponseByIco(String ico) throws DatatypeConfigurationException {
         //create polozky
-        KlicovePolozky polozky = creator.createAndSetPolozkyIco(ico);
+        KlicovePolozky polozky = requestFactory.createAndSetPolozkyIco(ico);
         //create request and send to Ares SOAP WS
-        return repository.getAresResponse(creator.createAresDotazy(polozky));
+        return repository.getAresResponse(requestFactory.createAresDotazy(polozky));
     }
 
     private List<Odpoved> getResponseByCompanyName(String companyName) throws DatatypeConfigurationException {
-
-        KlicovePolozky polozky = creator.createAndSetPolozkyCompanyName(companyName);
-        return repository.getAresResponse(creator.createAresDotazy(polozky));
+        KlicovePolozky polozky = requestFactory.createAndSetPolozkyCompanyName(companyName);
+        return repository.getAresResponse(requestFactory.createAresDotazy(polozky));
     }
 
 
