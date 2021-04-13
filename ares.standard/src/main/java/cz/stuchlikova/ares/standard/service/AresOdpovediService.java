@@ -2,16 +2,12 @@ package cz.stuchlikova.ares.standard.service;
 
 import cz.stuchlikova.ares.standard.dto.AresResponseDto;
 import cz.stuchlikova.ares.standard.repository.AresResponseRepository;
-import cz.stuchlikova.ares.standard.stub.*;
+import cz.stuchlikova.ares.standard.stub.KlicovePolozky;
+import cz.stuchlikova.ares.standard.stub.Odpoved;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 @Service
