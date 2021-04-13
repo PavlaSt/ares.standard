@@ -16,20 +16,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @WebMvcTest(AresController.class)
-public class AresControllerUnitTest {
+public class AresControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
-    AresOdpovediService service;
+    //@MockBean
+    //AresOdpovediService service;
 
     @Test
     public void getResponseByIco() throws Exception {
         mockMvc.perform(get("/ico/?ico=03603041"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(content().json("[]"));
-        verify(service, times(1)).getDtoResponseByIco("03603041");
+                .andExpect(content().json("[]"));//+očekávám jméno firmy
+        //verify(service, times(1)).getDtoResponseByIco("03603041");
     }
 
     @Test
@@ -38,7 +38,7 @@ public class AresControllerUnitTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().json("[]"));
-        verify(service, times(1)).getDtoResponseByFirmName("Etnetera");
+        //verify(service, times(1)).getDtoResponseByFirmName("Etnetera");
     }
 }
 
