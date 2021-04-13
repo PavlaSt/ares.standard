@@ -29,6 +29,7 @@ public class Transformation {
                     Integer cisloDomovni = adresa.getCisloDomovni();
                     String cisloOrientacni = adresa.getCisloOrientacni();
                     String psc = adresa.getPSC();
+
                     AresResponseDto responseDto = new AresResponseDto(obchodniFirma, ico, nazevUlice, cisloDomovni,
                             cisloOrientacni, psc, nazevObce, nazevCastiObce);
                     responseDtos.add(responseDto);
