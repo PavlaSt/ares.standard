@@ -6,7 +6,6 @@ import cz.stuchlikova.ares.standard.stub.Identifikace;
 import cz.stuchlikova.ares.standard.stub.Odpoved;
 import cz.stuchlikova.ares.standard.stub.Zaznam;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,6 +20,7 @@ public class Transformation {
                 .map(this::getInformation)
                 .collect(Collectors.toList());
     }
+
     private AresResponseDto getInformation(Zaznam record) {
         String obchodniFirma = record.getObchodniFirma();
         String ico = record.getICO();

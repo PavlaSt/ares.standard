@@ -7,9 +7,6 @@ import cz.stuchlikova.ares.standard.stub.Odpoved;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.xml.bind.JAXB;
-import javax.xml.bind.JAXBException;
-import java.io.StringReader;
 import java.util.List;
 
 @Repository
