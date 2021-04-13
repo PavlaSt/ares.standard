@@ -41,12 +41,12 @@ public class AresOdpovediService {
         //create polozky
         KlicovePolozky polozky = requestFactory.createAndSetPolozkyIco(ico);
         //create request and send to Ares SOAP WS
-        return repository.getAresResponse(requestFactory.createAresDotazy(polozky));
+        return repository.getOdpovedList(requestFactory.createAresDotazy(polozky));
     }
 
     private List<Odpoved> getResponseByCompanyName(String companyName) throws DatatypeConfigurationException {
         KlicovePolozky polozky = requestFactory.createAndSetPolozkyCompanyName(companyName);
-        return repository.getAresResponse(requestFactory.createAresDotazy(polozky));
+        return repository.getOdpovedList(requestFactory.createAresDotazy(polozky));
     }
 
 

@@ -19,10 +19,7 @@ public class AresResponseRepository {
     @Autowired
     private AresClient aresClient;
 
-
-
-
-    public List<Odpoved> getAresResponse(AresDotazy aresDotazy) {
+    public List<Odpoved> getOdpovedList(AresDotazy aresDotazy) {
 
         AresOdpovedi response = aresClient.getAresResponse(
                 "http://wwwinfo.mfcr.cz/cgi-bin/ares/xar.cgi", aresDotazy);
