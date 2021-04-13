@@ -12,6 +12,8 @@ import java.util.GregorianCalendar;
 public class RequestCreator {
 
     private final ObjectFactory objectFactory;
+    private final String EMAIL = "stuchlikova.pavla@post.cz";
+    private final Integer MAX_POCET = 100;
 
     public RequestCreator() {
         this.objectFactory = new ObjectFactory();
@@ -34,13 +36,15 @@ public class RequestCreator {
         aresDotazy.setDotazTyp(AresDotazTyp.STANDARD);
         aresDotazy.setVystupFormat(VystupFormat.XML);
         aresDotazy.setValidationXSLT("http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_request/v_1.0.0/ares_request.xsl");
-        aresDotazy.setUserMail("stuchlikova.pavla@post.cz");
+        aresDotazy.setUserMail(EMAIL);
+        //aresDotazy.setUserMail("stuchlikova.pavla@post.cz");
         aresDotazy.setAnswerNamespaceRequired("http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1");
         aresDotazy.setId("ares_dotaz");
 
         dotaz.setPomocneID(1);
         dotaz.setTypVyhledani(AresVyberTyp.FREE);
-        dotaz.setMaxPocet(100);
+        dotaz.setMaxPocet(MAX_POCET);
+        //dotaz.setMaxPocet(100);
         dotaz.setKlicovePolozky(polozky);
 
         aresDotazy.getDotaz().add(dotaz);
