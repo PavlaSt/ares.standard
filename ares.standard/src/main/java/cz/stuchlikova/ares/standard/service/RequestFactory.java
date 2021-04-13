@@ -9,13 +9,13 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.GregorianCalendar;
 
-public class RequestCreator {
+public class RequestFactory {
 
     private final ObjectFactory objectFactory;
     private final String EMAIL = "stuchlikova.pavla@post.cz";
-    private final Integer MAX_POCET = 100;
+    private final Integer MAX_POCET = 1000;
 
-    public RequestCreator() {
+    public RequestFactory() {
         this.objectFactory = new ObjectFactory();
     }
 
