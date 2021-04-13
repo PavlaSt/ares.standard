@@ -27,17 +27,6 @@ class AresResponseRepositoryTest {
 
 
     @Test
-    void getAresResponse_fromSavedXmlAnswer_jsonIsreturned() {
-
-        AresOdpovedi odpovedi = aresClient.getAresResponse("src/test/resources/answerIco.xml", new AresDotazy());
-
-        List<AresResponseDto> responseDtos = transformation.transformResponseToDto(odpovedi.getOdpoved());
-
-        assertThat(responseDtos.toString(), equalTo(jsonIcoAnswer));
-
-    }
-
-    @Test
     void getAresResponse_fromSavedXmlAnswerIco_rightObjectIsReturned() {
 
         AresOdpovedi odpovedi = aresClient.getAresResponse("src/test/resources/answerIco.xml", new AresDotazy());
@@ -50,7 +39,6 @@ class AresResponseRepositoryTest {
         assertThat(zaznamList.size(), equalTo(1));
         assertThat(zaznam1.getObchodniFirma(), equalTo("Asseco Central Europe, a.s."));
         assertThat(zaznam1.getICO(), equalTo("27074358"));
-
     }
 
     @Test
@@ -67,6 +55,14 @@ class AresResponseRepositoryTest {
         assertThat(zaznam1.getObchodniFirma(), startsWith("Etnetera"));
         assertThat(zaznam1.getObchodniFirma(), containsString("Etnetera"));
         assertThat(zaznam1.getICO(), equalTo("24133272"));
+    }
+
+    @Test
+    void getAresResponse_fromSavedXmlAnswer_jsonIsreturned() {
+
+        AresOdpovedi odpovedi = aresClient.getAresResponse("src/test/resources/answerIco.xml", new AresDotazy());
+        List<AresResponseDto> responseDtos = transformation.transformResponseToDto(odpovedi.getOdpoved());
+        assertThat(responseDtos.toString(), equalTo(jsonIcoAnswer));
 
     }
 }
