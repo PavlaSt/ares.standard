@@ -49,6 +49,29 @@ public class AresOdpovediService {
         return repository.getOdpovedList(requestFactory.createAresDotazy(polozky));
     }
 
+    //-------------------------------------------------------------------------
 
+    /*@Test
+    public void shouldReturnFullNameOfAPerson() throws Exception {
+        Person peter = new Person("Peter", "Pan");
+        given(personRepo.findByLastName("Pan"))
+                .willReturn(Optional.of(peter));
+
+        String greeting = subject.hello("Pan");
+
+        assertThat(greeting, is("Hello Peter Pan!"));
+    }
+
+    @Test
+    public void shouldTellIfPersonIsUnknown() throws Exception {
+        given(personRepo.findByLastName(anyString()))
+                .willReturn(Optional.empty());
+
+        String greeting = subject.hello("Pan");
+
+        assertThat(greeting, is("Who is this 'Pan' you're talking about?"));
+    }
+
+*/
 
 }

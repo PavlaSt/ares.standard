@@ -13,7 +13,7 @@ public class RequestFactory {
 
     private final ObjectFactory objectFactory;
     private final String EMAIL = "stuchlikova.pavla@post.cz";
-    private final Integer MAX_POCET = 1000;
+    private final Integer MAX_POCET = 200;
 
     public RequestFactory() {
         this.objectFactory = new ObjectFactory();

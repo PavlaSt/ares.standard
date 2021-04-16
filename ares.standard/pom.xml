@@ -61,25 +61,27 @@
 						<goals>
 							<goal>generate</goal>
 						</goals>
+						<configuration>
+							<args>
+								<arg>-XautoNameResolution</arg>
+							</args>
+							<strict>false</strict>
+							<catalog>src/main/resources/catalog.cat</catalog>
+
+							<schemaLanguage>WSDL</schemaLanguage>
+							<generatePackage>cz.stuchlikova.ares.standard.stub</generatePackage>
+							<generateDirectory>${project.basedir}/src/main/java</generateDirectory>
+							<schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
+
+							<schemaIncludes>
+								<include>*.wsdl</include>
+							</schemaIncludes>
+						</configuration>
 					</execution>
+
+
 				</executions>
-				<configuration>
-					<args>
-						<arg>-XautoNameResolution</arg>
-					</args>
-					<strict>false</strict>
-					<catalog>src/main/resources/catalog.cat</catalog>
 
-					<schemaLanguage>WSDL</schemaLanguage>
-					<generatePackage>cz.stuchlikova.ares.standard.stub</generatePackage>
-					<generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-					<schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
-
-					<schemaIncludes>
-						<include>*.wsdl</include>
-
-					</schemaIncludes>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

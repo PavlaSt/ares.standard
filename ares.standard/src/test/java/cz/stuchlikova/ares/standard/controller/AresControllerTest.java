@@ -20,8 +20,8 @@ public class AresControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    //@MockBean
-    //AresOdpovediService service;
+    @MockBean
+    AresOdpovediService service;
 
     @Test
     public void getResponseByIco() throws Exception {

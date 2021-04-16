@@ -17,11 +17,11 @@ public class Transformation {
         return responses.stream()
                 .map(Odpoved::getZaznam)
                 .flatMap(Collection::stream)
-                .map(this::getInformation)
+                .map(this::getDataCreateDto)
                 .collect(Collectors.toList());
     }
 
-    private AresResponseDto getInformation(Zaznam record) {
+    private AresResponseDto getDataCreateDto(Zaznam record) {
         String obchodniFirma = record.getObchodniFirma();
         String ico = record.getICO();
         Identifikace identifikace = record.getIdentifikace();

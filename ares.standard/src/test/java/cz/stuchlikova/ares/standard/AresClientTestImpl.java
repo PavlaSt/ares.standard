@@ -16,6 +16,14 @@ import java.io.InputStream;
 public class AresClientTestImpl implements AresClient {
 
     public AresOdpovedi getAresResponse(String url, AresDotazy request) {
+        if (request.getDotaz().size() > 0) {
+            if (request.getDotaz().get(0).getKlicovePolozky().getICO().equals("27074358")) {
+                url = "src/test/resources/answerIco.xml";
+            } else if (request.getDotaz().get(0).getKlicovePolozky().getObchodniFirma().equals("Etnetera")) {
+                url = "src/test/resources/answerCompanyName.xml";
+            }
+        }
+
 
         File answer = new File(url);
         try {
