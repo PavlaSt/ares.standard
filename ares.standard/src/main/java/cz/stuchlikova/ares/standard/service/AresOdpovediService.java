@@ -1,6 +1,6 @@
 package cz.stuchlikova.ares.standard.service;
 
-import cz.stuchlikova.ares.standard.dto.AresResponseDto;
+import cz.stuchlikova.ares.standard.domain.AresResponseDto;
 import cz.stuchlikova.ares.standard.repository.AresResponseRepository;
 import cz.stuchlikova.ares.standard.stub.KlicovePolozky;
 import cz.stuchlikova.ares.standard.stub.Odpoved;
@@ -29,7 +29,7 @@ public class AresOdpovediService {
         return transformation.transformResponseToDto(responses);
     }
 
-    public List<AresResponseDto> getDtoResponseByFirmName(String firmName) throws DatatypeConfigurationException {
+    public List<AresResponseDto> getDtoResponseByCompanyName(String firmName) throws DatatypeConfigurationException {
         List<Odpoved> responses = getResponseByCompanyName(firmName);
         return transformation.transformResponseToDto(responses);
     }
@@ -49,29 +49,5 @@ public class AresOdpovediService {
         return repository.getOdpovedList(requestFactory.createAresDotazy(polozky));
     }
 
-    //-------------------------------------------------------------------------
-
-    /*@Test
-    public void shouldReturnFullNameOfAPerson() throws Exception {
-        Person peter = new Person("Peter", "Pan");
-        given(personRepo.findByLastName("Pan"))
-                .willReturn(Optional.of(peter));
-
-        String greeting = subject.hello("Pan");
-
-        assertThat(greeting, is("Hello Peter Pan!"));
-    }
-
-    @Test
-    public void shouldTellIfPersonIsUnknown() throws Exception {
-        given(personRepo.findByLastName(anyString()))
-                .willReturn(Optional.empty());
-
-        String greeting = subject.hello("Pan");
-
-        assertThat(greeting, is("Who is this 'Pan' you're talking about?"));
-    }
-
-*/
 
 }
