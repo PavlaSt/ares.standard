@@ -2,6 +2,7 @@ package cz.stuchlikova.ares.standard;
 
 import cz.stuchlikova.ares.standard.stub.AresDotazy;
 import cz.stuchlikova.ares.standard.stub.AresOdpovedi;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
@@ -14,9 +15,21 @@ import java.io.StringWriter;
 
 //@Primary
 @Component
+@ConfigurationProperties(prefix = "ares")
 public class AresClientImpl extends WebServiceGatewaySupport implements AresClient {
 
-    public AresOdpovedi getAresResponse(String url, AresDotazy request) {
+    private String url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+
+    public AresOdpovedi getAresResponse(AresDotazy request) {
         String xmlRequest = marshalInputToXml(request);
         String xmlResult = sendSourceReceiveResult(url,xmlRequest);
         return unmarshalStringToObject(xmlResult);
@@ -32,7 +45,7 @@ public class AresClientImpl extends WebServiceGatewaySupport implements AresClie
         StringSource source = new StringSource(xmlRequest);
         StringResult result = new StringResult();
         getWebServiceTemplate().sendSourceAndReceiveToResult(url, source, result);
-        //System.out.println(result);
+        System.out.println(result);
         return result.toString();
     }
 

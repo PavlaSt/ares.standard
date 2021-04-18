@@ -4,5 +4,6 @@ import cz.stuchlikova.ares.standard.stub.AresDotazy;
 import cz.stuchlikova.ares.standard.stub.AresOdpovedi;
 
 public interface AresClient {
-    AresOdpovedi getAresResponse(String url, AresDotazy request);
+    //AresOdpovedi getAresResponse(String url, AresDotazy request);
+    AresOdpovedi getAresResponse(AresDotazy request);
 }
