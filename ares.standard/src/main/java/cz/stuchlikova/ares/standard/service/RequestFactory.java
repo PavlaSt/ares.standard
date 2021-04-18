@@ -1,6 +1,9 @@
 package cz.stuchlikova.ares.standard.service;
 
 import cz.stuchlikova.ares.standard.stub.*;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
@@ -9,17 +12,34 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.GregorianCalendar;
 
+@Component
+@EnableConfigurationProperties
+@ConfigurationProperties(prefix = "request")
 public class RequestFactory {
 
     private final ObjectFactory objectFactory;
-    private final String EMAIL = "stuchlikova.pavla@post.cz";
-    private final Integer MAX_POCET = 200;
+    String email = "stuchlikova.pavla@post.cz";
+    Integer maxPocet = 200;
 
     public RequestFactory() {
         this.objectFactory = new ObjectFactory();
     }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public Integer getMaxPocet() {
+        return maxPocet;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setMaxPocet(Integer maxPocet) {
+        this.maxPocet = maxPocet;
+    }
 
     public AresDotazy createAresDotazy(KlicovePolozky polozky) throws DatatypeConfigurationException {
 
@@ -36,14 +56,14 @@ public class RequestFactory {
         aresDotazy.setDotazTyp(AresDotazTyp.STANDARD);
         aresDotazy.setVystupFormat(VystupFormat.XML);
         aresDotazy.setValidationXSLT("http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_request/v_1.0.0/ares_request.xsl");
-        aresDotazy.setUserMail(EMAIL);
+        aresDotazy.setUserMail(email);
         //aresDotazy.setUserMail("stuchlikova.pavla@post.cz");
         aresDotazy.setAnswerNamespaceRequired("http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1");
         aresDotazy.setId("ares_dotaz");
 
         dotaz.setPomocneID(1);
         dotaz.setTypVyhledani(AresVyberTyp.FREE);
-        dotaz.setMaxPocet(MAX_POCET);
+        dotaz.setMaxPocet(maxPocet);
         //dotaz.setMaxPocet(100);
         dotaz.setKlicovePolozky(polozky);
 
