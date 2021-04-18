@@ -25,10 +25,12 @@ public class AresControllerTest {
 
     @Test
     public void getResponseByIco() throws Exception {
-        mockMvc.perform(get("/ico/?ico=03603041"))
+        mockMvc.perform(get("/ico/?ico=27074358"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(content().json("[]"));//+očekávám jméno firmy
+                .andExpect(content().json("[]"))
+                .andExpect(content().json("[{'obchodniFirma':'Asseco Central Europe, a.s'}]"));
+        //+očekávám jméno firmy
         //verify(service, times(1)).getDtoResponseByIco("03603041");
     }
 
