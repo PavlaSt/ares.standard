@@ -1,6 +1,6 @@
 package cz.stuchlikova.ares.standard.service;
 
-import cz.stuchlikova.ares.standard.dto.AresResponseDto;
+import cz.stuchlikova.ares.standard.domain.AresResponseDto;
 import cz.stuchlikova.ares.standard.stub.AdresaARES2;
 import cz.stuchlikova.ares.standard.stub.Identifikace;
 import cz.stuchlikova.ares.standard.stub.Odpoved;

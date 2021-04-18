@@ -1,4 +1,4 @@
-package cz.stuchlikova.ares.standard.dto;
+package cz.stuchlikova.ares.standard.domain;
 
 public class AresResponseDto {
 
