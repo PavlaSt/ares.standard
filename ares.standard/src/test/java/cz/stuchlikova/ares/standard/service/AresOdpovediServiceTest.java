@@ -1,6 +1,6 @@
 package cz.stuchlikova.ares.standard.service;
 
-import cz.stuchlikova.ares.standard.dto.AresResponseDto;
+import cz.stuchlikova.ares.standard.domain.AresResponseDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,7 +11,6 @@ import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class AresOdpovediServiceTest {
@@ -31,6 +30,9 @@ class AresOdpovediServiceTest {
     // sáhneš na filesystem, vezmeš připravený XML a proženešho marshallerem aby ti z něj vrátil výslednej
     // response objekt. Ideální je asi to asi nějak automaticky mapovat na ten filesystem, třeba něco jako
     // test/resources/jméno_metody/parametr1=hodnota1&parametr2=hodnota2.xml
+
+    // test/resources/getDtoResponseByIco/ico=27074358.xml
+    // test/resources/getDtoResponseByCompanyName/firma=Etnetera.xml
 
     @Test
     void getDtoResponseByIco_happy_path() throws DatatypeConfigurationException {
