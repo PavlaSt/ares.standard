@@ -14,1621 +14,1621 @@ Generated on: 2021.04.15 at 10:09:55 PM CEST
             
         <schemaBindings map="false">
                   
-            <package name="cz.stuchlikova.ares.standard.stub"/>
+            <package name="cz.stuchlikova.ares.application.stub"/>
                 
         </schemaBindings>
             
         <bindings if-exists="true" scd="~tns:konkurzy_vyrovnani">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KonkurzyVyrovnani2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KonkurzyVyrovnani2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odstepne_zavody">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdstepneZavody2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdstepneZavody2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:akcie">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Akcie"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Akcie"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:chybova_odpoved">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ChybovaOdpoved"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ChybovaOdpoved"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:uvod">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Uvod2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Uvod2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:typ_registru">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.TypRegistru2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.TypRegistru2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:soud">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Soud2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Soud2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:typ_zmeny">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.TypZmeny2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.TypZmeny2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_KVZ">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StavKVZ2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StavKVZ2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:shoda_ICO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ShodaICO2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ShodaICO2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:shoda_RC">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ShodaRC2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ShodaRC2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:shoda_OF">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ShodaOF2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ShodaOF2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresa_ARES">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresaARES2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresaARES2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vysledek_hledani">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VysledekHledani2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VysledekHledani2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:penezni_suma">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PenezniSuma2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PenezniSuma2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:fyzicka_osoba">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.FyzickaOsoba2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.FyzickaOsoba2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:pravnicka_osoba">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PravnickaOsoba2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PravnickaOsoba2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:error_ARES">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ErrorARES2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ErrorARES2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:chyba">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Chyba2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Chyba2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:okec">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Okec2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Okec2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kod_okec">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KodOkec2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KodOkec2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:nace">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Nace"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Nace"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kod_nace">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KodNace"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KodNace"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_basic">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedBasic2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedBasic2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_basic">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisBasic2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisBasic2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:registrace_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.RegistraceRZP2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.RegistraceRZP2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresa_dorucovaci">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresaDorucovaci2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresaDorucovaci2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_subjektu_ceu">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StavSubjektuCeu2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StavSubjektuCeu2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kategorie_poctu_pracovniku">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KategoriePoctuPracovniku2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KategoriePoctuPracovniku2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:institucionarni_sektor">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.InstitucionarniSektor"/>
+            <class ref="cz.stuchlikova.ares.application.stub.InstitucionarniSektor"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Stav2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Stav2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:registrace">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Registrace2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Registrace2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:spisova_znacka">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SpisovaZnacka2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SpisovaZnacka2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:cinnosti">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Cinnosti"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Cinnosti"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:predmety_podnikani">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PredmetyPodnikani2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PredmetyPodnikani2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:texty">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Texty"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Texty"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:textType">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.TextType"/>
+            <class ref="cz.stuchlikova.ares.application.stub.TextType"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:ico">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Ico2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Ico2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:obchodni_firma">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ObchodniFirma2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ObchodniFirma2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:cizi_nazev">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.CiziNazev"/>
+            <class ref="cz.stuchlikova.ares.application.stub.CiziNazev"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:dic">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Dic2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Dic2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_RFO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisRFO2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisRFO2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kraj_RFO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KrajRFO2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KrajRFO2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:okres_RFO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OkresRFO2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OkresRFO2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:obec_RFO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ObecRFO2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ObecRFO2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:prazsky_obvod_RFO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PrazskyObvodRFO2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PrazskyObvodRFO2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:mestska_cast_RFO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.MestskaCastRFO2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.MestskaCastRFO2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:cast_obce_RFO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.CastObceRFO2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.CastObceRFO2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_OR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedOR2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedOR2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_OR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisOR2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisOR2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:angazma">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Angazma"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Angazma"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladni_udaje_OR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladniUdajeOR2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladniUdajeOR2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:udalosti">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Udalosti"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Udalosti"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:udalost">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Udalost"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Udalost"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:ostatni_skutecnosti">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OstatniSkutecnosti2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OstatniSkutecnosti2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vklad_spolecnika">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VkladSpolecnika"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VkladSpolecnika"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vklad">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Vklad2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Vklad2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:splaceno">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Splaceno2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Splaceno2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kapital">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Kapital2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Kapital2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:jmeni">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Jmeni"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Jmeni"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:statutarni_organ">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StatutarniOrgan2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StatutarniOrgan2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:clen">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Clen"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Clen"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:sos">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Sos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Sos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:sok">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Sok"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Sok"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:sop">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Sop"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Sop"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:szo">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Szo"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Szo"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:trvani">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Trvani2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Trvani2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:spolecnik">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Spolecnik"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Spolecnik"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:komplementari">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Komplementari"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Komplementari"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:komanditiste">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Komanditiste"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Komanditiste"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:clenove_sdruzeni">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ClenoveSdruzeni"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ClenoveSdruzeni"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:druzstevnici">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Druzstevnici"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Druzstevnici"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:predstavenstvo">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Predstavenstvo"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Predstavenstvo"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:spravni_rada">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SpravniRada"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SpravniRada"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:nadace">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Nadace"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Nadace"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:nadacni_fond">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.NadacniFond"/>
+            <class ref="cz.stuchlikova.ares.application.stub.NadacniFond"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:revizori">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Revizori"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Revizori"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:spolecnici_bez_vkladu">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SpolecniciBezVkladu2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SpolecniciBezVkladu2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:spolecnici_s_vkladem">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SpolecniciSVkladem2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SpolecniciSVkladem2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:akcionari">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Akcionari"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Akcionari"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:ved_oz">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VedOz"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VedOz"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:likvidace">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Likvidace2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Likvidace2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:prokura">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Prokura2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Prokura2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:reditele_ops">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.RediteleOps"/>
+            <class ref="cz.stuchlikova.ares.application.stub.RediteleOps"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:dozorci_rada">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.DozorciRada2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.DozorciRada2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kontrolni_komise">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KontrolniKomise"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KontrolniKomise"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladatele_SP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladateleSP2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladateleSP2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladatele_OPS">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladateleOPS2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladateleOPS2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zrizovatele_OZ">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZrizovateleOZ2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZrizovateleOZ2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zrizovatele_PR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZrizovatelePR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZrizovatelePR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:nastupci_zrizovatele">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.NastupciZrizovatele"/>
+            <class ref="cz.stuchlikova.ares.application.stub.NastupciZrizovatele"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zrizovatele_nadace">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZrizovateleNadace2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZrizovateleNadace2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:spravce">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Spravce2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Spravce2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:konkurz">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Konkurz2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Konkurz2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:udaje_KVZ">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.UdajeKVZ2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.UdajeKVZ2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:txt_KVZ">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.TxtKVZ"/>
+            <class ref="cz.stuchlikova.ares.application.stub.TxtKVZ"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:pravni_forma">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PravniForma2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PravniForma2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_RES">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedRES"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedRES"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_RES">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisRES"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisRES"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladni_udaje_RES">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladniUdajeRES"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladniUdajeRES"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:typ_fyzicke_osoby">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.TypFyzickeOsoby"/>
+            <class ref="cz.stuchlikova.ares.application.stub.TypFyzickeOsoby"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:statisticke_udaje">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StatistickeUdaje"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StatistickeUdaje"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:doplnujici_pravni_formy">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.DoplnujiciPravniFormy"/>
+            <class ref="cz.stuchlikova.ares.application.stub.DoplnujiciPravniFormy"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zuj">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Zuj"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Zuj"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_RZZ">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedRZZ"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedRZZ"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_RZZ">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisRZZ"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisRZZ"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladni_udaje_RZZ">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladniUdajeRZZ"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladniUdajeRZZ"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:typ_zdravotnickeho_zarizeni">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.TypZdravotnickehoZarizeni"/>
+            <class ref="cz.stuchlikova.ares.application.stub.TypZdravotnickehoZarizeni"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:dalsi_udaje">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.DalsiUdaje"/>
+            <class ref="cz.stuchlikova.ares.application.stub.DalsiUdaje"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_rcns">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedRcns"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedRcns"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_rcns">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisRcns"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisRcns"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladni_udaje_RCNS">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladniUdajeRCNS"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladniUdajeRCNS"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:registrace_RCNS">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.RegistraceRCNS"/>
+            <class ref="cz.stuchlikova.ares.application.stub.RegistraceRCNS"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:organy">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Organy"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Organy"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:organ_PO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OrganPO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OrganPO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:organ_FO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OrganFO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OrganFO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:osobniUdaje">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OsobniUdaje"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OsobniUdaje"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stdadr_dotaz">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StdadrDotaz"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StdadrDotaz"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_stdadr">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedStdadr"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedStdadr"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stdadr_odpoved">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StdadrOdpoved"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StdadrOdpoved"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vysledek_dotazu">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VysledekDotazu2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VysledekDotazu2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:seznam_navracenych">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SeznamNavracenych2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SeznamNavracenych2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:slovo">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Slovo2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Slovo2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:priz_adresa_ARES">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PrizAdresaARES"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PrizAdresaARES"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedRZP2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedRZP2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisRZP2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisRZP2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladni_udaje_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladniUdajeRZP2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladniUdajeRZP2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresy_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresyRZP"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresyRZP"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:osoby_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OsobyRZP"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OsobyRZP"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zivnosti_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZivnostiRZP2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZivnostiRZP2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zivnost">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Zivnost2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Zivnost2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:upadky_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.UpadkyRZP"/>
+            <class ref="cz.stuchlikova.ares.application.stub.UpadkyRZP"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:upadek">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Upadek"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Upadek"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:obory_cinnosti">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OboryCinnosti"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OboryCinnosti"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:obor_cinnosti">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OborCinnosti"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OborCinnosti"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:osoba_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OsobaRZP"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OsobaRZP"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:provozovny_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ProvozovnyRZP2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ProvozovnyRZP2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:provozovna">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Provozovna2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Provozovna2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zivnostensky_urad">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZivnostenskyUrad2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZivnostenskyUrad2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:financni_urad">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.FinancniUrad2"/>
+            <class ref="cz.stuchlikova.ares.application.stub.FinancniUrad2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_es">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedEs"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedEs"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_stranky_prehledu">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisStrankyPrehledu"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisStrankyPrehledu"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_subjektu">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisSubjektu"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisSubjektu"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:help_ARES">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.HelpARES"/>
+            <class ref="cz.stuchlikova.ares.application.stub.HelpARES"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_fo">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedFo"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedFo"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_stranky_fo">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisStrankyFo"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisStrankyFo"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_osoby">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisOsoby"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisOsoby"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_oss">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedOss"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedOss"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_oss">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisOss"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisOss"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:parent_oss">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ParentOss"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ParentOss"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:org_slozky_oss">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OrgSlozkyOss"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OrgSlozkyOss"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:org_slozka_oss">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OrgSlozkaOss"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OrgSlozkaOss"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:nazev_oss">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.NazevOss"/>
+            <class ref="cz.stuchlikova.ares.application.stub.NazevOss"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:typ_hnuti">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.TypHnuti"/>
+            <class ref="cz.stuchlikova.ares.application.stub.TypHnuti"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_ceu_detail">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedCeuDetail"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedCeuDetail"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_ceu_detail">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisCeuDetail"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisCeuDetail"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:jednotlive_ukony">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.JednotliveUkony"/>
+            <class ref="cz.stuchlikova.ares.application.stub.JednotliveUkony"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:detailni_spisova_znacka">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.DetailniSpisovaZnacka"/>
+            <class ref="cz.stuchlikova.ares.application.stub.DetailniSpisovaZnacka"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_szr">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedSzr"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedSzr"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:osoba_szr">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OsobaSzr"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OsobaSzr"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:podnikatel_ezp">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PodnikatelEzp"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PodnikatelEzp"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:angazma_szr">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AngazmaSzr"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AngazmaSzr"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:subjekt_szr">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SubjektSzr"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SubjektSzr"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kontakty_szr">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KontaktySzr"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KontaktySzr"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:provozovny_szr">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ProvozovnySzr"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ProvozovnySzr"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:exids_szr">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ExidsSzr"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ExidsSzr"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:registry_szr">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.RegistrySzr"/>
+            <class ref="cz.stuchlikova.ares.application.stub.RegistrySzr"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kontakt_szr">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KontaktSzr"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KontaktSzr"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresy_szr">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresySzr"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresySzr"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresa_szr">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresaSzr"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresaSzr"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresa_ezp">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresaEzp"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresaEzp"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:provozovna_szr">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ProvozovnaSzr"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ProvozovnaSzr"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:exid">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Exid"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Exid"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:registr_szr">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.RegistrSzr"/>
+            <class ref="cz.stuchlikova.ares.application.stub.RegistrSzr"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:registr_ezp">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.RegistrEzp"/>
+            <class ref="cz.stuchlikova.ares.application.stub.RegistrEzp"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:obory_rvp">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OboryRvp"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OboryRvp"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:obor_rvp">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OborRvp"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OborRvp"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:ukony_ezp">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.UkonyEzp"/>
+            <class ref="cz.stuchlikova.ares.application.stub.UkonyEzp"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:ukon_ezp">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.UkonEzp"/>
+            <class ref="cz.stuchlikova.ares.application.stub.UkonEzp"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_zm">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedZm"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedZm"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zadani">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Zadani"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Zadani"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:seznam_subjektu">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SeznamSubjektu"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SeznamSubjektu"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:priznak_zmeny">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PriznakZmeny"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PriznakZmeny"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:cislo_davky">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.CisloDavky"/>
+            <class ref="cz.stuchlikova.ares.application.stub.CisloDavky"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_rpsh">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedRpsh"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedRpsh"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:subjekt_rpsh">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SubjektRpsh"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SubjektRpsh"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:nazvy_rpsh">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.NazvyRpsh"/>
+            <class ref="cz.stuchlikova.ares.application.stub.NazvyRpsh"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:osoby_rpsh">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OsobyRpsh"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OsobyRpsh"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresy_rpsh">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresyRpsh"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresyRpsh"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:statut_organy_rpsh">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StatutOrganyRpsh"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StatutOrganyRpsh"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zmeny_stanov_rpsh">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZmenyStanovRpsh"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZmenyStanovRpsh"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stavy_subj_rpsh">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StavySubjRpsh"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StavySubjRpsh"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:nazev_rpsh">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.NazevRpsh"/>
+            <class ref="cz.stuchlikova.ares.application.stub.NazevRpsh"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:osoba_rpsh">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OsobaRpsh"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OsobaRpsh"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresa_rpsh">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresaRpsh"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresaRpsh"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:statut_organ_rpsh">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StatutOrganRpsh"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StatutOrganRpsh"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zmena_stanov_rpsh">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZmenaStanovRpsh"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZmenaStanovRpsh"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_subj_rpsh">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StavSubjRpsh"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StavSubjRpsh"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_IR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedIR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedIR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_IR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisIR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisIR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladni_udaje_IR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladniUdajeIR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladniUdajeIR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:spisova_znacka_IR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SpisovaZnackaIR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SpisovaZnackaIR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:insolvencni_spravci">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.InsolvencniSpravci"/>
+            <class ref="cz.stuchlikova.ares.application.stub.InsolvencniSpravci"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:i_spravce">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ISpravce"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ISpravce"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:osoba_IR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OsobaIR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OsobaIR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresy_IR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresyIR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresyIR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresa_IR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresaIR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresaIR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:historie_IR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.HistorieIR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.HistorieIR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vety_IR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VetyIR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VetyIR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:veta_IR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VetaIR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VetaIR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_sko">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedSko"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedSko"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:subjekt_sko">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SubjektSko"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SubjektSko"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladni_udaje_eks_sko">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladniUdajeEksSko"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladniUdajeEksSko"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:angazma_sko">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AngazmaSko"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AngazmaSko"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:soucasti_sko">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SoucastiSko"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SoucastiSko"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:angaz_sko">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AngazSko"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AngazSko"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:funkce_sko">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.FunkceSko"/>
+            <class ref="cz.stuchlikova.ares.application.stub.FunkceSko"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:soucast_sko">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SoucastSko"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SoucastSko"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:typ_soucasti_sko">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.TypSoucastiSko"/>
+            <class ref="cz.stuchlikova.ares.application.stub.TypSoucastiSko"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:pravnicka_osoba_sko">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PravnickaOsobaSko"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PravnickaOsobaSko"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:fyzicka_osoba_sko">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.FyzickaOsobaSko"/>
+            <class ref="cz.stuchlikova.ares.application.stub.FyzickaOsobaSko"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:osobni_udaje_sko">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OsobniUdajeSko"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OsobniUdajeSko"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladni_udaje_ros_detail">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladniUdajeRosDetail"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladniUdajeRosDetail"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:pravni_stav_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PravniStavRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PravniStavRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_ROS">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisROS"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisROS"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladni_udaje_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladniUdajeRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladniUdajeRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:datum_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.DatumRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.DatumRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:pf_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PfRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PfRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:ps_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PsRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PsRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:datove_schranky">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.DatoveSchranky"/>
+            <class ref="cz.stuchlikova.ares.application.stub.DatoveSchranky"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:datova_schranka">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.DatovaSchranka"/>
+            <class ref="cz.stuchlikova.ares.application.stub.DatovaSchranka"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:podnikatel_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PodnikatelRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PodnikatelRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:agendy_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AgendyRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AgendyRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:agenda_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AgendaRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AgendaRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:agenda_kod_nazev">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AgendaKodNazev"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AgendaKodNazev"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kod_nazev_ovm">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KodNazevOvm"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KodNazevOvm"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:of_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OfRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OfRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:sidlo_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SidloRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SidloRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:statutari_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StatutariRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StatutariRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:statutar_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StatutarRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StatutarRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:provozovny_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ProvozovnyRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ProvozovnyRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:provozovna_ros">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ProvozovnaRos"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ProvozovnaRos"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:ares_dotaz_typ">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.AresDotazTyp2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.AresDotazTyp2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vystup_format">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.VystupFormat2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.VystupFormat2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:xslt_ks">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.XsltKs2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.XsltKs2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zdroj_type">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.ZdrojType2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.ZdrojType2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:ares_vyber_typ">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.AresVyberTyp2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.AresVyberTyp2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:mena">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.Mena2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.Mena2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:status_vety_ares">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.StatusVetyAres2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.StatusVetyAres2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_subjektu">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.StavSubjektu2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.StavSubjektu2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:pf_osoba">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.PfOsoba2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.PfOsoba2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:podoba_akcii">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.PodobaAkcii"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.PodobaAkcii"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:druh_akcie">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.DruhAkcie2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.DruhAkcie2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:tzu_osoba">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.TzuOsoba2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.TzuOsoba2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:typ_CNS">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.TypCNS"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.TypCNS"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kod_diakritiky">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.KodDiakritiky2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.KodDiakritiky2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:typ_standardizace">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.TypStandardizace"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.TypStandardizace"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:role_rzp">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.RoleRzp"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.RoleRzp"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:druh_zivnosti">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.DruhZivnosti"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.DruhZivnosti"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:typ_upadku">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.TypUpadku"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.TypUpadku"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_zivnosti">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.StavZivnosti2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.StavZivnosti2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:status_subj_rzp">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.StatusSubjRzp"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.StatusSubjRzp"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:jazyk_odkazu">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.JazykOdkazu"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.JazykOdkazu"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_oss">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.StavOss"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.StavOss"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:konkurz_vyrovnani_CEU">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.KonkurzVyrovnaniCEU2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.KonkurzVyrovnaniCEU2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_upadce_CEU">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.StavUpadceCEU2"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.StavUpadceCEU2"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:pSimpleType">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.PSimpleType"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.PSimpleType"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_subjektu_sko">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.StavSubjektuSko"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.StavSubjektuSko"/>
                 
         </bindings>
           
@@ -1638,31 +1638,31 @@ Generated on: 2021.04.15 at 10:09:55 PM CEST
             
         <schemaBindings map="false">
                   
-            <package name="cz.stuchlikova.ares.standard.stub"/>
+            <package name="cz.stuchlikova.ares.application.stub"/>
                 
         </schemaBindings>
             
         <bindings if-exists="true" scd="~tns:xslt_error_list">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.XsltErrorList"/>
+            <class ref="cz.stuchlikova.ares.application.stub.XsltErrorList"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresa_UIR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresaUIR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresaUIR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:error_kod">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.ErrorKod"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.ErrorKod"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:error_type">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.ErrorType"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.ErrorType"/>
                 
         </bindings>
           
@@ -1672,895 +1672,895 @@ Generated on: 2021.04.15 at 10:09:55 PM CEST
             
         <schemaBindings map="false">
                   
-            <package name="cz.stuchlikova.ares.standard.stub"/>
+            <package name="cz.stuchlikova.ares.application.stub"/>
                 
         </schemaBindings>
             
         <bindings if-exists="true" scd="~tns:konkurzy_vyrovnani">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KonkurzyVyrovnani"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KonkurzyVyrovnani"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odstepne_zavody">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdstepneZavody"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdstepneZavody"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:komanditni_spolecnici">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KomanditniSpolecnici"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KomanditniSpolecnici"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:clenske_vklady">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ClenskeVklady"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ClenskeVklady"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kapital">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Kapital"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Kapital"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladni_udaje_OR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladniUdajeOR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladniUdajeOR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:cinnost">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Cinnost"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Cinnost"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:uvod">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Uvod"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Uvod"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:typ_registru">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.TypRegistru"/>
+            <class ref="cz.stuchlikova.ares.application.stub.TypRegistru"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:soud">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Soud"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Soud"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:typ_zmeny">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.TypZmeny"/>
+            <class ref="cz.stuchlikova.ares.application.stub.TypZmeny"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_KVZ">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StavKVZ"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StavKVZ"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:shoda_ICO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ShodaICO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ShodaICO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:shoda_RC">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ShodaRC"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ShodaRC"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:shoda_OF">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ShodaOF"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ShodaOF"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresa_ARES">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresaARES"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresaARES"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vysledek_hledani">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VysledekHledani"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VysledekHledani"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:penezni_suma">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PenezniSuma"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PenezniSuma"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:osoba">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Osoba"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Osoba"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:nestandardni">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Nestandardni"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Nestandardni"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:fyzicka_osoba">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.FyzickaOsoba"/>
+            <class ref="cz.stuchlikova.ares.application.stub.FyzickaOsoba"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:pravnicka_osoba">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PravnickaOsoba"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PravnickaOsoba"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:error_ARES">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ErrorARES"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ErrorARES"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:chyba">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Chyba"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Chyba"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:okec">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Okec"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Okec"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kod_okec">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KodOkec"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KodOkec"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_basic">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedBasic"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedBasic"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_basic">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisBasic"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisBasic"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresa_dorucovaci">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresaDorucovaci"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresaDorucovaci"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_subjektu_ceu">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StavSubjektuCeu"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StavSubjektuCeu"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kategorie_poctu_pracovniku">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KategoriePoctuPracovniku"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KategoriePoctuPracovniku"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Stav"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Stav"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:registrace">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Registrace"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Registrace"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:spisova_znacka">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SpisovaZnacka"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SpisovaZnacka"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:predchozi_registrace">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PredchoziRegistrace"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PredchoziRegistrace"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:predmety_podnikani">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PredmetyPodnikani"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PredmetyPodnikani"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:predmet_podnikani">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PredmetPodnikani"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PredmetPodnikani"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:ico">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Ico"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Ico"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:obchodni_firma">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ObchodniFirma"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ObchodniFirma"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:dic">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Dic"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Dic"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedRZP"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedRZP"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisRZP"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisRZP"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladni_udaje_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladniUdajeRZP"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladniUdajeRZP"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:registrace_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.RegistraceRZP"/>
+            <class ref="cz.stuchlikova.ares.application.stub.RegistraceRZP"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zivnosti_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZivnostiRZP"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZivnostiRZP"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zivnost">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Zivnost"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Zivnost"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:provozovny_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ProvozovnyRZP"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ProvozovnyRZP"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:provozovna">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Provozovna"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Provozovna"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:provozovane_zivnosti">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ProvozovaneZivnosti"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ProvozovaneZivnosti"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:provozovana_zivnost">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ProvozovanaZivnost"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ProvozovanaZivnost"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:pravni_forma_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PravniFormaRZP"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PravniFormaRZP"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresa_RZP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresaRZP"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresaRZP"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zivnostensky_urad">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZivnostenskyUrad"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZivnostenskyUrad"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:financni_urad">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.FinancniUrad"/>
+            <class ref="cz.stuchlikova.ares.application.stub.FinancniUrad"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:evidencni_cislo">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.EvidencniCislo"/>
+            <class ref="cz.stuchlikova.ares.application.stub.EvidencniCislo"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stadrs">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Stadrs"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Stadrs"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stadrs_dotaz">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StadrsDotaz"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StadrsDotaz"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stadrs_odpoved">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StadrsOdpoved"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StadrsOdpoved"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vysledek_dotazu">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VysledekDotazu"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VysledekDotazu"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:seznam_navracenych">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SeznamNavracenych"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SeznamNavracenych"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:adresa_UIR_s_nazvy">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AdresaUIRSNazvy"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AdresaUIRSNazvy"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:slovo">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Slovo"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Slovo"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_RFO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisRFO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisRFO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kraj_RFO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KrajRFO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KrajRFO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:okres_RFO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OkresRFO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OkresRFO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:obec_RFO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ObecRFO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ObecRFO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:prazsky_obvod_RFO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PrazskyObvodRFO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PrazskyObvodRFO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:mestska_cast_RFO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.MestskaCastRFO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.MestskaCastRFO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:cast_obce_RFO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.CastObceRFO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.CastObceRFO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_CEU">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedCEU"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedCEU"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_ceu">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisCeu"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisCeu"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:subjekt_CEU">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SubjektCEU"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SubjektCEU"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:msp">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Msp"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Msp"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:aceu">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Aceu"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Aceu"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:k_zruseno">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KZruseno"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KZruseno"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:k_chyba">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KChyba"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KChyba"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vk_podnet">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VkPodnet"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VkPodnet"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vk_adresa">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VkAdresa"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VkAdresa"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:k_konkurz">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KKonkurz"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KKonkurz"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:k_klic">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KKlic"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KKlic"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:k_upadce">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KUpadce"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KUpadce"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:k_eksubj">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KEksubj"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KEksubj"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:k_cosoba">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KCosoba"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KCosoba"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:radky_textu_usneseni">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.RadkyTextuUsneseni"/>
+            <class ref="cz.stuchlikova.ares.application.stub.RadkyTextuUsneseni"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:spravce_konkurzu_CEU">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SpravceKonkurzuCEU"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SpravceKonkurzuCEU"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_OR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedOR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedOR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_OR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisOR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisOR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:angazma_PO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AngazmaPO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AngazmaPO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:angazma_FO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AngazmaFO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AngazmaFO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:angazma_PO_FO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AngazmaPOFO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AngazmaPOFO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:angazma_PO_n_FO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AngazmaPONFO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AngazmaPONFO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:ostatni_skutecnosti">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OstatniSkutecnosti"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OstatniSkutecnosti"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vklad">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Vklad"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Vklad"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:splaceno">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Splaceno"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Splaceno"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:trvani">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Trvani"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Trvani"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:clen_SO">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ClenSO"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ClenSO"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:statutarni_organ">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.StatutarniOrgan"/>
+            <class ref="cz.stuchlikova.ares.application.stub.StatutarniOrgan"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:likvidace">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Likvidace"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Likvidace"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:prokura">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Prokura"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Prokura"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:clen_DR">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ClenDR"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ClenDR"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:dozorci_rada">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.DozorciRada"/>
+            <class ref="cz.stuchlikova.ares.application.stub.DozorciRada"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:spolecnici_bez_vkladu">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SpolecniciBezVkladu"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SpolecniciBezVkladu"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:jednotlivy_podil">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.JednotlivyPodil"/>
+            <class ref="cz.stuchlikova.ares.application.stub.JednotlivyPodil"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:spolecny_podil">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SpolecnyPodil"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SpolecnyPodil"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:uvolneny_podil">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.UvolnenyPodil"/>
+            <class ref="cz.stuchlikova.ares.application.stub.UvolnenyPodil"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:komanditista">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Komanditista"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Komanditista"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:spolecnici_s_vkladem">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.SpolecniciSVkladem"/>
+            <class ref="cz.stuchlikova.ares.application.stub.SpolecniciSVkladem"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:spolecnici">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Spolecnici"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Spolecnici"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladatele_SP">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladateleSP"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladateleSP"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladatele_OPS">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladateleOPS"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladateleOPS"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zrizovatele_OZ">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZrizovateleOZ"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZrizovateleOZ"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zrizovatele_nadace">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZrizovateleNadace"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZrizovateleNadace"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:puvod_vzniku">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PuvodVzniku"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PuvodVzniku"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:udaje_KVZ">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.UdajeKVZ"/>
+            <class ref="cz.stuchlikova.ares.application.stub.UdajeKVZ"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:spravce">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Spravce"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Spravce"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:konkurz">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Konkurz"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Konkurz"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:pravni_forma">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.PravniForma"/>
+            <class ref="cz.stuchlikova.ares.application.stub.PravniForma"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_dml">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedDml"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedDml"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_DML">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisDML"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisDML"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladni_udaje_DML">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladniUdajeDML"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladniUdajeDML"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved_cns">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.OdpovedCns"/>
+            <class ref="cz.stuchlikova.ares.application.stub.OdpovedCns"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vypis_CNS">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.VypisCNS"/>
+            <class ref="cz.stuchlikova.ares.application.stub.VypisCNS"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zakladni_udaje_CNS">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.ZakladniUdajeCNS"/>
+            <class ref="cz.stuchlikova.ares.application.stub.ZakladniUdajeCNS"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:rozhodnuti">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Rozhodnuti"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Rozhodnuti"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:ares_dotaz_typ">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.AresDotazTyp"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.AresDotazTyp"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vystup_format">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.VystupFormat"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.VystupFormat"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zdroj_type">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.ZdrojType"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.ZdrojType"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:ares_vyber_typ">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.AresVyberTyp"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.AresVyberTyp"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:mena">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.Mena"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.Mena"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:status_vety_ares">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.StatusVetyAres"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.StatusVetyAres"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:ano_ne">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.AnoNe"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.AnoNe"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_upadce_CEU">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.StavUpadceCEU"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.StavUpadceCEU"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_subjektu">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.StavSubjektu"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.StavSubjektu"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_zivnosti">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.StavZivnosti"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.StavZivnosti"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:pf_osoba">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.PfOsoba"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.PfOsoba"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:pohlavi">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.Pohlavi"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.Pohlavi"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:kod_diakritiky">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.KodDiakritiky"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.KodDiakritiky"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:preteceni">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.Preteceni"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.Preteceni"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:upadce_spravce_CEU">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.UpadceSpravceCEU"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.UpadceSpravceCEU"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:konkurz_vyrovnani_CEU">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.KonkurzVyrovnaniCEU"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.KonkurzVyrovnaniCEU"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:pfc">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.Pfc"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.Pfc"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_vety_CEU">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.StavVetyCEU"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.StavVetyCEU"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:stav_konkurzu_CEU">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.StavKonkurzuCEU"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.StavKonkurzuCEU"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:typ_jmeni">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.TypJmeni"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.TypJmeni"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:druh_akcie">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.DruhAkcie"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.DruhAkcie"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:tzu_osoba">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.TzuOsoba"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.TzuOsoba"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:typ_licence">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.TypLicence"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.TypLicence"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:xslt_ks">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.XsltKs"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.XsltKs"/>
                 
         </bindings>
           
@@ -2570,25 +2570,25 @@ Generated on: 2021.04.15 at 10:09:55 PM CEST
             
         <schemaBindings map="false">
                   
-            <package name="cz.stuchlikova.ares.standard.stub"/>
+            <package name="cz.stuchlikova.ares.application.stub"/>
                 
         </schemaBindings>
             
         <bindings if-exists="true" scd="tns:Ares_dotazy">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AresDotazy"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AresDotazy"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:dotaz">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Dotaz"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Dotaz"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:klicove_polozky">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.KlicovePolozky"/>
+            <class ref="cz.stuchlikova.ares.application.stub.KlicovePolozky"/>
                 
         </bindings>
           
@@ -2598,37 +2598,37 @@ Generated on: 2021.04.15 at 10:09:55 PM CEST
             
         <schemaBindings map="false">
                   
-            <package name="cz.stuchlikova.ares.standard.stub"/>
+            <package name="cz.stuchlikova.ares.application.stub"/>
                 
         </schemaBindings>
             
         <bindings if-exists="true" scd="tns:Ares_odpovedi">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.AresOdpovedi"/>
+            <class ref="cz.stuchlikova.ares.application.stub.AresOdpovedi"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:odpoved">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Odpoved"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Odpoved"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:identifikace">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Identifikace"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Identifikace"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:zaznam">
                   
-            <class ref="cz.stuchlikova.ares.standard.stub.Zaznam"/>
+            <class ref="cz.stuchlikova.ares.application.stub.Zaznam"/>
                 
         </bindings>
             
         <bindings if-exists="true" scd="~tns:vyhledano_dle">
                   
-            <typesafeEnumClass ref="cz.stuchlikova.ares.standard.stub.VyhledanoDle"/>
+            <typesafeEnumClass ref="cz.stuchlikova.ares.application.stub.VyhledanoDle"/>
                 
         </bindings>
           
