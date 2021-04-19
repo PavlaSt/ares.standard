@@ -64,6 +64,7 @@
 				<version>0.14.0</version>
 				<executions>
 					<execution>
+						<id>standard</id>
 						<goals>
 							<goal>generate</goal>
 						</goals>
@@ -75,17 +76,37 @@
 							<catalog>src/main/resources/catalog.cat</catalog>
 
 							<schemaLanguage>WSDL</schemaLanguage>
-							<generatePackage>cz.stuchlikova.ares.application.stub</generatePackage>
+							<generatePackage>cz.stuchlikova.ares.application.stub.standard</generatePackage>
 							<generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-							<schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
+							<schemaDirectory>${project.basedir}/src/main/resources/wsdl/standard</schemaDirectory>
 
 							<schemaIncludes>
 								<include>*.wsdl</include>
 							</schemaIncludes>
 						</configuration>
 					</execution>
+					<execution>
+						<id>rzp</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<args>
+								<arg>-XautoNameResolution</arg>
+							</args>
+							<strict>false</strict>
+							<catalog>src/main/resources/catalog.cat</catalog>
 
+							<schemaLanguage>WSDL</schemaLanguage>
+							<generatePackage>cz.stuchlikova.ares.application.stub.rzp</generatePackage>
+							<generateDirectory>${project.basedir}/src/main/java</generateDirectory>
+							<schemaDirectory>${project.basedir}/src/main/resources/wsdl/rzp</schemaDirectory>
 
+							<schemaIncludes>
+								<include>*.wsdl</include>
+							</schemaIncludes>
+						</configuration>
+					</execution>
 				</executions>
 
 			</plugin>
