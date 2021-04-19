@@ -1,10 +1,10 @@
 package cz.stuchlikova.ares.application.service;
 
 import cz.stuchlikova.ares.application.domain.AresResponseDto;
-import cz.stuchlikova.ares.application.stub.AdresaARES2;
-import cz.stuchlikova.ares.application.stub.Identifikace;
-import cz.stuchlikova.ares.application.stub.Odpoved;
-import cz.stuchlikova.ares.application.stub.Zaznam;
+import cz.stuchlikova.ares.application.stub.standard.AdresaARES2;
+import cz.stuchlikova.ares.application.stub.standard.Identifikace;
+import cz.stuchlikova.ares.application.stub.standard.Odpoved;
+import cz.stuchlikova.ares.application.stub.standard.Zaznam;
 
 import java.util.Collection;
 import java.util.List;

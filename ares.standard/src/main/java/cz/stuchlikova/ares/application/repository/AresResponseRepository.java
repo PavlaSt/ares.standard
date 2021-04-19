@@ -1,9 +1,9 @@
 package cz.stuchlikova.ares.application.repository;
 
 import cz.stuchlikova.ares.application.AresClient;
-import cz.stuchlikova.ares.application.stub.AresDotazy;
-import cz.stuchlikova.ares.application.stub.AresOdpovedi;
-import cz.stuchlikova.ares.application.stub.Odpoved;
+import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
+import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;
+import cz.stuchlikova.ares.application.stub.standard.Odpoved;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

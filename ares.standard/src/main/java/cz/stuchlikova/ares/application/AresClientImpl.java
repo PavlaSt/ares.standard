@@ -1,7 +1,7 @@
 package cz.stuchlikova.ares.application;
 
-import cz.stuchlikova.ares.application.stub.AresDotazy;
-import cz.stuchlikova.ares.application.stub.AresOdpovedi;
+import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
+import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;

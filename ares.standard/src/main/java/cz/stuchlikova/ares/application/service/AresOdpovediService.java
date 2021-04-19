@@ -2,8 +2,8 @@ package cz.stuchlikova.ares.application.service;
 
 import cz.stuchlikova.ares.application.domain.AresResponseDto;
 import cz.stuchlikova.ares.application.repository.AresResponseRepository;
-import cz.stuchlikova.ares.application.stub.KlicovePolozky;
-import cz.stuchlikova.ares.application.stub.Odpoved;
+import cz.stuchlikova.ares.application.stub.standard.KlicovePolozky;
+import cz.stuchlikova.ares.application.stub.standard.Odpoved;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
 package cz.stuchlikova.ares.application;
 
-import cz.stuchlikova.ares.application.stub.AresDotazy;
-import cz.stuchlikova.ares.application.stub.AresOdpovedi;
+import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
+import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
