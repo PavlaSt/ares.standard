@@ -34,7 +34,21 @@ public class AresClientImpl extends WebServiceGatewaySupport implements AresClie
         return unmarshalStringToObject(xmlResult);
     }
 
+    @Override
+    public cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi getAresResponse(cz.stuchlikova.ares.application.stub.rzp.AresDotazy request) {
+        String xmlRequest = marshalInputToXml(request);
+        String xmlResult = sendSourceReceiveResult(url,xmlRequest);
+        return unmarshalStringToObjectRZP(xmlResult);
+    }
+
+    //-------------------------------------------------------------------
+
     private String marshalInputToXml(AresDotazy request) {
+        StringWriter stringWriter = new StringWriter();
+        JAXB.marshal(request, stringWriter);
+        return stringWriter.toString();
+    }
+    private String marshalInputToXml(cz.stuchlikova.ares.application.stub.rzp.AresDotazy request) {
         StringWriter stringWriter = new StringWriter();
         JAXB.marshal(request, stringWriter);
         return stringWriter.toString();
@@ -50,6 +64,10 @@ public class AresClientImpl extends WebServiceGatewaySupport implements AresClie
 
     private AresOdpovedi unmarshalStringToObject(String xmlResult) {
         return JAXB.unmarshal(new StringReader(xmlResult), AresOdpovedi.class);
+    }
+
+    private cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi unmarshalStringToObjectRZP(String xmlResult) {
+        return JAXB.unmarshal(new StringReader(xmlResult), cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi.class);
     }
 
 }

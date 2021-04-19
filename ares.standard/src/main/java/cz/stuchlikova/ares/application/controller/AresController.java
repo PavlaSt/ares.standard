@@ -1,6 +1,7 @@
 package cz.stuchlikova.ares.application.controller;
 
 import cz.stuchlikova.ares.application.domain.AresResponseDto;
+import cz.stuchlikova.ares.application.domain.AresResponseRzpDto;
 import cz.stuchlikova.ares.application.service.AresOdpovediService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,10 +23,17 @@ public class AresController {
     @Autowired
     private AresOdpovediService service;
 
-    @RequestMapping(value = "/ico", method = RequestMethod.GET)
-    public List<AresResponseDto> getResponseByIco(@Valid @Pattern(regexp = "[0-9]{8}", message = "ICO must be of 8 digit")
+    @RequestMapping(value = "/predmet", method = RequestMethod.GET)
+    public List<AresResponseRzpDto> getScopeOfBussiness(@Valid @Pattern(regexp = "[0-9]{8}", message = "ICO must be of 8 digit")
                                                       @RequestParam("ico") String ico)
             throws DatatypeConfigurationException{
+        return service.getAresResponseRzpDto(ico);
+    }
+
+    @RequestMapping(value = "/ico", method = RequestMethod.GET)
+    public List<AresResponseDto> getResponseByIco(@Valid @Pattern(regexp = "[0-9]{8}", message = "ICO must be of 8 digit")
+                                                  @RequestParam("ico") String ico)
+            throws DatatypeConfigurationException {
         return service.getDtoResponseByIco(ico);
     }
 

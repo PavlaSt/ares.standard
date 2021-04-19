@@ -40,6 +40,11 @@ public class AresClientTestImpl implements AresClient {
         }
     }
 
+    @Override
+    public cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi getAresResponse(cz.stuchlikova.ares.application.stub.rzp.AresDotazy request) {
+        return null;
+    }
+
     private AresOdpovedi unmarshalStringToObject(InputStream xmlResult) {
         return JAXB.unmarshal(xmlResult, AresOdpovedi.class);
     }
