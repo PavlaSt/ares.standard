@@ -29,8 +29,8 @@ public class AresOdpovediService {
         return transformation.transformResponseToDto(responses);
     }
 
-    public List<AresResponseDto> getDtoResponseByCompanyName(String firmName) throws DatatypeConfigurationException {
-        List<Odpoved> responses = getResponseByCompanyName(firmName);
+    public List<AresResponseDto> getDtoResponseByCompanyName(String companyName) throws DatatypeConfigurationException {
+        List<Odpoved> responses = getResponseByCompanyName(companyName);
         return transformation.transformResponseToDto(responses);
     }
 

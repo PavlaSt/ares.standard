@@ -17,13 +17,18 @@ public class AresClientTestImpl implements AresClient {
     private String url = "";
     public AresOdpovedi getAresResponse(AresDotazy request) {
             if (request.getDotaz().size() > 0) {
-            if (request.getDotaz().get(0).getKlicovePolozky().getICO().equals("27074358")) {
+            if (
+                    (request.getDotaz().get(0).getKlicovePolozky().getICO() != null)
+                            &&
+                    (request.getDotaz().get(0).getKlicovePolozky().getICO().equals("27074358")
+                    )) {
                 url = "src/test/resources/getDtoResponseByIco/ico=27074358.xml";
-            } else if (request.getDotaz().get(0).getKlicovePolozky().getObchodniFirma().equals("Etnetera")) {
+            } else {
+            //} else if (request.getDotaz().get(0).getKlicovePolozky().getObchodniFirma().equals("Etnetera")) {
                 url = "src/test/resources/getDtoresponseByCompanyName/firma=Etnetera.xml";
+
             }
         }
-
         File answer = new File(url);
         try {
             InputStream xmlResult = new FileInputStream(answer);
@@ -38,6 +43,4 @@ public class AresClientTestImpl implements AresClient {
     private AresOdpovedi unmarshalStringToObject(InputStream xmlResult) {
         return JAXB.unmarshal(xmlResult, AresOdpovedi.class);
     }
-
-
 }

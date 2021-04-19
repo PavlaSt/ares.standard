@@ -57,16 +57,13 @@ public class RequestFactory {
         aresDotazy.setVystupFormat(VystupFormat.XML);
         aresDotazy.setValidationXSLT("http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_request/v_1.0.0/ares_request.xsl");
         aresDotazy.setUserMail(email);
-        //aresDotazy.setUserMail("stuchlikova.pavla@post.cz");
         aresDotazy.setAnswerNamespaceRequired("http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1");
         aresDotazy.setId("ares_dotaz");
 
         dotaz.setPomocneID(1);
         dotaz.setTypVyhledani(AresVyberTyp.FREE);
         dotaz.setMaxPocet(maxPocet);
-        //dotaz.setMaxPocet(100);
         dotaz.setKlicovePolozky(polozky);
-
         aresDotazy.getDotaz().add(dotaz);
 
         return aresDotazy;
