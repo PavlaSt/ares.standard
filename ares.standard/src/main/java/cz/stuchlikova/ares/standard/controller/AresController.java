@@ -25,7 +25,6 @@ public class AresController {
     @RequestMapping(value = "/ico", method = RequestMethod.GET)
     public List<AresResponseDto> getResponseByIco(@Valid @Pattern(regexp = "[0-9]{8}", message = "ICO must be of 8 digit")
                                                       @RequestParam("ico") String ico)
-    //public List<AresResponseDto> getResponseByIco(@RequestParam String ico)
             throws DatatypeConfigurationException{
         return service.getDtoResponseByIco(ico);
     }

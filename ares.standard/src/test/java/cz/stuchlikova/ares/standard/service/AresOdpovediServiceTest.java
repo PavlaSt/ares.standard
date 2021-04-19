@@ -18,9 +18,6 @@ class AresOdpovediServiceTest {
    @Autowired
    AresOdpovediService service;
 
-    // Ideální je asi to asi nějak automaticky mapovat na ten filesystem, třeba něco jako
-    // test/resources/jméno_metody/parametr1=hodnota1&parametr2=hodnota2.xml
-
     @Test
     void getDtoResponseByIco_happy_path() throws DatatypeConfigurationException {
         List<AresResponseDto> dtos = service.getDtoResponseByIco("27074358");
