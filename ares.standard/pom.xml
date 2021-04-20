@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>cz.stuchlikova</groupId>
-	<artifactId>ares.standard</artifactId>
+	<artifactId>ares.application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ares.standard</name>
-	<description>API ARES standard</description>
+	<name>ares.application</name>
+	<description>API ARES application</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -64,6 +64,7 @@
 				<version>0.14.0</version>
 				<executions>
 					<execution>
+						<id>standard</id>
 						<goals>
 							<goal>generate</goal>
 						</goals>
@@ -75,17 +76,37 @@
 							<catalog>src/main/resources/catalog.cat</catalog>
 
 							<schemaLanguage>WSDL</schemaLanguage>
-							<generatePackage>cz.stuchlikova.ares.standard.stub</generatePackage>
+							<generatePackage>cz.stuchlikova.ares.application.stub.standard</generatePackage>
 							<generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-							<schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
+							<schemaDirectory>${project.basedir}/src/main/resources/wsdl/standard</schemaDirectory>
 
 							<schemaIncludes>
 								<include>*.wsdl</include>
 							</schemaIncludes>
 						</configuration>
 					</execution>
+					<execution>
+						<id>rzp</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<args>
+								<arg>-XautoNameResolution</arg>
+							</args>
+							<strict>false</strict>
+							<catalog>src/main/resources/catalog.cat</catalog>
 
+							<schemaLanguage>WSDL</schemaLanguage>
+							<generatePackage>cz.stuchlikova.ares.application.stub.rzp</generatePackage>
+							<generateDirectory>${project.basedir}/src/main/java</generateDirectory>
+							<schemaDirectory>${project.basedir}/src/main/resources/wsdl/rzp</schemaDirectory>
 
+							<schemaIncludes>
+								<include>*.wsdl</include>
+							</schemaIncludes>
+						</configuration>
+					</execution>
 				</executions>
 
 			</plugin>

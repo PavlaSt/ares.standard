@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:udt="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/uvis_datatypes/v_1.0.1" xmlns:dtt="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_datatypes/v_1.0.4" xmlns:are="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_rzp/v_1.0.4" targetNamespace="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_rzp/v_1.0.4" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2010-07-19">
+	<xsd:annotation>
+		<xsd:documentation>
+Schéma pro výpis z databáze ARES - Registr živnostenského podnikání
+Verze 1.0.4
+Copyright 2007-2009 Asseco Czech Republic, a.s. Všechna práva vyhrazena.
+Copyright Asseco Central Europe, a.s. 2010
+
+Tato odpověď se vypíše na verzi dotazu 1.0.5 (nebo o jednu verzi nižší, pokud nebude požadován výpis ve zkratkách) v závislosti na zadání v atributu answerNamespaceRequired.
+
+Datový typ odpoved_RZP je zcela jiný oproti schéma 1.0.1 nebo 1.0.3.
+
+Poznámka:
+ve veřejné verzi výstupu  budou vypisovány pouze údaje, které jsou veřejné dle živnostenského zákona č. 455/1991 Sb. ve znění pozdějších novelizací /viz. paragraf č. 60/.
+</xsd:documentation>
+		<xsd:appinfo>
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.0/">
+				<rdf:Description rdf:about="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_rzp/v_1.0.4">
+					<dc:title>XML Schema s definicí datového typu pro výpis ržp verze v_1.0.4</dc:title>
+					<dc:creator>Pavel Srb (Pavel.Srb@asseco.cz)</dc:creator>
+					<dc:creator>Asseco Czech Republic, a.s.</dc:creator>
+					<dc:subject>XML Schema; ržp; datové typy ARES; ARES</dc:subject>
+					<dc:description>Návrh XML Schema s definicí datového typu pro výpis ržp verze v_1.0.4</dc:description>
+					<dc:publisher> Ministerstvo financí České republiky </dc:publisher>
+					<dc:date>2007-05-11</dc:date>
+					<dc:type> XML Schema</dc:type>
+					<dc:identifier>"http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_rzp/v_1.0.4/ares_answer_rzp_v_1.0.4.xsd"</dc:identifier>
+					<dc:format>text/xml</dc:format>
+					<dc:language>cz</dc:language>
+					<dc:rights>© Asseco Czech Republic, a.s. 2007-2009</dc:rights>
+				</rdf:Description>
+			</rdf:RDF>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_datatypes/v_1.0.4" schemaLocation="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_datatypes/v_1.0.4/ares_datatypes_v_1.0.4.xsd"/>
+	<xsd:import namespace="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/uvis_datatypes/v_1.0.1" schemaLocation="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/uvis_datatypes/v_1.0.1/uvis_datatypes_v_1.0.1.xsd"/>
+	
+	<xsd:element name="Ares_odpovedi">
+		<xsd:annotation>
+			<xsd:documentation>Kořenový element</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Odpoved" type="dtt:odpoved_RZP" maxOccurs="unbounded"/>
+				<xsd:element name="Fault" type="dtt:chybova_odpoved" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:attribute name="odpoved_datum_cas" type="xsd:dateTime" use="required"/>
+			<xsd:attribute name="odpoved_pocet" type="xsd:int" use="required"/>
+			<xsd:attribute name="odpoved_typ" type="dtt:ares_dotaz_typ" fixed="Vypis_RZP"/>
+			<xsd:attribute name="vystup_format" type="dtt:vystup_format" use="optional" default="XML"/>
+			<xsd:attribute name="xslt" type="dtt:xslt_ks" use="optional" default="klient"/>
+			<xsd:attribute name="validation_XSLT" type="xsd:string" use="required"/>
+			<xsd:attribute name="Id" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

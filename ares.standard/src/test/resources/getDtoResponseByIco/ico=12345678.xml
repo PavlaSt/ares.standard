@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><are:Ares_odpovedi xmlns:are="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1" xmlns:dtt="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_datatypes/v_1.0.4" xmlns:udt="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/uvis_datatypes/v_1.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="Ares_odpoved" odpoved_datum_cas="2021-04-20T08:59:29" odpoved_pocet="1" odpoved_typ="Standard" validation_XSLT="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.0/ares_answer.xsl" vystup_format="XML" xsi:schemaLocation="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1 http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1/ares_answer_v_1.0.1.xsd">
+    <are:Odpoved>
+        <are:Pomocne_ID>1</are:Pomocne_ID>
+        <are:Pocet_zaznamu>0</are:Pocet_zaznamu>
+        <are:Typ_vyhledani>FREE</are:Typ_vyhledani>
+    </are:Odpoved>
+</are:Ares_odpovedi>
