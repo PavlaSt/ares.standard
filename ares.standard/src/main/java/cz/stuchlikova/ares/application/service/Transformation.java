@@ -14,6 +14,9 @@ public class Transformation {
 
     public List<AresResponseDto> transformResponseToDto(List<Odpoved> responses) {
 
+        if (responses.get(0).getPocetZaznamu() == 0) {
+            throw new RecordNotFoundException("There are no records for this query");
+        }
         return responses.stream()
                 .map(Odpoved::getZaznam)
                 .flatMap(Collection::stream)
