@@ -1,10 +1,12 @@
 package cz.stuchlikova.ares.application.service;
 
 import cz.stuchlikova.ares.application.domain.AresResponseDto;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.validation.ConstraintViolationException;
 import javax.xml.datatype.DatatypeConfigurationException;
 
 import java.util.List;
@@ -27,6 +29,27 @@ class AresOdpovediServiceTest {
         assertThat(dtos.get(0).getIco(), equalTo("27074358"));
     }
 
+    //TODO
+    @Test
+    void getDtoResponseByIco_non_existing() throws DatatypeConfigurationException {
+
+        Assertions.assertThrows(RecordNotFoundException.class, () -> {
+             List<AresResponseDto> dtos = service.getDtoResponseByIco("12345678");
+        });
+
+    }
+
+    //TODO
+  /*  @Test
+    void getDtoResponseByIco_bad_input() throws DatatypeConfigurationException {
+
+        Assertions.assertThrows(ConstraintViolationException.class, () -> {
+            List<AresResponseDto> dtos = service.getDtoResponseByIco("bad_input");
+        });
+    }*/
+
+
+
     @Test
     void getDtoResponseByCompanyName() throws DatatypeConfigurationException {
         List<AresResponseDto> dtos = service.getDtoResponseByCompanyName("Etnetera");
@@ -35,5 +58,7 @@ class AresOdpovediServiceTest {
         assertThat(dtos.get(0).getObchodniFirma(), containsStringIgnoringCase("Etnetera"));
         assertThat(dtos.get(0).getIco(), equalTo("24133272"));
     }
+
+    //TODO NON EXISTING
 
 }
