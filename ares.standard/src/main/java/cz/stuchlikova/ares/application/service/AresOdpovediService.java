@@ -38,6 +38,10 @@ public class AresOdpovediService {
 
     public List<AresResponseDto> getDtoResponseByIco(String ico) throws DatatypeConfigurationException {
         List<Odpoved> responses = getResponseByIco(ico);
+        if (responses.get(0).getPocetZaznamu() == 0) {
+            throw new RecordNotFoundException("There are no records for this query");
+        }
+
         return transformation.transformResponseToDto(responses);
     }
 
