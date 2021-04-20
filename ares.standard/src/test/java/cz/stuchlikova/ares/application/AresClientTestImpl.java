@@ -23,7 +23,14 @@ public class AresClientTestImpl implements AresClient {
                     (request.getDotaz().get(0).getKlicovePolozky().getICO().equals("27074358")
                     )) {
                 url = "src/test/resources/getDtoResponseByIco/ico=27074358.xml";
-            } else {
+            } else if (
+                    (request.getDotaz().get(0).getKlicovePolozky().getICO() != null)
+                            &&
+                            (request.getDotaz().get(0).getKlicovePolozky().getICO().equals("12345678")
+                            )) {
+                url = "src/test/resources/getDtoResponseByIco/ico=12345678.xml";
+            } else
+                {
             //} else if (request.getDotaz().get(0).getKlicovePolozky().getObchodniFirma().equals("Etnetera")) {
                 url = "src/test/resources/getDtoresponseByCompanyName/firma=Etnetera.xml";
 
