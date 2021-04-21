@@ -40,7 +40,6 @@ public class AresOdpovediService {
         if (responses.get(0).getPocetZaznamu() == 0) {
             throw new RecordNotFoundException("There are no records for this query");
         }
-
         return transformation.transformResponseToDto(responses);
     }
 
