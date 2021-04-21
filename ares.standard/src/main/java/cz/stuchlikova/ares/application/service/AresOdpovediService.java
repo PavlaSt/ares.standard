@@ -2,7 +2,7 @@ package cz.stuchlikova.ares.application.service;
 
 import cz.stuchlikova.ares.application.domain.AresResponseDto;
 import cz.stuchlikova.ares.application.domain.AresResponseRzpDto;
-import cz.stuchlikova.ares.application.repository.AresResponseRepository;
+import cz.stuchlikova.ares.application.repository.AresStandardRepo;
 import cz.stuchlikova.ares.application.stub.standard.KlicovePolozky;
 import cz.stuchlikova.ares.application.stub.standard.Odpoved;
 import cz.stuchlikova.ares.application.stub.rzp.OdpovedRZP;
@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.xml.datatype.DatatypeConfigurationException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,7 +21,7 @@ public class AresOdpovediService {
     private final RequestRzpFactory requestRzpFactory;
 
     @Autowired
-    private AresResponseRepository repository;
+    private AresStandardRepo repository;
 
     public AresOdpovediService() {
         transformationRzp = new TransformationRzp();
@@ -41,7 +40,6 @@ public class AresOdpovediService {
         if (responses.get(0).getPocetZaznamu() == 0) {
             throw new RecordNotFoundException("There are no records for this query");
         }
-
         return transformation.transformResponseToDto(responses);
     }
 

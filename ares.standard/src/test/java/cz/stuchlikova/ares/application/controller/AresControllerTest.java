@@ -21,7 +21,8 @@ public class AresControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    AresOdpovediService service;
+    AresOdpovediService service;/// vytvořit kopii tohot testu
+    //bez mockbean a udělat z něj integrační test
 
     @Test
     public void getResponseByIco_happy_path() throws Exception {
