@@ -27,6 +27,12 @@ public class AresClientImpl extends WebServiceGatewaySupport implements AresClie
         this.url = url;
     }
 
+   /* public Object getAresResponse(Object request) {
+        String xmlRequest = marshalInputToXml(request);
+        String xmlResult = sendSourceReceiveResult(url,xmlRequest);
+        Class requestClass = request.getClass();
+        return unmarshalStringToObject(xmlResult, requestClass);
+    }*/
 
     public AresOdpovedi getAresResponse(AresDotazy request) {
         String xmlRequest = marshalInputToXml(request);
@@ -34,7 +40,6 @@ public class AresClientImpl extends WebServiceGatewaySupport implements AresClie
         return unmarshalStringToObject(xmlResult);
     }
 
-    @Override
     public cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi getAresResponse(cz.stuchlikova.ares.application.stub.rzp.AresDotazy request) {
         String xmlRequest = marshalInputToXml(request);
         String xmlResult = sendSourceReceiveResult(url,xmlRequest);
@@ -43,22 +48,22 @@ public class AresClientImpl extends WebServiceGatewaySupport implements AresClie
 
     //-------------------------------------------------------------------
 
-    private String marshalInputToXml(AresDotazy request) {
+    private String marshalInputToXml(Object request) { //AresDotazy request
         StringWriter stringWriter = new StringWriter();
         JAXB.marshal(request, stringWriter);
         return stringWriter.toString();
     }
-    private String marshalInputToXml(cz.stuchlikova.ares.application.stub.rzp.AresDotazy request) {
+   /* private String marshalInputToXml(cz.stuchlikova.ares.application.stub.rzp.AresDotazy request) {
         StringWriter stringWriter = new StringWriter();
         JAXB.marshal(request, stringWriter);
         return stringWriter.toString();
-    }
+    }*/
 
     private String sendSourceReceiveResult(String url, String xmlRequest) {
         StringSource source = new StringSource(xmlRequest);
         StringResult result = new StringResult();
         getWebServiceTemplate().sendSourceAndReceiveToResult(url, source, result);
-        System.out.println(result);
+        //System.out.println(result);
         return result.toString();
     }
 
