@@ -15,13 +15,13 @@ import java.util.GregorianCalendar;
 @Component
 @EnableConfigurationProperties
 @ConfigurationProperties(prefix = "request")
-public class RequestFactory {
+public class AresStandardRequestFactory {
 
     private final ObjectFactory objectFactory;
     String email = "stuchlikova.pavla@post.cz";
     Integer maxPocet = 200;
 
-    public RequestFactory() {
+    public AresStandardRequestFactory() {
         this.objectFactory = new ObjectFactory();
     }
 

@@ -1,19 +1,17 @@
 package cz.stuchlikova.ares.application.service;
 
-import cz.stuchlikova.ares.application.domain.AresResponseRzpDto;
+import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
 import cz.stuchlikova.ares.application.domain.ZivnostDto;
 import cz.stuchlikova.ares.application.stub.rzp.*;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class TransformationRzp {
+public class AresRzpTransformation {
 
-    public List<AresResponseRzpDto> transformResponseRzpToDto(List<OdpovedRZP> responses) {
+    public List<AresRzpResponseDto> transformResponseRzpToDto(List<OdpovedRZP> responses) {
 
-        List<AresResponseRzpDto> responseRzpDtos = new ArrayList<>();
+        List<AresRzpResponseDto> responseRzpDtos = new ArrayList<>();
         for (OdpovedRZP response : responses) {
             List<VypisRZP> vypisRZP = response.getVypisRZP();
             for (VypisRZP vypis : vypisRZP) {
@@ -34,7 +32,7 @@ public class TransformationRzp {
                     }
                     zivnostDtoList.add(new ZivnostDto(predmetPodnikani, obory));
                 }
-                responseRzpDtos.add(new AresResponseRzpDto(obchodniFirma, ico, zivnostDtoList));
+                responseRzpDtos.add(new AresRzpResponseDto(obchodniFirma, ico, zivnostDtoList));
             }
         }
         return responseRzpDtos;

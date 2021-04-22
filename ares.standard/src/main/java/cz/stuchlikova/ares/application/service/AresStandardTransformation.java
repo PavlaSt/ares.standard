@@ -1,6 +1,7 @@
 package cz.stuchlikova.ares.application.service;
 
-import cz.stuchlikova.ares.application.domain.AresResponseDto;
+import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
+import cz.stuchlikova.ares.application.exceptions.RecordNotFoundException;
 import cz.stuchlikova.ares.application.stub.standard.AdresaARES2;
 import cz.stuchlikova.ares.application.stub.standard.Identifikace;
 import cz.stuchlikova.ares.application.stub.standard.Odpoved;
@@ -10,9 +11,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Transformation {
+public class AresStandardTransformation {
 
-    public List<AresResponseDto> transformResponseToDto(List<Odpoved> responses) {
+    public List<AresStandardResponseDto> transformResponseToDto(List<Odpoved> responses) {
 
         if (responses.get(0).getPocetZaznamu() == 0) {
             throw new RecordNotFoundException("There are no records for this query");
@@ -24,7 +25,7 @@ public class Transformation {
                 .collect(Collectors.toList());
     }
 
-    private AresResponseDto getDataCreateDto(Zaznam record) {
+    private AresStandardResponseDto getDataCreateDto(Zaznam record) {
         String obchodniFirma = record.getObchodniFirma();
         String ico = record.getICO();
         Identifikace identifikace = record.getIdentifikace();
@@ -36,7 +37,7 @@ public class Transformation {
         String cisloOrientacni = adresa.getCisloOrientacni();
         String psc = adresa.getPSC();
 
-        return new AresResponseDto(obchodniFirma, ico, nazevUlice, cisloDomovni,
+        return new AresStandardResponseDto(obchodniFirma, ico, nazevUlice, cisloDomovni,
                 cisloOrientacni, psc, nazevObce, nazevCastiObce);
     }
 }

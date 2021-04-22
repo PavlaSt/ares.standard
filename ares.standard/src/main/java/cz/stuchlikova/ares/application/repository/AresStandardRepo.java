@@ -16,8 +16,9 @@ public class AresStandardRepo {
     @Autowired
     private AresClient aresClient;
 
-    public List<Odpoved> getOdpovedList(AresDotazy aresDotazy) {
-        AresOdpovedi response = aresClient.getAresResponse(aresDotazy);
+    public List<Odpoved> getOdpovedList(Object aresDotazy) { //Object
+        AresOdpovedi response = aresClient.getAresResponse((AresDotazy) aresDotazy); //
+        //AresOdpovedi response = aresClient.getAresResponse(aresDotazy); //(AresDotazy)
         return response.getOdpoved();
     }
 

@@ -1,6 +1,6 @@
 package cz.stuchlikova.ares.application.domain;
 
-public class AresResponseDto {
+public class AresStandardResponseDto {
 
     private String obchodniFirma;
     private String ico;
@@ -11,7 +11,7 @@ public class AresResponseDto {
     private String nazevObce;
     private String nazevCastiObce;
 
-    public AresResponseDto(String obchodniFirma, String ico, String nazevUlice, Integer cisloDomovni, String cisloOrientacni, String psc, String nazevObce, String nazevCastiObce) {
+    public AresStandardResponseDto(String obchodniFirma, String ico, String nazevUlice, Integer cisloDomovni, String cisloOrientacni, String psc, String nazevObce, String nazevCastiObce) {
         this.obchodniFirma = obchodniFirma;
         this.ico = ico;
         this.nazevUlice = nazevUlice;
