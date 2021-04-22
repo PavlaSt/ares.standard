@@ -16,7 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @WebMvcTest(AresController.class)
-public class AresControllerTest {
+public class AresControllerUnitTest {
     @Autowired
     private MockMvc mockMvc;
 
@@ -47,7 +47,7 @@ public class AresControllerTest {
         mockMvc.perform(get("/ico/?ico=bad_input"))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.valueOf("text/plain;charset=UTF-8")))
-                .andExpect(content().string("Something happened: getResponseByIco.ico: ICO must be of 8 digit"));
+                .andExpect(content().string("Something happened: getResponseByIco.ico.value: ICO must be of 8 digit"));
         verify(service, times(0)).getDtoResponseByIco("bad_input");
     }
 
