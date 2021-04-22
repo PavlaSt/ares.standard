@@ -11,32 +11,24 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.Optional;
 
 @Component
 @Primary
 public class AresClientTestImpl implements AresClient {
-    private String url = "";
-    public AresOdpovedi getAresResponse(AresDotazy request) {
-            if (request.getDotaz().size() > 0) {
-            if (
-                    (request.getDotaz().get(0).getKlicovePolozky().getICO() != null)
-                            &&
-                    (request.getDotaz().get(0).getKlicovePolozky().getICO().equals("27074358")
-                    )) {
-                url = "src/test/resources/getDtoResponseByIco/ico=27074358.xml";
-            } else if (
-                    (request.getDotaz().get(0).getKlicovePolozky().getICO() != null)
-                            &&
-                            (request.getDotaz().get(0).getKlicovePolozky().getICO().equals("12345678")
-                            )) {
-                url = "src/test/resources/getDtoResponseByIco/ico=12345678.xml";
-            } else
-                {
-            //} else if (request.getDotaz().get(0).getKlicovePolozky().getObchodniFirma().equals("Etnetera")) {
-                url = "src/test/resources/getDtoresponseByCompanyName/firma=Etnetera.xml";
 
-            }
+    public AresOdpovedi getAresResponse(AresDotazy request) {
+
+        Optional<String> optionalIco = Optional.ofNullable(request.getDotaz().get(0).getKlicovePolozky().getICO());
+        String url = "";
+        if (optionalIco.isPresent()) {
+            String ico = optionalIco.get();
+            url = "src/test/resources/getDtoResponseByIco/ico=" + ico + ".xml";
+        } else {
+            String companyName = request.getDotaz().get(0).getKlicovePolozky().getObchodniFirma();
+            url = "src/test/resources/getDtoresponseByCompanyName/firma=" + companyName + ".xml";
         }
+
         File answer = new File(url);
         try {
             InputStream xmlResult = new FileInputStream(answer);
@@ -47,13 +39,12 @@ public class AresClientTestImpl implements AresClient {
             return null;
         }
     }
+    private AresOdpovedi unmarshalStringToObject(InputStream xmlResult) {
+        return JAXB.unmarshal(xmlResult, AresOdpovedi.class);
+    }
 
-    @Override
     public cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi getAresResponse(cz.stuchlikova.ares.application.stub.rzp.AresDotazy request) {
         return null;
     }
 
-    private AresOdpovedi unmarshalStringToObject(InputStream xmlResult) {
-        return JAXB.unmarshal(xmlResult, AresOdpovedi.class);
-    }
 }
