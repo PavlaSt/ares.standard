@@ -1,4 +1,4 @@
-package cz.stuchlikova.ares.application;
+package cz.stuchlikova.ares.application.connector;
 
 import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
 import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;

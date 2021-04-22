@@ -1,6 +1,6 @@
 package cz.stuchlikova.ares.application.repository;
 
-import cz.stuchlikova.ares.application.AresClient;
+import cz.stuchlikova.ares.application.connector.AresClient;
 import cz.stuchlikova.ares.application.stub.rzp.AresDotazy;
 import cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi;
 import cz.stuchlikova.ares.application.stub.rzp.OdpovedRZP;

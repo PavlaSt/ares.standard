@@ -2,6 +2,7 @@ package cz.stuchlikova.ares.application.service;
 
 import cz.stuchlikova.ares.application.domain.AresResponseDto;
 import cz.stuchlikova.ares.application.domain.AresResponseRzpDto;
+import cz.stuchlikova.ares.application.repository.AresRzpRepo;
 import cz.stuchlikova.ares.application.repository.AresStandardRepo;
 import cz.stuchlikova.ares.application.stub.standard.KlicovePolozky;
 import cz.stuchlikova.ares.application.stub.standard.Odpoved;
@@ -21,7 +22,10 @@ public class AresOdpovediService {
     private final RequestRzpFactory requestRzpFactory;
 
     @Autowired
-    private AresStandardRepo repository;
+    private AresStandardRepo standardRepo;
+
+    @Autowired
+    private AresRzpRepo rzpRepo;
 
     public AresOdpovediService() {
         transformationRzp = new TransformationRzp();
@@ -50,19 +54,20 @@ public class AresOdpovediService {
 
     //------------------------------------------------------------------------------------------
     private List<OdpovedRZP> getAresResponseRzp(String ico) throws DatatypeConfigurationException {
-        return repository.getOdpovedRZPList(requestRzpFactory.createAresDotazyRZP(ico));
+        return rzpRepo.getOdpovedRZPList(requestRzpFactory.createAresDotazyRZP(ico));
+        //return standardRepo.getOdpovedRZPList(requestRzpFactory.createAresDotazyRZP(ico));
     }
 
     private List<Odpoved> getResponseByIco(String ico) throws DatatypeConfigurationException {
         //create polozky
         KlicovePolozky polozky = requestFactory.createAndSetPolozkyIco(ico);
         //create request and send to Ares SOAP WS
-        return repository.getOdpovedList(requestFactory.createAresDotazy(polozky));
+        return standardRepo.getOdpovedList(requestFactory.createAresDotazy(polozky));
     }
 
     private List<Odpoved> getResponseByCompanyName(String companyName) throws DatatypeConfigurationException {
         KlicovePolozky polozky = requestFactory.createAndSetPolozkyCompanyName(companyName);
-        return repository.getOdpovedList(requestFactory.createAresDotazy(polozky));
+        return standardRepo.getOdpovedList(requestFactory.createAresDotazy(polozky));
     }
 
 

@@ -1,5 +1,6 @@
 package cz.stuchlikova.ares.application;
 
+import cz.stuchlikova.ares.application.connector.AresClient;
 import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
 import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;
 import org.springframework.context.annotation.Primary;

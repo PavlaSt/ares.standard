@@ -1,7 +1,6 @@
 package cz.stuchlikova.ares.application.repository;
 
-import cz.stuchlikova.ares.application.AresClient;
-import cz.stuchlikova.ares.application.stub.rzp.OdpovedRZP;
+import cz.stuchlikova.ares.application.connector.AresClient;
 import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
 import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;
 import cz.stuchlikova.ares.application.stub.standard.Odpoved;
@@ -22,8 +21,4 @@ public class AresStandardRepo {
         return response.getOdpoved();
     }
 
-    public List<OdpovedRZP> getOdpovedRZPList(cz.stuchlikova.ares.application.stub.rzp.AresDotazy aresDotazyRZP) {
-        cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi responseRZP = aresClient.getAresResponse(aresDotazyRZP);
-        return responseRZP.getOdpoved();
-    }
 }
