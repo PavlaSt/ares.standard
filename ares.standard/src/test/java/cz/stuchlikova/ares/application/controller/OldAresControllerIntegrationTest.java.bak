@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-public class AresControllerIntegrationTest {
+public class OldAresControllerIntegrationTest {
 
     @LocalServerPort
     private int port;
