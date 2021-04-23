@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.GregorianCalendar;
 
-public class RequestRzpFactory {
+public class AresRzpRequestFactory {
 
     public AresDotazy createAresDotazyRZP(String ico) throws DatatypeConfigurationException {
         ObjectFactory objectFactory = new ObjectFactory();
