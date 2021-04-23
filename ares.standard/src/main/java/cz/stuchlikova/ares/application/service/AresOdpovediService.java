@@ -1,5 +1,6 @@
 package cz.stuchlikova.ares.application.service;
 
+import cz.stuchlikova.ares.application.configuration.ConfigProperties;
 import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
 import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
 import cz.stuchlikova.ares.application.exceptions.RecordNotFoundException;
@@ -20,7 +21,7 @@ public class AresOdpovediService {
     private final AresStandardTransformation aresStandardTransformation;
     private final AresRzpTransformation aresRzpTransformation;
     private final AresStandardRequestFactory aresStandardRequestFactory;
-    private final RequestRzpFactory requestRzpFactory;
+    private final AresRzpRequestFactory aresRzpRequestFactory;
 
     @Autowired
     private AresStandardRepo standardRepo;
@@ -28,9 +29,12 @@ public class AresOdpovediService {
     @Autowired
     private AresRzpRepo rzpRepo;
 
+    @Autowired
+    ConfigProperties properties;
+
     public AresOdpovediService() {
         aresRzpTransformation = new AresRzpTransformation();
-        requestRzpFactory = new RequestRzpFactory();
+        aresRzpRequestFactory = new AresRzpRequestFactory();
         aresStandardRequestFactory = new AresStandardRequestFactory();
         aresStandardTransformation = new AresStandardTransformation();
     }
@@ -55,20 +59,23 @@ public class AresOdpovediService {
 
     //------------------------------------------------------------------------------------------
     private List<OdpovedRZP> getAresResponseRzp(String ico) throws DatatypeConfigurationException {
-        return rzpRepo.getOdpovedRZPList(requestRzpFactory.createAresDotazyRZP(ico));
-        //return standardRepo.getOdpovedRZPList(requestRzpFactory.createAresDotazyRZP(ico));
+        return rzpRepo.getOdpovedRZPList(aresRzpRequestFactory.createAresDotazyRZP(ico));
     }
 
     private List<Odpoved> getResponseByIco(String ico) throws DatatypeConfigurationException {
-        //create polozky
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyIco(ico);
-        //create request and send to Ares SOAP WS
-        return standardRepo.getOdpovedList(aresStandardRequestFactory.createAresDotazy(polozky));
+        return standardRepo.getOdpovedList(aresStandardRequestFactory
+                .createAresDotazy(polozky,
+                        properties.getEmail(),
+                        properties.getMaxPocet()));
     }
 
     private List<Odpoved> getResponseByCompanyName(String companyName) throws DatatypeConfigurationException {
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyCompanyName(companyName);
-        return standardRepo.getOdpovedList(aresStandardRequestFactory.createAresDotazy(polozky));
+        return standardRepo.getOdpovedList(aresStandardRequestFactory
+                .createAresDotazy(polozky,
+                        properties.getEmail(),
+                        properties.getMaxPocet()));
     }
 
 

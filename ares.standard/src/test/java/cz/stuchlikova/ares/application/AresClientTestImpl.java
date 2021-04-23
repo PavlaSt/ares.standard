@@ -20,7 +20,7 @@ public class AresClientTestImpl implements AresClient {
     public AresOdpovedi getAresResponse(AresDotazy request) {
 
         Optional<String> optionalIco = Optional.ofNullable(request.getDotaz().get(0).getKlicovePolozky().getICO());
-        String url = "";
+        String url;
         if (optionalIco.isPresent()) {
             String ico = optionalIco.get();
             url = "src/test/resources/getDtoResponseByIco/ico=" + ico + ".xml";

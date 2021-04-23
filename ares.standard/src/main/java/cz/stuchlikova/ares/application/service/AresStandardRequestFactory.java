@@ -1,9 +1,6 @@
 package cz.stuchlikova.ares.application.service;
 
 import cz.stuchlikova.ares.application.stub.standard.*;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
@@ -12,20 +9,28 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.GregorianCalendar;
 
-@Component
-@EnableConfigurationProperties
-@ConfigurationProperties(prefix = "request")
+//@Component
+//@EnableConfigurationProperties
+//@ConfigurationProperties(prefix = "request")
 public class AresStandardRequestFactory {
 
     private final ObjectFactory objectFactory;
-    String email = "stuchlikova.pavla@post.cz";
-    Integer maxPocet = 200;
+
+    //@Autowired
+    //ConfigProperties properties; // proč je null?
+    //String email = "stuchlikova.pavla@post.cz";
+    //Integer maxPocet = 200;
+
+    /*public AresStandardRequestFactory(ConfigProperties properties) {
+        this.objectFactory = new ObjectFactory();
+        this.properties = properties;
+    }*/
 
     public AresStandardRequestFactory() {
         this.objectFactory = new ObjectFactory();
+        //this.properties = new ConfigProperties();
     }
-
-    public String getEmail() {
+    /*public String getEmail() {
         return email;
     }
 
@@ -39,10 +44,12 @@ public class AresStandardRequestFactory {
 
     public void setMaxPocet(Integer maxPocet) {
         this.maxPocet = maxPocet;
-    }
+    }*/
 
-    public AresDotazy createAresDotazy(KlicovePolozky polozky) throws DatatypeConfigurationException {
+    public AresDotazy createAresDotazy(KlicovePolozky polozky, String email, Integer maxPocet) throws DatatypeConfigurationException {
 
+        //Integer maxPocet = properties.getMaxPocet();
+        //String email = properties.getEmail();//proč je null?
         AresDotazy aresDotazy = objectFactory.createAresDotazy();
         Dotaz dotaz = objectFactory.createDotaz();
 

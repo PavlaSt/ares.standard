@@ -1,8 +1,9 @@
 package cz.stuchlikova.ares.application.connector;
 
+import cz.stuchlikova.ares.application.configuration.ConfigProperties;
 import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
 import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.xml.transform.StringResult;
@@ -14,18 +15,23 @@ import java.io.StringWriter;
 
 //@Primary
 @Component
-@ConfigurationProperties(prefix = "ares")
+//@ConfigurationProperties(prefix = "standard")
 public class AresClientImpl extends WebServiceGatewaySupport implements AresClient {
 
-    private String url;
 
-    public String getUrl() {
+    @Autowired
+    ConfigProperties properties;
+    //private String url = properties.getUrl();
+
+
+
+   /* public String getUrl() {
         return url;
     }
 
     public void setUrl(String url) {
         this.url = url;
-    }
+    }*/
 
    /* public Object getAresResponse(Object request) {
         String xmlRequest = marshalInputToXml(request);
@@ -35,12 +41,14 @@ public class AresClientImpl extends WebServiceGatewaySupport implements AresClie
     }*/
 
     public AresOdpovedi getAresResponse(AresDotazy request) {
+        String url = properties.getUrl();
         String xmlRequest = marshalInputToXml(request);
         String xmlResult = sendSourceReceiveResult(url,xmlRequest);
         return unmarshalStringToObject(xmlResult);
     }
 
     public cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi getAresResponse(cz.stuchlikova.ares.application.stub.rzp.AresDotazy request) {
+        String url = properties.getUrl();
         String xmlRequest = marshalInputToXml(request);
         String xmlResult = sendSourceReceiveResult(url,xmlRequest);
         return unmarshalStringToObjectRZP(xmlResult);
@@ -63,7 +71,7 @@ public class AresClientImpl extends WebServiceGatewaySupport implements AresClie
         StringSource source = new StringSource(xmlRequest);
         StringResult result = new StringResult();
         getWebServiceTemplate().sendSourceAndReceiveToResult(url, source, result);
-        //System.out.println(result);
+        System.out.println(result);
         return result.toString();
     }
 
