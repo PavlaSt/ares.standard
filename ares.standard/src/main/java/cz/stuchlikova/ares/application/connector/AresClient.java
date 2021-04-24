@@ -1,5 +1,5 @@
 package cz.stuchlikova.ares.application.connector;
 
-public interface AresClientGen<O,D>{
+public interface AresClient<O,D>{
     O getAresResponse(D dotazy);
 }

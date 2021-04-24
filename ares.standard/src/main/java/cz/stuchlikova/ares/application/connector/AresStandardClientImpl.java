@@ -12,7 +12,7 @@ import java.io.StringReader;
 
 @Component
 @Qualifier("standard")
-public class AresStandardClientImpl extends ClientBase implements AresClientGen<AresOdpovedi, AresDotazy> {
+public class AresStandardClientImpl extends ClientBase implements AresClient<AresOdpovedi, AresDotazy> {
 
     @Autowired
     ConfigProperties properties;

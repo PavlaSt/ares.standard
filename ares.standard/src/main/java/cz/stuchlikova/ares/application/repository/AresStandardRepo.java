@@ -2,8 +2,7 @@ package cz.stuchlikova.ares.application.repository;
 
 //import cz.stuchlikova.ares.application.connector.AresClient;
 
-import cz.stuchlikova.ares.application.connector.AresClientGen;
-import cz.stuchlikova.ares.application.connector.AresStandardClientImpl;
+import cz.stuchlikova.ares.application.connector.AresClient;
 import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
 import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;
 import cz.stuchlikova.ares.application.stub.standard.Odpoved;
@@ -22,7 +21,7 @@ public class AresStandardRepo {
 
     @Autowired
     @Qualifier("standard")
-    private AresClientGen clientGen;//AresStandardClientImpl standardClient;
+    private AresClient clientGen;//AresStandardClientImpl standardClient;
 
     public List<Odpoved> getOdpovedList(AresDotazy aresDotazy) { //Object
         //AresOdpovedi response = standardClient.getAresResponse( aresDotazy); //(AresDotazy)

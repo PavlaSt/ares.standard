@@ -6,18 +6,14 @@ import cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
-import org.springframework.xml.transform.StringResult;
-import org.springframework.xml.transform.StringSource;
 
 import javax.xml.bind.JAXB;
 import java.io.StringReader;
-import java.io.StringWriter;
 
 
 @Component
 @Qualifier("rzp")
-public class AresRzpClientImpl extends ClientBase implements AresClientGen<AresOdpovedi, AresDotazy> {
+public class AresRzpClientImpl extends ClientBase implements AresClient<AresOdpovedi, AresDotazy> {
 
     @Autowired
     ConfigProperties properties;
