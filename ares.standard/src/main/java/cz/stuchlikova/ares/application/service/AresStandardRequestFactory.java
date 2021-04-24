@@ -10,42 +10,13 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.GregorianCalendar;
 
-//@Component
-//@EnableConfigurationProperties
-//@ConfigurationProperties(prefix = "request")
 public class AresStandardRequestFactory {
 
     private final ObjectFactory objectFactory;
 
-    //@Autowired
-    //ConfigProperties properties; // proč je null?
-    //String email = "stuchlikova.pavla@post.cz";
-    //Integer maxPocet = 200;
-
-    /*public AresStandardRequestFactory(ConfigProperties properties) {
-        this.objectFactory = new ObjectFactory();
-        this.properties = properties;
-    }*/
-
     public AresStandardRequestFactory() {
         this.objectFactory = new ObjectFactory();
-        //this.properties = new ConfigProperties();
     }
-    /*public String getEmail() {
-        return email;
-    }
-
-    public Integer getMaxPocet() {
-        return maxPocet;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setMaxPocet(Integer maxPocet) {
-        this.maxPocet = maxPocet;
-    }*/
 
     public AresDotazy createAresDotazy(KlicovePolozky polozky, String email, Integer maxPocet) throws DatatypeConfigurationException {
 
@@ -75,12 +46,13 @@ public class AresStandardRequestFactory {
         return aresDotazy;
     }
 
-    public KlicovePolozky createAndSetPolozkyIco(Ico ico){
+    public KlicovePolozky createAndSetPolozkyIco(Ico ico) {
         KlicovePolozky polozky = objectFactory.createKlicovePolozky();
         polozky.setICO(ico.getValue());
         return polozky;
     }
-    public KlicovePolozky createAndSetPolozkyCompanyName(String companyName){
+
+    public KlicovePolozky createAndSetPolozkyCompanyName(String companyName) {
         KlicovePolozky polozky = objectFactory.createKlicovePolozky();
         polozky.setObchodniFirma(companyName);
         return polozky;

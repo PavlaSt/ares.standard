@@ -64,13 +64,11 @@ public class AresOdpovediService {
     //------------------------------------------------------------------------------------------
     private List<OdpovedRZP> getAresResponseRzp(@Valid Ico ico) throws DatatypeConfigurationException {
         return rzpRepo.getOdpovedRZPList(aresRzpRequestFactory.createAresDotazyRZP(ico));
-        //return rzpRepo.getOdpovedRZPList(aresRzpRequestFactory.createAresDotazyRZP(ico));
     }
 
     private List<Odpoved> getResponseByIco(Ico ico) throws DatatypeConfigurationException {
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyIco(ico);
         return standardRepo.getOdpovedList(aresStandardRequestFactory
-        //return standardRepo.getOdpovedList(aresStandardRequestFactory
                 .createAresDotazy(polozky,
                         properties.getEmail(),
                         properties.getMaxPocet()));
@@ -79,7 +77,6 @@ public class AresOdpovediService {
     private List<Odpoved> getResponseByCompanyName(String companyName) throws DatatypeConfigurationException {
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyCompanyName(companyName);
         return standardRepo.getOdpovedList(aresStandardRequestFactory
-        //return standardRepo.getOdpovedList(aresStandardRequestFactory
                 .createAresDotazy(polozky,
                         properties.getEmail(),
                         properties.getMaxPocet()));

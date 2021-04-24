@@ -15,23 +15,13 @@ import java.util.List;
 @Repository
 public class AresStandardRepo {
 
-
-   /* @Autowired
-    private AresClient aresClient;*/
-
     @Autowired
     @Qualifier("standard")
-    private AresClient clientGen;//AresStandardClientImpl standardClient;
+    private AresClient clientGen;
 
-    public List<Odpoved> getOdpovedList(AresDotazy aresDotazy) { //Object
-        //AresOdpovedi response = standardClient.getAresResponse( aresDotazy); //(AresDotazy)
-        AresOdpovedi response = (AresOdpovedi) clientGen.getAresResponse(aresDotazy); //(AresDotazy)
+    public List<Odpoved> getOdpovedList(AresDotazy aresDotazy) {
+        AresOdpovedi response = (AresOdpovedi) clientGen.getAresResponse(aresDotazy);
         return response.getOdpoved();
     }
-
-    /*public List<Odpoved> getOdpovedList(AresDotazy aresDotazy) { //Object
-        AresOdpovedi response = aresClient.getAresResponse( aresDotazy); //(AresDotazy)
-               return response.getOdpoved();
-    }*/
 
 }
