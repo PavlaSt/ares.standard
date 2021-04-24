@@ -1,6 +1,8 @@
 package cz.stuchlikova.ares.application.repository;
 
-import cz.stuchlikova.ares.application.connector.AresClient;
+//import cz.stuchlikova.ares.application.connector.AresClient;
+import cz.stuchlikova.ares.application.connector.AresClientGen;
+import cz.stuchlikova.ares.application.connector.AresStandardClientImpl;
 import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
 import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;
 import cz.stuchlikova.ares.application.stub.standard.Odpoved;
@@ -13,13 +15,20 @@ import java.util.List;
 public class AresStandardRepo {
 
 
-    @Autowired
-    private AresClient aresClient;
+   /* @Autowired
+    private AresClient aresClient;*/
 
-    public List<Odpoved> getOdpovedList(Object aresDotazy) { //Object
-        AresOdpovedi response = aresClient.getAresResponse((AresDotazy) aresDotazy); //
-        //AresOdpovedi response = aresClient.getAresResponse(aresDotazy); //(AresDotazy)
+    @Autowired
+    private AresStandardClientImpl standardClient;
+
+    public List<Odpoved> getOdpovedListG(AresDotazy aresDotazy) { //Object
+        AresOdpovedi response = standardClient.getAresResponse( aresDotazy); //(AresDotazy)
         return response.getOdpoved();
     }
+
+    /*public List<Odpoved> getOdpovedList(AresDotazy aresDotazy) { //Object
+        AresOdpovedi response = aresClient.getAresResponse( aresDotazy); //(AresDotazy)
+               return response.getOdpoved();
+    }*/
 
 }

@@ -1,6 +1,7 @@
 package cz.stuchlikova.ares.application;
 
-import cz.stuchlikova.ares.application.connector.AresClient;
+//import cz.stuchlikova.ares.application.connector.AresClient;
+import cz.stuchlikova.ares.application.connector.AresClientGen;
 import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
 import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;
 import org.springframework.context.annotation.Primary;
@@ -15,7 +16,7 @@ import java.util.Optional;
 
 @Component
 @Primary
-public class AresClientTestImpl implements AresClient {
+public class AresClientTestImpl implements AresClientGen<AresOdpovedi, AresDotazy> {
 
     public AresOdpovedi getAresResponse(AresDotazy request) {
 
@@ -39,12 +40,8 @@ public class AresClientTestImpl implements AresClient {
             return null;
         }
     }
+
     private AresOdpovedi unmarshalStringToObject(InputStream xmlResult) {
         return JAXB.unmarshal(xmlResult, AresOdpovedi.class);
     }
-
-    public cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi getAresResponse(cz.stuchlikova.ares.application.stub.rzp.AresDotazy request) {
-        return null;
-    }
-
 }
