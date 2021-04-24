@@ -1,7 +1,5 @@
-package cz.stuchlikova.ares.application;
+package cz.stuchlikova.ares.application.connector;
 
-//import cz.stuchlikova.ares.application.connector.AresClient;
-import cz.stuchlikova.ares.application.connector.AresClient;
 import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
 import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,7 +17,7 @@ import java.util.Optional;
 @Primary
 @Qualifier("standard")
 
-public class AresClientTestImpl implements AresClient<AresOdpovedi, AresDotazy> {
+public class AresStandardClientTestImpl implements AresClient<AresOdpovedi, AresDotazy> {
 
     public AresOdpovedi getAresResponse(AresDotazy request) {
 
