@@ -37,10 +37,8 @@ class AresOdpovediServiceTest {
         Assertions.assertThrows(RecordNotFoundException.class, () -> {
             List<AresStandardResponseDto> dtos = service.getDtoResponseByIco(new Ico("12345678"));
         });
-
     }
 
-    //TODO
     @Test
     void getDtoResponseByIco_bad_input() {
 
@@ -50,12 +48,22 @@ class AresOdpovediServiceTest {
     }
 
     @Test
-    void getDtoResponseByCompanyName() throws DatatypeConfigurationException {
+    void getDtoResponseByCompanyName_happy_path() throws DatatypeConfigurationException {
         List<AresStandardResponseDto> dtos = service.getDtoResponseByCompanyName("Etnetera");
 
         assertThat(dtos.size(), equalTo(4));
         assertThat(dtos.get(0).getObchodniFirma(), containsStringIgnoringCase("Etnetera"));
         assertThat(dtos.get(0).getIco(), equalTo("24133272"));
     }
+
+    @Test
+    void getDtoResponseByCompanyName_non_existing() {
+
+        Assertions.assertThrows(RecordNotFoundException.class, () -> {
+            List<AresStandardResponseDto> dtos = service.getDtoResponseByCompanyName("QQQQQ");
+        });
+    }
+
+
 
 }
