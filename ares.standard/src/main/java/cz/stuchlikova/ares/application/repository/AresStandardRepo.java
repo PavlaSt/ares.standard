@@ -17,10 +17,10 @@ public class AresStandardRepo {
 
     @Autowired
     @Qualifier("standard")
-    private AresClient clientGen;
+    private AresClient client;
 
     public List<Odpoved> getOdpovedList(AresDotazy aresDotazy) {
-        AresOdpovedi response = (AresOdpovedi) clientGen.getAresResponse(aresDotazy);
+        AresOdpovedi response = (AresOdpovedi) client.getAresResponse(aresDotazy);
         return response.getOdpoved();
     }
 
