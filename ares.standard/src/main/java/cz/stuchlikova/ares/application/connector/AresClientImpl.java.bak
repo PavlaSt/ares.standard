@@ -21,24 +21,8 @@ public class AresClientImpl extends WebServiceGatewaySupport implements AresClie
 
     @Autowired
     ConfigProperties properties;
-    //private String url = properties.getUrl();
 
-
-
-   /* public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }*/
-
-   /* public Object getAresResponse(Object request) {
-        String xmlRequest = marshalInputToXml(request);
-        String xmlResult = sendSourceReceiveResult(url,xmlRequest);
-        Class requestClass = request.getClass();
-        return unmarshalStringToObject(xmlResult, requestClass);
-    }*/
+    //-----------RŮZNÉ-------------------------------------------
 
     public AresOdpovedi getAresResponse(AresDotazy request) {
         String url = properties.getUrl();
@@ -54,7 +38,7 @@ public class AresClientImpl extends WebServiceGatewaySupport implements AresClie
         return unmarshalStringToObjectRZP(xmlResult);
     }
 
-    //-------------------------------------------------------------------
+    //-----------STEJNÉ-------------------------------------------
 
     private String marshalInputToXml(Object request) { //AresDotazy request
         StringWriter stringWriter = new StringWriter();
@@ -67,6 +51,7 @@ public class AresClientImpl extends WebServiceGatewaySupport implements AresClie
         return stringWriter.toString();
     }*/
 
+    //-----------STEJNÉ-------------------------------------------
     private String sendSourceReceiveResult(String url, String xmlRequest) {
         StringSource source = new StringSource(xmlRequest);
         StringResult result = new StringResult();
@@ -75,6 +60,7 @@ public class AresClientImpl extends WebServiceGatewaySupport implements AresClie
         return result.toString();
     }
 
+    //-----------RŮZNÉ-------------------------------------------
     private AresOdpovedi unmarshalStringToObject(String xmlResult) {
         return JAXB.unmarshal(new StringReader(xmlResult), AresOdpovedi.class);
     }
