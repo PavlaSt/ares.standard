@@ -1,6 +1,7 @@
 package cz.stuchlikova.ares.application.repository;
 
-import cz.stuchlikova.ares.application.connector.AresClient;
+//import cz.stuchlikova.ares.application.connector.AresClient;
+import cz.stuchlikova.ares.application.connector.AresRzpClientImpl;
 import cz.stuchlikova.ares.application.stub.rzp.AresDotazy;
 import cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi;
 import cz.stuchlikova.ares.application.stub.rzp.OdpovedRZP;
@@ -12,11 +13,19 @@ import java.util.List;
 @Repository
 public class AresRzpRepo {
 
-    @Autowired
-    private AresClient aresClient;
+    /*@Autowired
+    private AresClient aresClient;*/
 
-    public List<OdpovedRZP> getOdpovedRZPList(AresDotazy aresDotazyRZP) {
-        AresOdpovedi responseRZP = aresClient.getAresResponse(aresDotazyRZP);
+    @Autowired
+    private AresRzpClientImpl rzpClient;
+
+    public List<OdpovedRZP> getOdpovedRZPListG(AresDotazy aresDotazyRZP) {
+        AresOdpovedi responseRZP = rzpClient.getAresResponse(aresDotazyRZP);
         return responseRZP.getOdpoved();
     }
+
+    /*public List<OdpovedRZP> getOdpovedRZPList(AresDotazy aresDotazyRZP) {
+        AresOdpovedi responseRZP = aresClient.getAresResponse(aresDotazyRZP);
+        return responseRZP.getOdpoved();
+    }*/
 }
