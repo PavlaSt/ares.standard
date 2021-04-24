@@ -4,6 +4,7 @@ import cz.stuchlikova.ares.application.configuration.ConfigProperties;
 import cz.stuchlikova.ares.application.stub.rzp.AresDotazy;
 import cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.xml.transform.StringResult;
@@ -15,8 +16,8 @@ import java.io.StringWriter;
 
 
 @Component
-public
-class AresRzpClientImpl extends ClientBase implements AresClientGen<AresOdpovedi, AresDotazy> {
+@Qualifier("rzp")
+public class AresRzpClientImpl extends ClientBase implements AresClientGen<AresOdpovedi, AresDotazy> {
 
     @Autowired
     ConfigProperties properties;
