@@ -1,7 +1,9 @@
 package cz.stuchlikova.ares.application.service;
 
+import cz.stuchlikova.ares.application.Ico;
 import cz.stuchlikova.ares.application.stub.rzp.*;
 
+import javax.validation.Valid;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -11,7 +13,7 @@ import java.util.GregorianCalendar;
 
 public class AresRzpRequestFactory {
 
-    public AresDotazy createAresDotazyRZP(String ico) throws DatatypeConfigurationException {
+    public AresDotazy createAresDotazyRZP(@Valid Ico ico) throws DatatypeConfigurationException {
         ObjectFactory objectFactory = new ObjectFactory();
 
         AresDotazy aresDotazy = objectFactory.createAresDotazy();
@@ -32,7 +34,7 @@ public class AresRzpRequestFactory {
         aresDotazy.setId("Ares_dotaz");
 
         Dotaz dotaz = objectFactory.createDotaz();
-        dotaz.setICO(ico);
+        dotaz.setICO(ico.getValue());
         dotaz.setPomocneID(0);
         dotaz.setRozsah((short) 1);
 

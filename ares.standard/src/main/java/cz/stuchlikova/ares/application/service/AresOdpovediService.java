@@ -1,5 +1,6 @@
 package cz.stuchlikova.ares.application.service;
 
+import cz.stuchlikova.ares.application.Ico;
 import cz.stuchlikova.ares.application.configuration.ConfigProperties;
 import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
 import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
@@ -11,11 +12,14 @@ import cz.stuchlikova.ares.application.stub.standard.Odpoved;
 import cz.stuchlikova.ares.application.stub.rzp.OdpovedRZP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
 import javax.xml.datatype.DatatypeConfigurationException;
 import java.util.List;
 
 @Service
+@Validated
 public class AresOdpovediService {
 
     private final AresStandardTransformation aresStandardTransformation;
@@ -39,12 +43,12 @@ public class AresOdpovediService {
         aresStandardTransformation = new AresStandardTransformation();
     }
 
-    public List<AresRzpResponseDto> getAresResponseRzpDto(String ico) throws DatatypeConfigurationException {
+    public List<AresRzpResponseDto> getAresResponseRzpDto(@Valid Ico ico) throws DatatypeConfigurationException {
         List<OdpovedRZP> responsesRZP = getAresResponseRzp(ico);
         return aresRzpTransformation.transformResponseRzpToDto(responsesRZP);
     }
 
-    public List<AresStandardResponseDto> getDtoResponseByIco(String ico) throws DatatypeConfigurationException {
+    public List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
         List<Odpoved> responses = getResponseByIco(ico);
         if (responses.get(0).getPocetZaznamu() == 0) {
             throw new RecordNotFoundException("There are no records for this query");
@@ -58,14 +62,14 @@ public class AresOdpovediService {
     }
 
     //------------------------------------------------------------------------------------------
-    private List<OdpovedRZP> getAresResponseRzp(String ico) throws DatatypeConfigurationException {
-        return rzpRepo.getOdpovedRZPListG(aresRzpRequestFactory.createAresDotazyRZP(ico));
+    private List<OdpovedRZP> getAresResponseRzp(@Valid Ico ico) throws DatatypeConfigurationException {
+        return rzpRepo.getOdpovedRZPList(aresRzpRequestFactory.createAresDotazyRZP(ico));
         //return rzpRepo.getOdpovedRZPList(aresRzpRequestFactory.createAresDotazyRZP(ico));
     }
 
-    private List<Odpoved> getResponseByIco(String ico) throws DatatypeConfigurationException {
+    private List<Odpoved> getResponseByIco(Ico ico) throws DatatypeConfigurationException {
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyIco(ico);
-        return standardRepo.getOdpovedListG(aresStandardRequestFactory
+        return standardRepo.getOdpovedList(aresStandardRequestFactory
         //return standardRepo.getOdpovedList(aresStandardRequestFactory
                 .createAresDotazy(polozky,
                         properties.getEmail(),
@@ -74,7 +78,7 @@ public class AresOdpovediService {
 
     private List<Odpoved> getResponseByCompanyName(String companyName) throws DatatypeConfigurationException {
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyCompanyName(companyName);
-        return standardRepo.getOdpovedListG(aresStandardRequestFactory
+        return standardRepo.getOdpovedList(aresStandardRequestFactory
         //return standardRepo.getOdpovedList(aresStandardRequestFactory
                 .createAresDotazy(polozky,
                         properties.getEmail(),

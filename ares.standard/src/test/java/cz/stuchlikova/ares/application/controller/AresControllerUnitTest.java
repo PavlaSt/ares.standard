@@ -1,5 +1,6 @@
 package cz.stuchlikova.ares.application.controller;
 
+import cz.stuchlikova.ares.application.Ico;
 import cz.stuchlikova.ares.application.service.AresOdpovediService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class AresControllerUnitTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().json("[]"));
-        verify(service, times(1)).getDtoResponseByIco("27074358");
+        verify(service, times(1)).getDtoResponseByIco(new Ico("27074358"));
     }
 
     /*@Test
@@ -48,7 +49,7 @@ public class AresControllerUnitTest {
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.valueOf("text/plain;charset=UTF-8")))
                 .andExpect(content().string("Something happened: getResponseByIco.ico.value: ICO must be of 8 digit"));
-        verify(service, times(0)).getDtoResponseByIco("bad_input");
+        verify(service, times(0)).getDtoResponseByIco(new Ico("bad_input"));
     }
 
     @Test

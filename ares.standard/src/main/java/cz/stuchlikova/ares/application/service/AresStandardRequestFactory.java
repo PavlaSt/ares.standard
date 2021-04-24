@@ -1,5 +1,6 @@
 package cz.stuchlikova.ares.application.service;
 
+import cz.stuchlikova.ares.application.Ico;
 import cz.stuchlikova.ares.application.stub.standard.*;
 
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -48,8 +49,6 @@ public class AresStandardRequestFactory {
 
     public AresDotazy createAresDotazy(KlicovePolozky polozky, String email, Integer maxPocet) throws DatatypeConfigurationException {
 
-        //Integer maxPocet = properties.getMaxPocet();
-        //String email = properties.getEmail();//proč je null?
         AresDotazy aresDotazy = objectFactory.createAresDotazy();
         Dotaz dotaz = objectFactory.createDotaz();
 
@@ -76,9 +75,9 @@ public class AresStandardRequestFactory {
         return aresDotazy;
     }
 
-    public KlicovePolozky createAndSetPolozkyIco(String ico){
+    public KlicovePolozky createAndSetPolozkyIco(Ico ico){
         KlicovePolozky polozky = objectFactory.createKlicovePolozky();
-        polozky.setICO(ico);
+        polozky.setICO(ico.getValue());
         return polozky;
     }
     public KlicovePolozky createAndSetPolozkyCompanyName(String companyName){

@@ -23,13 +23,13 @@ public class AresController {
     @RequestMapping(value = "/predmet", method = RequestMethod.GET)
     public List<AresRzpResponseDto> getScopeOfBussiness(@Valid @RequestParam("ico") Ico ico)
             throws DatatypeConfigurationException{
-        return service.getAresResponseRzpDto(ico.getValue());
+        return service.getAresResponseRzpDto(ico);
     }
 
     @RequestMapping(value = "/ico", method = RequestMethod.GET)
     public List<AresStandardResponseDto> getResponseByIco(@Valid @RequestParam("ico") Ico ico)
             throws DatatypeConfigurationException {
-        return service.getDtoResponseByIco(ico.getValue());
+        return service.getDtoResponseByIco(ico);
     }
 
     @RequestMapping(value = "/firma", method = RequestMethod.GET)
