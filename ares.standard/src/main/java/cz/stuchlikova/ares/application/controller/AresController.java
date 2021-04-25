@@ -23,7 +23,7 @@ public class AresController {
     @RequestMapping(value = "/predmet", method = RequestMethod.GET)
     public List<AresRzpResponseDto> getScopeOfBussiness(@Valid @RequestParam("ico") Ico ico)
             throws DatatypeConfigurationException{
-        return service.getAresResponseRzpDto(ico);
+        return service.getDtoRzpResponseByIco(ico);
     }
 
     @RequestMapping(value = "/ico", method = RequestMethod.GET)

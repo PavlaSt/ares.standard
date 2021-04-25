@@ -42,7 +42,7 @@ public class AresOdpovediService {
         aresStandardTransformation = new AresStandardTransformation();
     }
 
-    public List<AresRzpResponseDto> getAresResponseRzpDto(@Valid Ico ico) throws DatatypeConfigurationException {
+    public List<AresRzpResponseDto> getDtoRzpResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
         List<OdpovedRZP> responsesRZP = getAresResponseRzp(ico);
         return aresRzpTransformation.transformResponseRzpToDto(responsesRZP);
     }
