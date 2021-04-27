@@ -1,4 +1,4 @@
-package cz.stuchlikova.ares.application;
+package cz.stuchlikova.ares.application.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -1,6 +1,5 @@
 package cz.stuchlikova.ares.application.controller;
 
-import cz.stuchlikova.ares.application.Ico;
 import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
 import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
 import cz.stuchlikova.ares.application.service.AresOdpovediService;

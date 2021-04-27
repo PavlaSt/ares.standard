@@ -1,6 +1,6 @@
 package cz.stuchlikova.ares.application.service;
 
-import cz.stuchlikova.ares.application.Ico;
+import cz.stuchlikova.ares.application.controller.Ico;
 import cz.stuchlikova.ares.application.stub.standard.*;
 
 import javax.xml.datatype.DatatypeConfigurationException;
