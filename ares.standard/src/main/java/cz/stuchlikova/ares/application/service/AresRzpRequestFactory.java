@@ -13,7 +13,7 @@ import java.util.GregorianCalendar;
 
 public class AresRzpRequestFactory {
 
-    public AresDotazy createAresDotazyRZP(@Valid Ico ico) throws DatatypeConfigurationException {
+    public AresDotazy createAresDotazyRZP(@Valid Ico ico, String email) throws DatatypeConfigurationException {
         ObjectFactory objectFactory = new ObjectFactory();
 
         AresDotazy aresDotazy = objectFactory.createAresDotazy();
@@ -29,7 +29,7 @@ public class AresRzpRequestFactory {
         aresDotazy.setVystupFormat(VystupFormat.XML);
         aresDotazy.setXslt(XsltKs.KLIENT);
         aresDotazy.setValidationXSLT("http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_request_orrg/v_1.0.0/ares_request_orrg.xsl");
-        aresDotazy.setUserMail("stuchlikova.pavla@post.cz");
+        aresDotazy.setUserMail(email);
         aresDotazy.setAnswerNamespaceRequired("http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_rzp/v_1.0.4");
         aresDotazy.setId("Ares_dotaz");
 

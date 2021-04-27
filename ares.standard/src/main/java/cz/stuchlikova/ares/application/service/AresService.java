@@ -59,7 +59,7 @@ public class AresService {
 
     //------------------------------------------------------------------------------------------
     private List<OdpovedRZP> getAresResponseRzp(@Valid Ico ico) throws DatatypeConfigurationException {
-        return rzpRepo.getOdpovedRZPList(aresRzpRequestFactory.createAresDotazyRZP(ico));
+        return rzpRepo.getOdpovedRZPList(aresRzpRequestFactory.createAresDotazyRZP(ico, properties.getEmail()));
     }
 
     private List<Odpoved> getResponseByIco(Ico ico) throws DatatypeConfigurationException {
