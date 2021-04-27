@@ -38,11 +38,27 @@ public class AresControllerUnitTest {
     }
 
     @Test
-    public void getResponseByFirmName() throws Exception {
+    public void getResponseByFirmName_happy_path() throws Exception {
         mockMvc.perform(get("/firma/?firma=Etnetera"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().json("[]"));
+    }
+
+    @Test
+    public void getRzpResponseByIco_happy_path() throws Exception {
+        mockMvc.perform(get("/predmet/?ico=27074358"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(content().json("[]"));
+    }
+
+    @Test
+    public void getRzpResponseByIco_bad_input() throws Exception {
+        mockMvc.perform(get("/predmet/?ico=bad_input"))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().contentType(MediaType.valueOf("text/plain;charset=UTF-8")))
+                .andExpect(content().string("Something happened: getRzpResponseByIco.ico.value: ICO must be of 8 digit"));
     }
 }
 
