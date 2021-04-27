@@ -18,11 +18,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 @SpringBootTest
-class AresOdpovediServiceTest {
+class AresServiceTest {
 
     @Autowired
-    AresOdpovediService service;
+    AresService service;
 
+    /*getDtoResponseByIco*/
     @Test
     void getDtoResponseByIco_happy_path() throws DatatypeConfigurationException {
         List<AresStandardResponseDto> dtos = service.getDtoResponseByIco(new Ico("27074358"));
@@ -46,6 +47,7 @@ class AresOdpovediServiceTest {
         });
     }
 
+    /*getDtoResponseByCompanyName*/
     @Test
     void getDtoResponseByCompanyName_happy_path() throws DatatypeConfigurationException {
         List<AresStandardResponseDto> dtos = service.getDtoResponseByCompanyName("Etnetera");
@@ -62,7 +64,7 @@ class AresOdpovediServiceTest {
         });
     }
 
-
+    /*getDtoRzpResponseByIco*/
     @Test
     void getDtoRzpResponseByIco_happy_path() throws DatatypeConfigurationException {
         List<AresRzpResponseDto> dtos = service.getDtoRzpResponseByIco(new Ico("27074358"));

@@ -1,6 +1,6 @@
 package cz.stuchlikova.ares.application.controller;
 
-import cz.stuchlikova.ares.application.service.AresOdpovediService;
+import cz.stuchlikova.ares.application.service.AresService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -19,7 +19,7 @@ public class AresControllerUnitTest {
     private MockMvc mockMvc;
 
     @MockBean
-    AresOdpovediService service;
+    AresService service;
 
     @Test
     public void getResponseByIco_happy_path() throws Exception {

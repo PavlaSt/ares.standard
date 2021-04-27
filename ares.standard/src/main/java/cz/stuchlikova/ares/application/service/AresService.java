@@ -19,7 +19,7 @@ import java.util.List;
 
 @Service
 @Validated
-public class AresOdpovediService {
+public class AresService {
 
     private final AresStandardTransformation aresStandardTransformation;
     private final AresRzpTransformation aresRzpTransformation;
@@ -35,7 +35,7 @@ public class AresOdpovediService {
     @Autowired
     ConfigProperties properties;
 
-    public AresOdpovediService() {
+    public AresService() {
         aresRzpTransformation = new AresRzpTransformation();
         aresRzpRequestFactory = new AresRzpRequestFactory();
         aresStandardRequestFactory = new AresStandardRequestFactory();

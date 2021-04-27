@@ -2,7 +2,7 @@ package cz.stuchlikova.ares.application.controller;
 
 import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
 import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
-import cz.stuchlikova.ares.application.service.AresOdpovediService;
+import cz.stuchlikova.ares.application.service.AresService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +17,7 @@ import java.util.List;
 public class AresController {
 
     @Autowired
-    private AresOdpovediService service;
+    private AresService service;
 
     @RequestMapping(value = "/predmet", method = RequestMethod.GET)
     public List<AresRzpResponseDto> getScopeOfBussiness(@Valid @RequestParam("ico") Ico ico)
