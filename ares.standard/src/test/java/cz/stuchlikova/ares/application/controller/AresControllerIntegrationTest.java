@@ -49,7 +49,7 @@ public class AresControllerIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$[0].ico").value("24133272"));
-        
+
 
     }
 
