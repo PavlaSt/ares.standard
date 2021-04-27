@@ -7,67 +7,23 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-//import static org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 public class AresControllerIntegrationTest {
 
-
     @Autowired
     private MockMvc mockMvc;
 
-    final String jsonIcoAnswer = "[{\"obchodniFirma\":\"Asseco Central Europe, a.s.\",\"ico\":\"27074358\",\"nazevUlice\":\"Budějovická\",\"cisloDomovni\":778,\"cisloOrientacni\":\"3a\",\"psc\":\"14000\",\"nazevObce\":\"Praha\",\"nazevCastiObce\":\"Michle\"}]";
-    final String jsonEtneteraAnswer = "[{\n" +
-            "        \"obchodniFirma\": \"Etnetera Group a.s.\",\n" +
-            "        \"ico\": \"24133272\",\n" +
-            "        \"nazevUlice\": \"Jankovcova\",\n" +
-            "        \"cisloDomovni\": 1037,\n" +
-            "        \"cisloOrientacni\": \"49\",\n" +
-            "        \"psc\": \"17000\",\n" +
-            "        \"nazevObce\": \"Praha\",\n" +
-            "        \"nazevCastiObce\": \"Holešovice\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "        \"obchodniFirma\": \"Etnetera a.s.\",\n" +
-            "        \"ico\": \"25103814\",\n" +
-            "        \"nazevUlice\": \"Jankovcova\",\n" +
-            "        \"cisloDomovni\": 1037,\n" +
-            "        \"cisloOrientacni\": \"49\",\n" +
-            "        \"psc\": \"17000\",\n" +
-            "        \"nazevObce\": \"Praha\",\n" +
-            "        \"nazevCastiObce\": \"Holešovice\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "        \"obchodniFirma\": \"Etnetera Activate a.s.\",\n" +
-            "        \"ico\": \"02713209\",\n" +
-            "        \"nazevUlice\": \"Jankovcova\",\n" +
-            "        \"cisloDomovni\": 1037,\n" +
-            "        \"cisloOrientacni\": \"49\",\n" +
-            "        \"psc\": \"17000\",\n" +
-            "        \"nazevObce\": \"Praha\",\n" +
-            "        \"nazevCastiObce\": \"Holešovice\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "        \"obchodniFirma\": \"Etnetera Motion s.r.o.\",\n" +
-            "        \"ico\": \"02832020\",\n" +
-            "        \"nazevUlice\": \"Jankovcova\",\n" +
-            "        \"cisloDomovni\": 1037,\n" +
-            "        \"cisloOrientacni\": \"49\",\n" +
-            "        \"psc\": \"17000\",\n" +
-            "        \"nazevObce\": \"Praha\",\n" +
-            "        \"nazevCastiObce\": \"Holešovice\"\n" +
-            "    }]";
 
     @Test
     public void getResponseByIco_happy_path() throws Exception {
         mockMvc.perform(get("/ico/?ico=27074358"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$[0].ico").value("27074358"))
-                .andExpect(content().json(jsonIcoAnswer));
+                .andExpect(jsonPath("$[0].ico").value("27074358"));
     }
 
     @Test
@@ -92,7 +48,8 @@ public class AresControllerIntegrationTest {
         mockMvc.perform(get("/firma/?firma=Etnetera"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(content().json(jsonEtneteraAnswer));
+                .andExpect(jsonPath("$[0].ico").value("24133272"));
+        
 
     }
 
