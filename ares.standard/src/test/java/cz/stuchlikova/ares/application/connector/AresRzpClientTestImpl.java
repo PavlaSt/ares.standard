@@ -15,7 +15,7 @@ import java.io.InputStream;
 
 @Component
 @Primary
-@Qualifier("rzp")
+
 public class AresRzpClientTestImpl implements AresClient<AresOdpovedi, AresDotazy> {
 
 

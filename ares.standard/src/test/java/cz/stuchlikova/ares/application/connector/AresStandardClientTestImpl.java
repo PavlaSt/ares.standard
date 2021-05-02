@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @Component
 @Primary
-@Qualifier("standard")
+
 
 public class AresStandardClientTestImpl implements AresClient<AresOdpovedi, AresDotazy> {
 
@@ -30,7 +30,7 @@ public class AresStandardClientTestImpl implements AresClient<AresOdpovedi, Ares
             String companyName = request.getDotaz().get(0).getKlicovePolozky().getObchodniFirma();
             url = "src/test/resources/getDtoresponseByCompanyName/firma=" + companyName + ".xml";
         }
-        System.out.println(url);
+
         File answer = new File(url);
         try {
             InputStream xmlResult = new FileInputStream(answer);
