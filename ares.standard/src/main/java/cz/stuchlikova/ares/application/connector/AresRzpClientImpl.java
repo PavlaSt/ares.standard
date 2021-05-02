@@ -3,7 +3,6 @@ package cz.stuchlikova.ares.application.connector;
 import cz.stuchlikova.ares.application.configuration.ConfigProperties;
 import cz.stuchlikova.ares.application.stub.rzp.AresDotazy;
 import cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import javax.xml.bind.JAXB;
@@ -21,7 +20,7 @@ public class AresRzpClientImpl extends ClientBase implements AresClient<AresOdpo
 
     @Override
     public AresOdpovedi getAresResponse(AresDotazy request) {
-        String url = properties.getUrl();
+        String url = properties.getRzpProperties().getUrl();
         String xmlRequest = marshalInputToXml(request);
         String xmlResult = sendSourceReceiveResult(url, xmlRequest);
         return unmarshalStringToObjectRZP(xmlResult);

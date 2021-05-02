@@ -12,8 +12,7 @@ import java.io.StringReader;
 @Component
 public class AresStandardClientImpl extends ClientBase implements AresClient<AresOdpovedi, AresDotazy> {
 
-    final
-    ConfigProperties properties;
+    final ConfigProperties properties;
 
     public AresStandardClientImpl(ConfigProperties properties) {
         this.properties = properties;
@@ -21,7 +20,7 @@ public class AresStandardClientImpl extends ClientBase implements AresClient<Are
 
     @Override
     public AresOdpovedi getAresResponse(AresDotazy request) {
-        String url = properties.getUrl();
+        String url = properties.getStandardProperties().getUrl();
         String xmlRequest = marshalInputToXml(request);
         String xmlResult = sendSourceReceiveResult(url, xmlRequest);
         return unmarshalStringToObject(xmlResult);

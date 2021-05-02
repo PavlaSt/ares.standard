@@ -8,40 +8,64 @@ import org.springframework.stereotype.Component;
 @Configuration
 @ConfigurationProperties(prefix = "app")
 public class ConfigProperties {
-    private String url;
-    private String email;
-    private Integer maxPocet;
+
+    AresClientProperties standardProperties;
+    AresClientProperties rzpProperties;
 
     public ConfigProperties() {
     }
 
-    public ConfigProperties(String url, String email, Integer maxPocet) {
-        this.url = url;
-        this.email = email;
-        this.maxPocet = maxPocet;
+    public ConfigProperties(AresClientProperties standardProperties, AresClientProperties rzpProperties) {
+        this.standardProperties = standardProperties;
+        this.rzpProperties = rzpProperties;
     }
 
-    public String getUrl() {
-        return url;
+    public AresClientProperties getStandardProperties() {
+        return standardProperties;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setStandardProperties(AresClientProperties standardProperties) {
+        this.standardProperties = standardProperties;
     }
 
-    public String getEmail() {
-        return email;
+    public AresClientProperties getRzpProperties() {
+        return rzpProperties;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setRzpProperties(AresClientProperties rzpProperties) {
+        this.rzpProperties = rzpProperties;
     }
 
-    public Integer getMaxPocet() {
-        return maxPocet;
-    }
+    public static class AresClientProperties {
+        String url;
+        String email;
+        Integer maxPocet;
 
-    public void setMaxPocet(Integer maxPocet) {
-        this.maxPocet = maxPocet;
+        public AresClientProperties() {
+        }
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public Integer getMaxPocet() {
+            return maxPocet;
+        }
+
+        public void setMaxPocet(Integer maxPocet) {
+            this.maxPocet = maxPocet;
+        }
     }
 }
