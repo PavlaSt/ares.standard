@@ -32,7 +32,7 @@ public class AresControllerUnitTest {
     @Test
     public void getResponseByIco_bad_input() throws Exception {
         mockMvc.perform(get("/ico/?ico=bad_input"))
-                .andExpect(status().isBadRequest())
+                .andExpect(status().isNotAcceptable())
                 .andExpect(content().contentType(MediaType.valueOf("text/plain;charset=UTF-8")))
                 .andExpect(content().string("Something happened: getResponseByIco.ico.value: ICO must be of 8 digit"));
     }
@@ -56,7 +56,7 @@ public class AresControllerUnitTest {
     @Test
     public void getRzpResponseByIco_bad_input() throws Exception {
         mockMvc.perform(get("/predmet/?ico=bad_input"))
-                .andExpect(status().isBadRequest())
+                .andExpect(status().isNotAcceptable())
                 .andExpect(content().contentType(MediaType.valueOf("text/plain;charset=UTF-8")))
                 .andExpect(content().string("Something happened: getRzpResponseByIco.ico.value: ICO must be of 8 digit"));
     }

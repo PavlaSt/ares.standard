@@ -12,7 +12,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<String> onValidationError(Exception ex) {
-        return new ResponseEntity<>("Something happened: " + ex.getMessage(), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>("Something happened: " + ex.getMessage(), HttpStatus.NOT_ACCEPTABLE);
     }
 
     @ExceptionHandler(RecordNotFoundException.class)
