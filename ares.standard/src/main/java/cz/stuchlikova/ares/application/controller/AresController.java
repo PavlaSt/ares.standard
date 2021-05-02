@@ -1,11 +1,13 @@
 package cz.stuchlikova.ares.application.controller;
 
-import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
 import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
+import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
 import cz.stuchlikova.ares.application.service.AresService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -16,12 +18,15 @@ import java.util.List;
 
 public class AresController {
 
-    @Autowired
-    private AresService service;
+    private final AresService service;
+
+    public AresController(AresService service) {
+        this.service = service;
+    }
 
     @RequestMapping(value = "/predmet", method = RequestMethod.GET)
     public List<AresRzpResponseDto> getRzpResponseByIco(@Valid @RequestParam("ico") Ico ico)
-            throws DatatypeConfigurationException{
+            throws DatatypeConfigurationException {
         return service.getDtoRzpResponseByIco(ico);
     }
 
@@ -35,4 +40,4 @@ public class AresController {
     public List<AresStandardResponseDto> getResponseByFirmName(@RequestParam String firma) throws DatatypeConfigurationException {
         return service.getDtoResponseByCompanyName(firma);
     }
-    }
+}

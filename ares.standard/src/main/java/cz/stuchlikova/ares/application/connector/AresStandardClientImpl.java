@@ -3,7 +3,6 @@ package cz.stuchlikova.ares.application.connector;
 import cz.stuchlikova.ares.application.configuration.ConfigProperties;
 import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
 import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
@@ -11,12 +10,16 @@ import javax.xml.bind.JAXB;
 import java.io.StringReader;
 
 @Component
-@Qualifier("standard")
 public class AresStandardClientImpl extends ClientBase implements AresClient<AresOdpovedi, AresDotazy> {
 
-    @Autowired
+    final
     ConfigProperties properties;
 
+    public AresStandardClientImpl(ConfigProperties properties) {
+        this.properties = properties;
+    }
+
+    @Override
     public AresOdpovedi getAresResponse(AresDotazy request) {
         String url = properties.getUrl();
         String xmlRequest = marshalInputToXml(request);
