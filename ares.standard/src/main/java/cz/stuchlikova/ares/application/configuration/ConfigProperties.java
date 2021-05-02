@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Configuration
-@ConfigurationProperties(prefix = "standard")
+@ConfigurationProperties(prefix = "app")
 public class ConfigProperties {
     private String url;
     private String email;
