@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.validation.ConstraintViolationException;
+import java.io.FileNotFoundException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -18,6 +19,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(RecordNotFoundException.class)
     public ResponseEntity<String> notFoundError(Exception ex) {
         return new ResponseEntity<>("Something happened: " + ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(FileNotFoundException.class)
+    public ResponseEntity<String> fileNotFoundError(Exception ex) {
+        return new ResponseEntity<>("Something happened: " + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 }
