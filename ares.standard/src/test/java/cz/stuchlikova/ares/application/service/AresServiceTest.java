@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import javax.validation.ConstraintViolationException;
 import javax.xml.datatype.DatatypeConfigurationException;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -37,6 +38,13 @@ class AresServiceTest {
     void getDtoResponseByIco_non_existing() {
         Assertions.assertThrows(RecordNotFoundException.class, () -> {
             List<AresStandardResponseDto> dtos = service.getDtoResponseByIco(new Ico("12345678"));
+        });
+    }
+
+    @Test
+    void getDtoResponseByIco_non_existing_file_() {
+        Assertions.assertThrows(FileNotFoundException.class, () -> {
+            List<AresStandardResponseDto> dtos = service.getDtoResponseByIco(new Ico("87654321"));
         });
     }
 
