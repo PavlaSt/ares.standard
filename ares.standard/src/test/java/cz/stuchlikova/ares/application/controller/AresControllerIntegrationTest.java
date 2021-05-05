@@ -44,6 +44,14 @@ public class AresControllerIntegrationTest {
     }
 
     @Test
+    public void getDtoResponseByIco_non_existing_file() throws Exception {
+        mockMvc.perform(get("/ico/?ico=87654321"))
+                .andExpect(status().isNotExtended())
+                .andExpect(content().contentType(MediaType.valueOf("text/plain;charset=UTF-8")))
+                .andExpect(content().string("Something happened: Resource not found"));
+    }
+
+    @Test
     public void getResponseByFirmName() throws Exception {
         mockMvc.perform(get("/firma/?firma=Etnetera"))
                 .andExpect(status().isOk())

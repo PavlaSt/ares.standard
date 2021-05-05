@@ -4,6 +4,7 @@ import cz.stuchlikova.ares.application.controller.Ico;
 import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
 import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
 import cz.stuchlikova.ares.application.exceptions.RecordNotFoundException;
+import cz.stuchlikova.ares.application.exceptions.ResourceNotFoundException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,8 +43,8 @@ class AresServiceTest {
     }
 
     @Test
-    void getDtoResponseByIco_non_existing_file_() {
-        Assertions.assertThrows(FileNotFoundException.class, () -> {
+    void getDtoResponseByIco_non_existing_file() {
+        Assertions.assertThrows(ResourceNotFoundException.class, () -> {
             List<AresStandardResponseDto> dtos = service.getDtoResponseByIco(new Ico("87654321"));
         });
     }
