@@ -21,9 +21,10 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>("Something happened: " + ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(FileNotFoundException.class)
-    public ResponseEntity<String> fileNotFoundError(Exception ex) {
-        return new ResponseEntity<>("Something happened: " + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    @ExceptionHandler(MyAbstractException.class)
+    public ResponseEntity<String> fileNotFoundError(MyAbstractException ex) {
+        return new ResponseEntity<>("Something happened: " + ex.getMessage(),
+                ex.getDescription().getStatus());
     }
 
 }

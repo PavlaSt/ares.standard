@@ -1,5 +1,7 @@
 package cz.stuchlikova.ares.application.connector;
 
+import cz.stuchlikova.ares.application.exceptions.ResourceNotFoundException;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,8 +16,7 @@ public abstract class ClientBaseTest<O> {
             return unmarshalStringToObject(xmlResult);
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return null;
+            throw new ResourceNotFoundException("Resource not found");
         }
     }
 
