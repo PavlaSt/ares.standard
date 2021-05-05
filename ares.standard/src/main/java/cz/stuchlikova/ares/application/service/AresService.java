@@ -43,6 +43,7 @@ public class AresService {
         counter = new AtomicLong();
     }
 
+    @Cacheable("rzp")
     public List<AresRzpResponseDto> getDtoRzpResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
         long count = counter.incrementAndGet();
         if (count > 2) {
@@ -52,13 +53,14 @@ public class AresService {
         return aresRzpTransformation.transformResponseRzpToDto(responsesRZP);
     }
 
-    @Cacheable("responses")
+    @Cacheable("responses-by-ico")
     public List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
         System.out.println("dto");
         List<Odpoved> responses = getResponseByIco(ico);
         return aresStandardTransformation.transformResponseToDto(responses);
     }
 
+    @Cacheable("responses-by-company")
     public List<AresStandardResponseDto> getDtoResponseByCompanyName(String companyName) throws DatatypeConfigurationException {
         List<Odpoved> responses = getResponseByCompanyName(companyName);
         return aresStandardTransformation.transformResponseToDto(responses);
