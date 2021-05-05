@@ -12,12 +12,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.validation.ConstraintViolationException;
 import javax.xml.datatype.DatatypeConfigurationException;
-
-import java.io.FileNotFoundException;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.containsStringIgnoringCase;
+import static org.hamcrest.Matchers.equalTo;
 
 @SpringBootTest
 class AresServiceTest {
