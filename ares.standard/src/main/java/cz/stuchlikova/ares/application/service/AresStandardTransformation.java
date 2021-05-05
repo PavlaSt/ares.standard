@@ -15,9 +15,9 @@ public class AresStandardTransformation {
 
     public List<AresStandardResponseDto> transformResponseToDto(List<Odpoved> responses) {
 
-        if (responses.get(0).getPocetZaznamu() == 0) {
+        /*if (responses.get(0).getPocetZaznamu() == 0) {
             throw new RecordNotFoundException("There are no records for this query");
-        }
+        }*/
         return responses.stream()
                 .map(Odpoved::getZaznam)
                 .flatMap(Collection::stream)

@@ -9,25 +9,28 @@ import cz.stuchlikova.ares.application.repository.AresStandardRepo;
 import cz.stuchlikova.ares.application.stub.rzp.OdpovedRZP;
 import cz.stuchlikova.ares.application.stub.standard.KlicovePolozky;
 import cz.stuchlikova.ares.application.stub.standard.Odpoved;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
 import javax.xml.datatype.DatatypeConfigurationException;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 @Service
 @Validated
 public class AresService {
 
-    final
-    ConfigProperties properties;
+    final ConfigProperties properties;
+    final AresStandardRequestFactory aresStandardRequestFactory;
+    final AresRzpRequestFactory aresRzpRequestFactory;
+    final AresStandardRepo standardRepo;
     private final AresStandardTransformation aresStandardTransformation;
     private final AresRzpTransformation aresRzpTransformation;
-    private final AresStandardRequestFactory aresStandardRequestFactory;
-    private final AresRzpRequestFactory aresRzpRequestFactory;
-    private final AresStandardRepo standardRepo;
     private final AresRzpRepo rzpRepo;
+
+    private final AtomicLong counter;
 
     public AresService(ConfigProperties properties, AresRzpRepo rzpRepo, AresStandardRepo standardRepo) {
         aresRzpTransformation = new AresRzpTransformation();
@@ -37,15 +40,21 @@ public class AresService {
         this.properties = properties;
         this.rzpRepo = rzpRepo;
         this.standardRepo = standardRepo;
+        counter = new AtomicLong();
     }
 
     public List<AresRzpResponseDto> getDtoRzpResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
+        long count = counter.incrementAndGet();
+        if (count > 2) {
+            System.out.println("exceeded limit");
+        }
         List<OdpovedRZP> responsesRZP = getAresResponseRzp(ico);
         return aresRzpTransformation.transformResponseRzpToDto(responsesRZP);
     }
 
     @Cacheable("responses")
     public List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
+        System.out.println("dto");
         List<Odpoved> responses = getResponseByIco(ico);
         return aresStandardTransformation.transformResponseToDto(responses);
     }
@@ -55,14 +64,15 @@ public class AresService {
         return aresStandardTransformation.transformResponseToDto(responses);
     }
 
-    //------------------------------------------------------------------------------------------
+
     private List<OdpovedRZP> getAresResponseRzp(@Valid Ico ico) throws DatatypeConfigurationException {
         return rzpRepo.getOdpovedRZPList(aresRzpRequestFactory
                 .createAresDotazyRZP(ico, properties.getRzpProperties().getEmail()));
     }
 
-    private List<Odpoved> getResponseByIco(Ico ico) throws DatatypeConfigurationException {
+    List<Odpoved> getResponseByIco(Ico ico) throws DatatypeConfigurationException {
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyIco(ico);
+        System.out.println("response");
         return standardRepo.getOdpovedList(aresStandardRequestFactory
                 .createAresDotazy(polozky,
                         properties.getStandardProperties().getEmail(),
