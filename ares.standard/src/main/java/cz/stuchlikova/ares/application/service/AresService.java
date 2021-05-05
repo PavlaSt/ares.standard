@@ -44,6 +44,7 @@ public class AresService {
         return aresRzpTransformation.transformResponseRzpToDto(responsesRZP);
     }
 
+    @Cacheable("responses")
     public List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
         List<Odpoved> responses = getResponseByIco(ico);
         return aresStandardTransformation.transformResponseToDto(responses);
