@@ -4,6 +4,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalTime;
+
 @Component
 @Configuration
 @ConfigurationProperties(prefix = "app")
@@ -11,6 +13,11 @@ public class ConfigProperties {
 
     AresClientProperties standardProperties;
     AresClientProperties rzpProperties;
+    long lowerLimit;
+    long upperLimit;
+    LocalTime earlierTime;
+    LocalTime laterTime;
+
 
     public ConfigProperties() {
     }
@@ -28,6 +35,38 @@ public class ConfigProperties {
         this.standardProperties = standardProperties;
     }
 
+    public long getLowerLimit() {
+        return lowerLimit;
+    }
+
+    public void setLowerLimit(long lowerLimit) {
+        this.lowerLimit = lowerLimit;
+    }
+
+    public long getUpperLimit() {
+        return upperLimit;
+    }
+
+    public void setUpperLimit(long upperLimit) {
+        this.upperLimit = upperLimit;
+    }
+
+    public LocalTime getEarlierTime() {
+        return earlierTime;
+    }
+
+    public void setEarlierTime(LocalTime earlierTime) {
+        this.earlierTime = earlierTime;
+    }
+
+    public LocalTime getLaterTime() {
+        return laterTime;
+    }
+
+    public void setLaterTime(LocalTime laterTime) {
+        this.laterTime = laterTime;
+    }
+
     public AresClientProperties getRzpProperties() {
         return rzpProperties;
     }
@@ -43,6 +82,7 @@ public class ConfigProperties {
 
         public AresClientProperties() {
         }
+
 
         public String getUrl() {
             return url;
