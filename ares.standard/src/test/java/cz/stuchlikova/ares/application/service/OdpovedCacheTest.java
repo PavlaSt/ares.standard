@@ -17,7 +17,7 @@ public class OdpovedCacheTest {
     void getResponseById_forMultipleRequests_isRetrievedFromCache() throws DatatypeConfigurationException {
         //given
         Ico ico = new Ico("27074358");
-        Ico ico2 = new Ico("12345678");
+        Ico ico2 = new Ico("24133272");
 
         //when
         System.out.println(1);
@@ -25,16 +25,18 @@ public class OdpovedCacheTest {
 
         System.out.println(2);
         System.out.println(service.getDtoResponseByIco(ico).get(0).getIco());
-        //service.getDtoResponseByIco(ico);
 
         System.out.println(3);
         service.getDtoResponseByIco(ico);
+        System.out.println(service.getDtoResponseByIco(ico).get(0).getIco());
 
         System.out.println(4);
         service.getDtoResponseByIco(ico);
+        System.out.println(service.getDtoResponseByIco(ico).get(0).getIco());
 
         System.out.println(5);
         service.getDtoResponseByIco(ico2);
+        System.out.println(service.getDtoResponseByIco(ico).get(0).getIco());
 
         //then
 

@@ -1,7 +1,5 @@
 package cz.stuchlikova.ares.application.repository;
 
-//import cz.stuchlikova.ares.application.connector.AresClient;
-
 import cz.stuchlikova.ares.application.connector.AresClient;
 import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
 import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;
@@ -22,7 +20,6 @@ public class AresStandardRepo {
 
 
     public List<Odpoved> getOdpovedList(AresDotazy aresDotazy) {
-        System.out.println("!!!");
         AresOdpovedi response = client.getAresResponse(aresDotazy);
         return response.getOdpoved();
     }
