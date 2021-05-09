@@ -109,6 +109,15 @@ public class AresService {
         if (count > limit) {
             throw new ApiRateExceededException("Too many API requests");
         }
+
+        /*if (now.isAfter(properties.getStandardProperties().getEarlierTime()) && now.isBefore(properties.getStandardProperties().getLaterTime())) {
+            limit = properties.getStandardProperties().getLowerLimit();
+        } else {
+            limit = properties.getStandardProperties().getUpperLimit();
+        }
+        if (count > limit) {
+            throw new ApiRateExceededException("Too many API requests");
+        }*/
     }
 
     @Scheduled(cron = "0 0 8 * * ?")
