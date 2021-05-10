@@ -6,8 +6,8 @@ public class MyAbstractException extends RuntimeException{
     private final ErrorDescription description;
 
     public static class ErrorDescription {
-        private HttpStatus status;
-        private String description;
+        private final HttpStatus status;
+        private final String description;
 
         public ErrorDescription(HttpStatus status, String description) {
             this.status = status;
