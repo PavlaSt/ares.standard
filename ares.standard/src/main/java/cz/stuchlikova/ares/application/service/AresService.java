@@ -55,21 +55,21 @@ public class AresService {
     }
 
     @Cacheable("responses-by-ico")
-    public List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
+    public synchronized List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
         checkRateLimit();
         List<Odpoved> responses = getResponseByIco(ico);
         return aresStandardTransformation.transformResponseToDto(responses);
     }
 
     @Cacheable("responses-by-company")
-    public List<AresStandardResponseDto> getDtoResponseByCompanyName(Firma companyName) throws DatatypeConfigurationException {
+    public synchronized List<AresStandardResponseDto> getDtoResponseByCompanyName(Firma companyName) throws DatatypeConfigurationException {
         checkRateLimit();
         List<Odpoved> responses = getResponseByCompanyName(companyName);
         return aresStandardTransformation.transformResponseToDto(responses);
     }
 
     @Cacheable("rzp")
-    public List<AresRzpResponseDto> getDtoRzpResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
+    public synchronized List<AresRzpResponseDto> getDtoRzpResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
         checkRateLimit();
         List<OdpovedRZP> responsesRZP = getAresResponseRzp(ico);
         return aresRzpTransformation.transformResponseRzpToDto(responsesRZP);
