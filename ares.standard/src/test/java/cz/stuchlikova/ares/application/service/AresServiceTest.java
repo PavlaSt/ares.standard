@@ -1,5 +1,6 @@
 package cz.stuchlikova.ares.application.service;
 
+import cz.stuchlikova.ares.application.controller.Firma;
 import cz.stuchlikova.ares.application.controller.Ico;
 import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
 import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
@@ -58,7 +59,7 @@ class AresServiceTest {
     /*getDtoResponseByCompanyName*/
     @Test
     void getDtoResponseByCompanyName_happy_path() throws DatatypeConfigurationException {
-        List<AresStandardResponseDto> dtos = service.getDtoResponseByCompanyName("Etnetera");
+        List<AresStandardResponseDto> dtos = service.getDtoResponseByCompanyName(new Firma("Etnetera"));
 
         assertThat(dtos.size(), equalTo(4));
         assertThat(dtos.get(0).getObchodniFirma(), containsStringIgnoringCase("Etnetera"));
@@ -68,7 +69,7 @@ class AresServiceTest {
     @Test
     void getDtoResponseByCompanyName_non_existing() {
         Assertions.assertThrows(RecordNotFoundException.class, () -> {
-            List<AresStandardResponseDto> dtos = service.getDtoResponseByCompanyName("QQQQQ");
+            List<AresStandardResponseDto> dtos = service.getDtoResponseByCompanyName(new Firma("QQQQQ"));
         });
     }
 

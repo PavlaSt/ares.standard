@@ -1,5 +1,6 @@
 package cz.stuchlikova.ares.application.service;
 
+import cz.stuchlikova.ares.application.controller.Firma;
 import cz.stuchlikova.ares.application.controller.Ico;
 import cz.stuchlikova.ares.application.stub.standard.*;
 
@@ -52,9 +53,9 @@ public class AresStandardRequestFactory {
         return polozky;
     }
 
-    public KlicovePolozky createAndSetPolozkyCompanyName(String companyName) {
+    public KlicovePolozky createAndSetPolozkyCompanyName(Firma companyName) {
         KlicovePolozky polozky = objectFactory.createKlicovePolozky();
-        polozky.setObchodniFirma(companyName);
+        polozky.setObchodniFirma(companyName.getValue());
         return polozky;
     }
 

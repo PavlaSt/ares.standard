@@ -18,7 +18,6 @@ public class AresStandardRepo {
     }
 
 
-
     public List<Odpoved> getOdpovedList(AresDotazy aresDotazy) {
         AresOdpovedi response = client.getAresResponse(aresDotazy);
         return response.getOdpoved();

@@ -1,6 +1,7 @@
 package cz.stuchlikova.ares.application.service;
 
 import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
+import cz.stuchlikova.ares.application.exceptions.MaxNumberExceeded;
 import cz.stuchlikova.ares.application.exceptions.RecordNotFoundException;
 import cz.stuchlikova.ares.application.stub.standard.AdresaARES2;
 import cz.stuchlikova.ares.application.stub.standard.Identifikace;
@@ -15,9 +16,8 @@ public class AresStandardTransformation {
 
     public List<AresStandardResponseDto> transformResponseToDto(List<Odpoved> responses) {
 
-        if (responses.get(0).getPocetZaznamu() == 0) {
-            throw new RecordNotFoundException("There are no records for this query");
-        }
+        checkResponses(responses);
+
         return responses.stream()
                 .map(Odpoved::getZaznam)
                 .flatMap(Collection::stream)
@@ -39,5 +39,14 @@ public class AresStandardTransformation {
 
         return new AresStandardResponseDto(obchodniFirma, ico, nazevUlice, cisloDomovni,
                 cisloOrientacni, psc, nazevObce, nazevCastiObce);
+    }
+
+    private void checkResponses(List<Odpoved> responses) {
+        if (responses.get(0).getPocetZaznamu() == 0) {
+            throw new RecordNotFoundException("There are no records for this query");
+        }
+        if (responses.get(0).getPocetZaznamu() == -1) {
+            throw new MaxNumberExceeded("the allowed number of returned subjects has been exceeded: \n" + responses.get(0).getError().get(0).getErrorText());
+        }
     }
 }

@@ -1,6 +1,7 @@
 package cz.stuchlikova.ares.application.service;
 
 import cz.stuchlikova.ares.application.configuration.ConfigProperties;
+import cz.stuchlikova.ares.application.controller.Firma;
 import cz.stuchlikova.ares.application.controller.Ico;
 import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
 import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
@@ -61,7 +62,7 @@ public class AresService {
     }
 
     @Cacheable("responses-by-company")
-    public List<AresStandardResponseDto> getDtoResponseByCompanyName(String companyName) throws DatatypeConfigurationException {
+    public List<AresStandardResponseDto> getDtoResponseByCompanyName(Firma companyName) throws DatatypeConfigurationException {
         checkRateLimit();
         List<Odpoved> responses = getResponseByCompanyName(companyName);
         return aresStandardTransformation.transformResponseToDto(responses);
@@ -83,7 +84,7 @@ public class AresService {
                         properties.getStandardProperties().getMaxPocet()));
     }
 
-    private List<Odpoved> getResponseByCompanyName(String companyName) throws DatatypeConfigurationException {
+    private List<Odpoved> getResponseByCompanyName(Firma companyName) throws DatatypeConfigurationException {
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyCompanyName(companyName);
         return standardRepo.getOdpovedList(aresStandardRequestFactory
                 .createAresDotazy(polozky,

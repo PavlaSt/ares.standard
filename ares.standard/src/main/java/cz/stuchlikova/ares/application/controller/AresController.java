@@ -37,7 +37,7 @@ public class AresController {
     }
 
     @RequestMapping(value = "/firma", method = RequestMethod.GET)
-    public List<AresStandardResponseDto> getResponseByFirmName(@RequestParam String firma) throws DatatypeConfigurationException {
+    public List<AresStandardResponseDto> getResponseByFirmName(@Valid @RequestParam Firma firma) throws DatatypeConfigurationException {
         return service.getDtoResponseByCompanyName(firma);
     }
 }
