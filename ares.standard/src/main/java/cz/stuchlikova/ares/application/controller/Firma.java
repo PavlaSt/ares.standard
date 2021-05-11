@@ -8,7 +8,7 @@ import java.util.Objects;
 
 @ResponseStatus(value =  HttpStatus.BAD_REQUEST)
 public class Firma {
-    @Pattern(regexp = ".{3,254}[/*]?", message = "Firma has to be minimum 3, maximum 254 letters or digits")
+    @Pattern(regexp = ".{3,254}[/*]?", message = "Firma has to be minimum 3, maximum 254 characters")
     private String value;
 
     public Firma() {
