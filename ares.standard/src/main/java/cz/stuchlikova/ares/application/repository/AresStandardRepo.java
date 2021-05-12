@@ -4,6 +4,7 @@ import cz.stuchlikova.ares.application.configuration.ConfigProperties;
 import cz.stuchlikova.ares.application.connector.AresClient;
 import cz.stuchlikova.ares.application.controller.Firma;
 import cz.stuchlikova.ares.application.controller.Ico;
+import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
 import cz.stuchlikova.ares.application.service.AresStandardRequestFactory;
 import cz.stuchlikova.ares.application.service.AresStandardTransformation;
 import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
@@ -55,4 +56,7 @@ public class AresStandardRepo {
         return response.getOdpoved();
     }
 
+    public List<AresStandardResponseDto> transformResponseToDto(List<Odpoved> responses) {
+        return aresStandardTransformation.transformResponseToDto(responses);
+    }
 }

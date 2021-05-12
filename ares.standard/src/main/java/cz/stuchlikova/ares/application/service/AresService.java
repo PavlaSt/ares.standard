@@ -30,8 +30,6 @@ public class AresService {
 
     final ConfigProperties properties;
     final AresStandardRepo standardRepo;
-    private final AresStandardTransformation aresStandardTransformation;
-    private final AresRzpTransformation aresRzpTransformation;
     private final AresRzpRepo rzpRepo;
 
     private final AtomicLong counter;
@@ -41,8 +39,6 @@ public class AresService {
 
 
     public AresService(ConfigProperties properties, AresRzpRepo rzpRepo, AresStandardRepo standardRepo) {
-        aresRzpTransformation = new AresRzpTransformation();
-        aresStandardTransformation = new AresStandardTransformation();
         this.properties = properties;
         this.rzpRepo = rzpRepo;
         this.standardRepo = standardRepo;
@@ -53,21 +49,21 @@ public class AresService {
     public synchronized List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
         checkRateLimit();
         List<Odpoved> responses = standardRepo.getResponseByIco(ico);
-        return aresStandardTransformation.transformResponseToDto(responses);
+        return standardRepo.transformResponseToDto(responses);
     }
 
     @Cacheable("responses-by-company")
     public synchronized List<AresStandardResponseDto> getDtoResponseByCompanyName(Firma companyName) throws DatatypeConfigurationException {
         checkRateLimit();
         List<Odpoved> responses = standardRepo.getResponseByCompanyName(companyName);
-        return aresStandardTransformation.transformResponseToDto(responses);
+        return standardRepo.transformResponseToDto(responses);
     }
 
     @Cacheable("rzp")
     public synchronized List<AresRzpResponseDto> getDtoRzpResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
         checkRateLimit();
         List<OdpovedRZP> responsesRZP = rzpRepo.getRzpResponse(ico);
-        return aresRzpTransformation.transformResponseRzpToDto(responsesRZP);
+        return rzpRepo.transformResponseRzpToDto(responsesRZP);
     }
 
     private void checkRateLimit() {
