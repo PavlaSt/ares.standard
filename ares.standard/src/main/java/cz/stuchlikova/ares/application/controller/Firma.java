@@ -5,7 +5,7 @@ import java.util.Objects;
 
 
 public class Firma {
-    @Pattern(regexp = ".{3,254}[/*]?", message = "Firma has to be minimum 3, maximum 254 characters")
+    @Pattern(regexp = ".{1,254}[/*]?", message = "Firma has to be minimum 1, maximum 254 characters")
     private String value;
 
     public Firma() {
@@ -37,6 +37,9 @@ public class Firma {
     }
 
     /*Obchodní firma
+
+    @see https://wwwinfo.mfcr.cz/ares/ares_es_help.html.cz
+
 Toto pole slouží k zadání názvu subjektu, pod kterým subjekt vystupuje (obchodní firma, název podnikatele).
  Maximální počet zadávaných znaků je 254. Nerozlišuje se mezi zadáním velkých a malých písmen abecedy.
 
