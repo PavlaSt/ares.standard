@@ -2,6 +2,7 @@ package cz.stuchlikova.ares.application.service;
 
 import cz.stuchlikova.ares.application.controller.Firma;
 import cz.stuchlikova.ares.application.controller.Ico;
+import cz.stuchlikova.ares.application.exceptions.ChangeToXmlGregCalendarFailedException;
 import cz.stuchlikova.ares.application.stub.standard.*;
 
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -19,7 +20,7 @@ public class AresStandardRequestFactory {
         this.objectFactory = new ObjectFactory();
     }
 
-    public AresDotazy createAresDotazy(KlicovePolozky polozky, String email, Integer maxPocet) throws DatatypeConfigurationException {
+    public AresDotazy createAresDotazy(KlicovePolozky polozky, String email, Integer maxPocet) {
 
         AresDotazy aresDotazy = objectFactory.createAresDotazy();
         Dotaz dotaz = objectFactory.createDotaz();
@@ -27,7 +28,15 @@ public class AresStandardRequestFactory {
         //LocalDate to xmlGregorianCalendar
         LocalDate date = LocalDate.now();
         GregorianCalendar gcal = GregorianCalendar.from(date.atStartOfDay(ZoneId.systemDefault()));
-        XMLGregorianCalendar xcal = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
+
+        XMLGregorianCalendar xcal;
+        try {
+            xcal = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
+        } catch (DatatypeConfigurationException e) {
+            throw new ChangeToXmlGregCalendarFailedException("Conversion of GregorianCalendar data type to " +
+                    "XmlGregorianCalendar failed" + e.getMessage());
+        }
+
 
         aresDotazy.setDotazDatumCas(xcal);
         aresDotazy.setDotazPocet(1);

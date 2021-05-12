@@ -25,19 +25,17 @@ public class AresController {
     }
 
     @RequestMapping(value = "/predmet", method = RequestMethod.GET)
-    public List<AresRzpResponseDto> getRzpResponseByIco(@Valid @RequestParam("ico") Ico ico)
-            throws DatatypeConfigurationException {
+    public List<AresRzpResponseDto> getRzpResponseByIco(@Valid @RequestParam("ico") Ico ico) {
         return service.getDtoRzpResponseByIco(ico);
     }
 
     @RequestMapping(value = "/ico", method = RequestMethod.GET)
-    public List<AresStandardResponseDto> getResponseByIco(@Valid @RequestParam("ico") Ico ico)
-            throws DatatypeConfigurationException {
+    public List<AresStandardResponseDto> getResponseByIco(@Valid @RequestParam("ico") Ico ico) {
         return service.getDtoResponseByIco(ico);
     }
 
     @RequestMapping(value = "/firma", method = RequestMethod.GET)
-    public List<AresStandardResponseDto> getResponseByFirmName(@Valid @RequestParam Firma firma) throws DatatypeConfigurationException {
+    public List<AresStandardResponseDto> getResponseByFirmName(@Valid @RequestParam Firma firma) {
         return service.getDtoResponseByCompanyName(firma);
     }
 }

@@ -34,7 +34,7 @@ public class AresRzpRepo {
         aresRzpTransformation = new AresRzpTransformation();
     }
 
-    public List<OdpovedRZP> getRzpResponse(@Valid Ico ico) throws DatatypeConfigurationException {
+    public List<OdpovedRZP> getRzpResponse(@Valid Ico ico) {
         return getOdpovedRZPList(aresRzpRequestFactory
                 .createAresDotazyRZP(ico, properties.getRzpProperties().getEmail()));
     }

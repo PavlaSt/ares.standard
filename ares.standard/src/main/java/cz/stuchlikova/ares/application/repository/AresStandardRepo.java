@@ -34,7 +34,7 @@ public class AresStandardRepo {
     }
 
 
-    public List<Odpoved> getResponseByIco(Ico ico) throws DatatypeConfigurationException {
+    public List<Odpoved> getResponseByIco(Ico ico) {
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyIco(ico);
         return getOdpovedList(aresStandardRequestFactory
                 .createAresDotazy(polozky,
@@ -43,7 +43,7 @@ public class AresStandardRepo {
     }
 
 
-    public List<Odpoved> getResponseByCompanyName(Firma companyName) throws DatatypeConfigurationException {
+    public List<Odpoved> getResponseByCompanyName(Firma companyName) {
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyCompanyName(companyName);
         return getOdpovedList(aresStandardRequestFactory
                 .createAresDotazy(polozky,
