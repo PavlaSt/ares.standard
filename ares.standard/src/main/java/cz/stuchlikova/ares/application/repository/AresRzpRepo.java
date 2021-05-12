@@ -9,11 +9,11 @@ import cz.stuchlikova.ares.application.service.AresRzpTransformation;
 import cz.stuchlikova.ares.application.stub.rzp.AresDotazy;
 import cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi;
 import cz.stuchlikova.ares.application.stub.rzp.OdpovedRZP;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
-import javax.xml.datatype.DatatypeConfigurationException;
 import java.util.List;
 
 @Validated
@@ -34,17 +34,18 @@ public class AresRzpRepo {
         aresRzpTransformation = new AresRzpTransformation();
     }
 
-    public List<OdpovedRZP> getRzpResponse(@Valid Ico ico) {
-        return getOdpovedRZPList(aresRzpRequestFactory
-                .createAresDotazyRZP(ico, properties.getRzpProperties().getEmail()));
+    @Cacheable("rzp")
+    public List<AresRzpResponseDto> getRzpResponse(@Valid Ico ico) {
+        AresDotazy aresDotazyRZP = aresRzpRequestFactory
+                .createAresDotazyRZP(ico, properties.getRzpProperties().getEmail());
+        List<OdpovedRZP> responsesRZP = getOdpovedRZPList(aresDotazyRZP);
+        return aresRzpTransformation.transformResponseRzpToDto(responsesRZP);
     }
+
 
     public List<OdpovedRZP> getOdpovedRZPList(AresDotazy aresDotazyRZP) {
         AresOdpovedi responseRZP = client.getAresResponse(aresDotazyRZP);
         return responseRZP.getOdpoved();
     }
 
-    public List<AresRzpResponseDto> transformResponseRzpToDto(List<OdpovedRZP> responsesRZP) {
-        return aresRzpTransformation.transformResponseRzpToDto(responsesRZP);
-    }
 }

@@ -18,7 +18,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
-import javax.xml.datatype.DatatypeConfigurationException;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Objects;
@@ -45,25 +44,22 @@ public class AresService {
         counter = new AtomicLong();
     }
 
-    @Cacheable("responses-by-ico")
-    public synchronized List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) {
+
+    public List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) {
         checkRateLimit();
-        List<Odpoved> responses = standardRepo.getResponseByIco(ico);
-        return standardRepo.transformResponseToDto(responses);
+        return standardRepo.getResponseByIco(ico);
     }
 
-    @Cacheable("responses-by-company")
-    public synchronized List<AresStandardResponseDto> getDtoResponseByCompanyName(Firma companyName) {
+
+    public List<AresStandardResponseDto> getDtoResponseByCompanyName(Firma companyName) {
         checkRateLimit();
-        List<Odpoved> responses = standardRepo.getResponseByCompanyName(companyName);
-        return standardRepo.transformResponseToDto(responses);
+        return standardRepo.getResponseByCompanyName(companyName);
     }
 
-    @Cacheable("rzp")
-    public synchronized List<AresRzpResponseDto> getDtoRzpResponseByIco(@Valid Ico ico) {
+
+    public List<AresRzpResponseDto> getDtoRzpResponseByIco(@Valid Ico ico) {
         checkRateLimit();
-        List<OdpovedRZP> responsesRZP = rzpRepo.getRzpResponse(ico);
-        return rzpRepo.transformResponseRzpToDto(responsesRZP);
+        return rzpRepo.getRzpResponse(ico);
     }
 
     private void checkRateLimit() {

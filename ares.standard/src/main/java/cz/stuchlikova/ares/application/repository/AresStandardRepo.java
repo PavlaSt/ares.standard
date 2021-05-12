@@ -11,10 +11,10 @@ import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
 import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;
 import cz.stuchlikova.ares.application.stub.standard.KlicovePolozky;
 import cz.stuchlikova.ares.application.stub.standard.Odpoved;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 import org.springframework.validation.annotation.Validated;
 
-import javax.xml.datatype.DatatypeConfigurationException;
 import java.util.List;
 
 @Validated
@@ -33,22 +33,26 @@ public class AresStandardRepo {
         this.aresStandardTransformation = new AresStandardTransformation();
     }
 
-
-    public List<Odpoved> getResponseByIco(Ico ico) {
+    @Cacheable("responses-by-ico")
+    public List<AresStandardResponseDto> getResponseByIco(Ico ico) {
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyIco(ico);
-        return getOdpovedList(aresStandardRequestFactory
+        AresDotazy aresDotazy = aresStandardRequestFactory
                 .createAresDotazy(polozky,
                         properties.getStandardProperties().getEmail(),
-                        properties.getStandardProperties().getMaxPocet()));
+                        properties.getStandardProperties().getMaxPocet());
+        List<Odpoved> responses = getOdpovedList(aresDotazy);
+        return aresStandardTransformation.transformResponseToDto(responses);
     }
 
-
-    public List<Odpoved> getResponseByCompanyName(Firma companyName) {
+    @Cacheable("responses-by-company")
+    public List<AresStandardResponseDto> getResponseByCompanyName(Firma companyName) {
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyCompanyName(companyName);
-        return getOdpovedList(aresStandardRequestFactory
+        AresDotazy aresDotazy = aresStandardRequestFactory
                 .createAresDotazy(polozky,
                         properties.getStandardProperties().getEmail(),
-                        properties.getStandardProperties().getMaxPocet()));
+                        properties.getStandardProperties().getMaxPocet());
+        List<Odpoved> responses =  getOdpovedList(aresDotazy);
+        return aresStandardTransformation.transformResponseToDto(responses);
     }
 
     public List<Odpoved> getOdpovedList(AresDotazy aresDotazy) {
@@ -56,7 +60,4 @@ public class AresStandardRepo {
         return response.getOdpoved();
     }
 
-    public List<AresStandardResponseDto> transformResponseToDto(List<Odpoved> responses) {
-        return aresStandardTransformation.transformResponseToDto(responses);
-    }
 }
