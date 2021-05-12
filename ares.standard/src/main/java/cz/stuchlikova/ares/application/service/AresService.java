@@ -33,17 +33,15 @@ public class AresService {
 
     private final AtomicLong counter;
 
-    @Autowired
-    CacheManager cacheManager;
+    final CacheManager cacheManager;
 
-
-    public AresService(ConfigProperties properties, AresRzpRepo rzpRepo, AresStandardRepo standardRepo) {
+    public AresService(ConfigProperties properties, AresRzpRepo rzpRepo, AresStandardRepo standardRepo, CacheManager cacheManager) {
         this.properties = properties;
         this.rzpRepo = rzpRepo;
         this.standardRepo = standardRepo;
         counter = new AtomicLong();
+        this.cacheManager = cacheManager;
     }
-
 
     public List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) {
         checkRateLimit();
