@@ -9,7 +9,6 @@ import cz.stuchlikova.ares.application.exceptions.ApiRateExceededException;
 import cz.stuchlikova.ares.application.repository.AresRzpRepo;
 import cz.stuchlikova.ares.application.repository.AresStandardRepo;
 import cz.stuchlikova.ares.application.stub.rzp.OdpovedRZP;
-import cz.stuchlikova.ares.application.stub.standard.KlicovePolozky;
 import cz.stuchlikova.ares.application.stub.standard.Odpoved;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
@@ -30,8 +29,6 @@ import java.util.concurrent.atomic.AtomicLong;
 public class AresService {
 
     final ConfigProperties properties;
-    final AresStandardRequestFactory aresStandardRequestFactory;
-    final AresRzpRequestFactory aresRzpRequestFactory;
     final AresStandardRepo standardRepo;
     private final AresStandardTransformation aresStandardTransformation;
     private final AresRzpTransformation aresRzpTransformation;
@@ -45,8 +42,6 @@ public class AresService {
 
     public AresService(ConfigProperties properties, AresRzpRepo rzpRepo, AresStandardRepo standardRepo) {
         aresRzpTransformation = new AresRzpTransformation();
-        aresRzpRequestFactory = new AresRzpRequestFactory();
-        aresStandardRequestFactory = new AresStandardRequestFactory();
         aresStandardTransformation = new AresStandardTransformation();
         this.properties = properties;
         this.rzpRepo = rzpRepo;
@@ -57,44 +52,22 @@ public class AresService {
     @Cacheable("responses-by-ico")
     public synchronized List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
         checkRateLimit();
-        List<Odpoved> responses = getResponseByIco(ico);
+        List<Odpoved> responses = standardRepo.getResponseByIco(ico);
         return aresStandardTransformation.transformResponseToDto(responses);
     }
 
     @Cacheable("responses-by-company")
     public synchronized List<AresStandardResponseDto> getDtoResponseByCompanyName(Firma companyName) throws DatatypeConfigurationException {
         checkRateLimit();
-        List<Odpoved> responses = getResponseByCompanyName(companyName);
+        List<Odpoved> responses = standardRepo.getResponseByCompanyName(companyName);
         return aresStandardTransformation.transformResponseToDto(responses);
     }
 
     @Cacheable("rzp")
     public synchronized List<AresRzpResponseDto> getDtoRzpResponseByIco(@Valid Ico ico) throws DatatypeConfigurationException {
         checkRateLimit();
-        List<OdpovedRZP> responsesRZP = getAresResponseRzp(ico);
+        List<OdpovedRZP> responsesRZP = rzpRepo.getRzpResponse(ico);
         return aresRzpTransformation.transformResponseRzpToDto(responsesRZP);
-    }
-
-
-    private List<Odpoved> getResponseByIco(Ico ico) throws DatatypeConfigurationException {
-        KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyIco(ico);
-        return standardRepo.getOdpovedList(aresStandardRequestFactory
-                .createAresDotazy(polozky,
-                        properties.getStandardProperties().getEmail(),
-                        properties.getStandardProperties().getMaxPocet()));
-    }
-
-    private List<Odpoved> getResponseByCompanyName(Firma companyName) throws DatatypeConfigurationException {
-        KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyCompanyName(companyName);
-        return standardRepo.getOdpovedList(aresStandardRequestFactory
-                .createAresDotazy(polozky,
-                        properties.getStandardProperties().getEmail(),
-                        properties.getStandardProperties().getMaxPocet()));
-    }
-
-    private List<OdpovedRZP> getAresResponseRzp(@Valid Ico ico) throws DatatypeConfigurationException {
-        return rzpRepo.getOdpovedRZPList(aresRzpRequestFactory
-                .createAresDotazyRZP(ico, properties.getRzpProperties().getEmail()));
     }
 
     private void checkRateLimit() {
@@ -110,15 +83,6 @@ public class AresService {
         if (count > limit) {
             throw new ApiRateExceededException("Too many API requests");
         }
-
-        /*if (now.isAfter(properties.getStandardProperties().getEarlierTime()) && now.isBefore(properties.getStandardProperties().getLaterTime())) {
-            limit = properties.getStandardProperties().getLowerLimit();
-        } else {
-            limit = properties.getStandardProperties().getUpperLimit();
-        }
-        if (count > limit) {
-            throw new ApiRateExceededException("Too many API requests");
-        }*/
     }
 
     @Scheduled(cron = "0 0 8 * * ?")
@@ -129,7 +93,7 @@ public class AresService {
 
     @Scheduled(cron = "0 0 0 * * ?")
     public void evictCache() {
-        cacheManager.getCacheNames().stream()
+        cacheManager.getCacheNames()
                 .forEach(cacheName -> Objects.requireNonNull(cacheManager.getCache(cacheName)).clear());
     }
 }
