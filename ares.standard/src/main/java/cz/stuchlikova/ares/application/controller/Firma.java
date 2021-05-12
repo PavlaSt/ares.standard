@@ -1,12 +1,9 @@
 package cz.stuchlikova.ares.application.controller;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
 import javax.validation.constraints.Pattern;
 import java.util.Objects;
 
-//@ResponseStatus(value =  HttpStatus.NOT_ACCEPTABLE)
+
 public class Firma {
     @Pattern(regexp = ".{3,254}[/*]?", message = "Firma has to be minimum 3, maximum 254 characters")
     private String value;

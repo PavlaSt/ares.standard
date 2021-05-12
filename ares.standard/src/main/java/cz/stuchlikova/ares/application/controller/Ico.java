@@ -1,12 +1,9 @@
 package cz.stuchlikova.ares.application.controller;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
 import javax.validation.constraints.Pattern;
 import java.util.Objects;
 
-//@ResponseStatus(value = HttpStatus.NOT_ACCEPTABLE)
+
 public class Ico {
     @Pattern(regexp = "[0-9]{8}", message = "ICO must be of 8 digit")
     private String value;
