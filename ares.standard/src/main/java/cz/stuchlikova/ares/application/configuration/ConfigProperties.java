@@ -79,10 +79,7 @@ public class ConfigProperties {
         String url;
         String email;
         Integer maxPocet;
-        /*long lowerLimit;
-        long upperLimit;
-        LocalTime earlierTime;
-        LocalTime laterTime;*/
+
 
         public AresClientProperties() {
         }
@@ -112,37 +109,7 @@ public class ConfigProperties {
             this.maxPocet = maxPocet;
         }
 
-        /*public long getLowerLimit() {
-            return lowerLimit;
-        }
 
-        public void setLowerLimit(long lowerLimit) {
-            this.lowerLimit = lowerLimit;
-        }
-
-        public long getUpperLimit() {
-            return upperLimit;
-        }
-
-        public void setUpperLimit(long upperLimit) {
-            this.upperLimit = upperLimit;
-        }
-
-        public LocalTime getEarlierTime() {
-            return earlierTime;
-        }
-
-        public void setEarlierTime(LocalTime earlierTime) {
-            this.earlierTime = earlierTime;
-        }
-
-        public LocalTime getLaterTime() {
-            return laterTime;
-        }
-
-        public void setLaterTime(LocalTime laterTime) {
-            this.laterTime = laterTime;
-        }*/
     }
 
 }
