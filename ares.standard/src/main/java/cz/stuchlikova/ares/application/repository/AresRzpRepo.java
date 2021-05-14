@@ -6,6 +6,7 @@ import cz.stuchlikova.ares.application.controller.Ico;
 import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
 import cz.stuchlikova.ares.application.service.AresRzpRequestFactory;
 import cz.stuchlikova.ares.application.service.AresRzpTransformation;
+import cz.stuchlikova.ares.application.service.AresService;
 import cz.stuchlikova.ares.application.stub.rzp.AresDotazy;
 import cz.stuchlikova.ares.application.stub.rzp.AresOdpovedi;
 import cz.stuchlikova.ares.application.stub.rzp.OdpovedRZP;
@@ -18,7 +19,7 @@ import java.util.List;
 
 @Validated
 @Repository
-public class AresRzpRepo {
+public class AresRzpRepo extends BaseAresRepo{
 
 
     final ConfigProperties properties;
@@ -35,7 +36,8 @@ public class AresRzpRepo {
     }
 
     @Cacheable("rzp")
-    public List<AresRzpResponseDto> getRzpResponse(@Valid Ico ico) {
+    public List<AresRzpResponseDto> getRzpResponse(@Valid Ico ico, AresService.CallCounter callCounter) {
+        checkRateLimit(callCounter);
         AresDotazy aresDotazyRZP = aresRzpRequestFactory
                 .createAresDotazyRZP(ico, properties.getRzpProperties().getEmail());
         List<OdpovedRZP> responsesRZP = getOdpovedRZPList(aresDotazyRZP);
