@@ -42,9 +42,6 @@ public class AresStandardTransformation {
     }
 
     private void checkResponses(List<Odpoved> responses) {
-        if (responses.get(0).getPocetZaznamu() == 0) {
-            throw new RecordNotFoundException("There are no records for this query");
-        }
         if (responses.get(0).getPocetZaznamu() == -1) {
             throw new MaxNumberExceeded("the allowed number of returned subjects has been exceeded: \n" + responses.get(0).getError().get(0).getErrorText());
         }
