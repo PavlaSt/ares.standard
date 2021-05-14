@@ -51,7 +51,7 @@ public class AresStandardRepo {
                 .createAresDotazy(polozky,
                         properties.getStandardProperties().getEmail(),
                         properties.getStandardProperties().getMaxPocet());
-        List<Odpoved> responses =  getOdpovedList(aresDotazy);
+        List<Odpoved> responses = getOdpovedList(aresDotazy);
         return aresStandardTransformation.transformResponseToDto(responses);
     }
 
