@@ -1,9 +1,7 @@
 package cz.stuchlikova.ares.application.domain;
 
-public class AresStandardResponseDto {
+public class AresStandardResponseDto extends BaseResponseDto{
 
-    private String obchodniFirma;
-    private String ico;
     private String nazevUlice;
     private Integer cisloDomovni;
     private String cisloOrientacni;
@@ -12,31 +10,13 @@ public class AresStandardResponseDto {
     private String nazevCastiObce;
 
     public AresStandardResponseDto(String obchodniFirma, String ico, String nazevUlice, Integer cisloDomovni, String cisloOrientacni, String psc, String nazevObce, String nazevCastiObce) {
-        this.obchodniFirma = obchodniFirma;
-        this.ico = ico;
+        super(obchodniFirma, ico);
         this.nazevUlice = nazevUlice;
         this.cisloDomovni = cisloDomovni;
         this.cisloOrientacni = cisloOrientacni;
         this.psc = psc;
         this.nazevObce = nazevObce;
         this.nazevCastiObce = nazevCastiObce;
-    }
-
-
-    public String getObchodniFirma() {
-        return obchodniFirma;
-    }
-
-    public void setObchodniFirma(String obchodniFirma) {
-        this.obchodniFirma = obchodniFirma;
-    }
-
-    public String getIco() {
-        return ico;
-    }
-
-    public void setIco(String ico) {
-        this.ico = ico;
     }
 
     public String getNazevUlice() {
