@@ -2,7 +2,6 @@ package cz.stuchlikova.ares.application.service;
 
 import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
 import cz.stuchlikova.ares.application.domain.ZivnostDto;
-import cz.stuchlikova.ares.application.exceptions.MaxNumberExceeded;
 import cz.stuchlikova.ares.application.exceptions.RecordNotFoundException;
 import cz.stuchlikova.ares.application.stub.rzp.OborCinnosti;
 import cz.stuchlikova.ares.application.stub.rzp.OdpovedRZP;

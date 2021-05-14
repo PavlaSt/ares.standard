@@ -6,7 +6,6 @@ import cz.stuchlikova.ares.application.controller.Ico;
 import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
 import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
 import cz.stuchlikova.ares.application.domain.BaseResponseDto;
-import cz.stuchlikova.ares.application.exceptions.ApiRateExceededException;
 import cz.stuchlikova.ares.application.exceptions.RecordNotFoundException;
 import cz.stuchlikova.ares.application.repository.AresRzpRepo;
 import cz.stuchlikova.ares.application.repository.AresStandardRepo;

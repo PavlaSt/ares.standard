@@ -2,7 +2,6 @@ package cz.stuchlikova.ares.application.service;
 
 import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
 import cz.stuchlikova.ares.application.exceptions.MaxNumberExceeded;
-import cz.stuchlikova.ares.application.exceptions.RecordNotFoundException;
 import cz.stuchlikova.ares.application.stub.standard.AdresaARES2;
 import cz.stuchlikova.ares.application.stub.standard.Identifikace;
 import cz.stuchlikova.ares.application.stub.standard.Odpoved;
