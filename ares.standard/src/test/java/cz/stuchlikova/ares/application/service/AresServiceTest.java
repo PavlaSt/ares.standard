@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.validation.ConstraintViolationException;
-import javax.xml.datatype.DatatypeConfigurationException;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -27,7 +26,7 @@ class AresServiceTest {
 
     /*getDtoResponseByIco*/
     @Test
-    void getDtoResponseByIco_happy_path() throws DatatypeConfigurationException {
+    void getDtoResponseByIco_happy_path() {
         List<AresStandardResponseDto> dtos = service.getDtoResponseByIco(new Ico("27074358"));
 
         assertThat(dtos.size(), equalTo(1));
@@ -58,7 +57,7 @@ class AresServiceTest {
 
     /*getDtoResponseByCompanyName*/
     @Test
-    void getDtoResponseByCompanyName_happy_path() throws DatatypeConfigurationException {
+    void getDtoResponseByCompanyName_happy_path() {
         List<AresStandardResponseDto> dtos = service.getDtoResponseByCompanyName(new Firma("Etnetera"));
 
         assertThat(dtos.size(), equalTo(4));
@@ -75,7 +74,7 @@ class AresServiceTest {
 
     /*getDtoRzpResponseByIco*/
     @Test
-    void getDtoRzpResponseByIco_happy_path() throws DatatypeConfigurationException {
+    void getDtoRzpResponseByIco_happy_path() {
         List<AresRzpResponseDto> dtos = service.getDtoRzpResponseByIco(new Ico("27074358"));
 
         assertThat(dtos.get(0).getZivnosti().size(), equalTo(26));
