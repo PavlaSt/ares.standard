@@ -46,22 +46,22 @@ public class AresService {
     }
 
     public List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) {
-        checkRateLimit();
-        List<AresStandardResponseDto> responseDtos = standardRepo.getResponseByIco(ico);
+        //checkRateLimit();
+        List<AresStandardResponseDto> responseDtos = standardRepo.getResponseByIco(ico, callCounter);
         checkIfNotEmpty(responseDtos);
         return responseDtos;
     }
 
     public List<AresStandardResponseDto> getDtoResponseByCompanyName(@Valid Firma companyName) {
-        checkRateLimit();
-        List<AresStandardResponseDto> responseDtos = standardRepo.getResponseByCompanyName(companyName);
+        //checkRateLimit();
+        List<AresStandardResponseDto> responseDtos = standardRepo.getResponseByCompanyName(companyName, callCounter);
         checkIfNotEmpty(responseDtos);
         return responseDtos;
     }
 
     public List<AresRzpResponseDto> getDtoRzpResponseByIco(@Valid Ico ico) {
-        checkRateLimit();
-        List<AresRzpResponseDto> rzpResponseDtos = rzpRepo.getRzpResponse(ico);
+        //checkRateLimit();
+        List<AresRzpResponseDto> rzpResponseDtos = rzpRepo.getRzpResponse(ico, callCounter);
         checkIfNotEmpty(rzpResponseDtos);
         return rzpResponseDtos;
     }
@@ -72,35 +72,61 @@ public class AresService {
         }
     }
 
-    private synchronized void checkRateLimit() {
-        if (!callCounter.isFromInterval()) {
+    /*private synchronized void checkRateLimit() {
+        if (callCounter.isNotFromInterval()) {
             init();
         }
         long count = callCounter.incrementAndGet();
         if (count > callCounter.limit) {
             throw new ApiRateExceededException("Too many API requests");
         }
-    }
+    }*/
 
-    /*  @Scheduled(cron = "0 0 8 * * ?")
-      @Scheduled(cron = "0 0 18 * * ?")
-      void resetCounter() {
-          counter.set(0L);
-      }
-  */
     @Scheduled(cron = "0 0 0 * * ?")
     public void evictCache() {
         cacheManager.getCacheNames()
                 .forEach(cacheName -> Objects.requireNonNull(cacheManager.getCache(cacheName)).clear());
     }
 
-    class CallCounter {
-        final long limit;
-        final LocalDateTime from;
-        final LocalDateTime to;
+    public class CallCounter {
+        long limit;
+        LocalDateTime from;
+        LocalDateTime to;
         long counter;
 
         public CallCounter() {
+            init();
+            /*counter = 0L;
+            LocalTime timeNow = LocalTime.now();
+            LocalDate currentDate = LocalDate.now();
+            //current time is between 8 - 18 h
+            if (timeNow.isAfter(properties.getEarlierTime()) && timeNow.isBefore(properties.getLaterTime())) {
+                limit = properties.getUpperLimit();
+                from = LocalDateTime.of(currentDate, properties.getEarlierTime());
+                to = LocalDateTime.of(currentDate, properties.getLaterTime());
+            } else {
+                limit = properties.getLowerLimit();
+                //current time is before 8 h
+                if (timeNow.isBefore(properties.getEarlierTime())) {
+                    from = LocalDateTime.of(currentDate.minusDays(1L), properties.getLaterTime());
+                    to = LocalDateTime.of(currentDate, properties.getLaterTime());
+                } else {
+                    //current time is after 18 h
+                    from = LocalDateTime.of(currentDate, properties.getLaterTime());
+                    to = LocalDateTime.of(currentDate.plusDays(1L), properties.getEarlierTime());
+                }
+            }*/
+        }
+
+        public boolean isNotFromInterval() {
+            return !LocalDateTime.now().isAfter(from) || !LocalDateTime.now().isBefore(to);
+        }
+
+        public long incrementAndGet() {
+            ++counter;
+            return counter;
+        }
+        public void init() {
             counter = 0L;
             LocalTime timeNow = LocalTime.now();
             LocalDate currentDate = LocalDate.now();
@@ -121,15 +147,6 @@ public class AresService {
                     to = LocalDateTime.of(currentDate.plusDays(1L), properties.getEarlierTime());
                 }
             }
-        }
-
-        public boolean isFromInterval() {
-            return LocalDateTime.now().isAfter(from) && LocalDateTime.now().isBefore(to);
-        }
-
-        public long incrementAndGet() {
-            ++counter;
-            return counter;
         }
 
         public LocalDateTime getFrom() {
