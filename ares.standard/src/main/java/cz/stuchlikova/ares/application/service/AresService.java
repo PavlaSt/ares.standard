@@ -5,23 +5,23 @@ import cz.stuchlikova.ares.application.controller.Firma;
 import cz.stuchlikova.ares.application.controller.Ico;
 import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
 import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
+import cz.stuchlikova.ares.application.domain.BaseResponseDto;
 import cz.stuchlikova.ares.application.exceptions.ApiRateExceededException;
+import cz.stuchlikova.ares.application.exceptions.RecordNotFoundException;
 import cz.stuchlikova.ares.application.repository.AresRzpRepo;
 import cz.stuchlikova.ares.application.repository.AresStandardRepo;
-import cz.stuchlikova.ares.application.stub.rzp.OdpovedRZP;
-import cz.stuchlikova.ares.application.stub.standard.Odpoved;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
+import javax.annotation.PostConstruct;
 import javax.validation.Valid;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicLong;
 
 @Service
 @Validated
@@ -29,61 +29,127 @@ public class AresService {
 
     final ConfigProperties properties;
     final AresStandardRepo standardRepo;
-    private final AresRzpRepo rzpRepo;
-
-    private final AtomicLong counter;
-
     final CacheManager cacheManager;
+    private final AresRzpRepo rzpRepo;
+    CallCounter callCounter;
 
     public AresService(ConfigProperties properties, AresRzpRepo rzpRepo, AresStandardRepo standardRepo, CacheManager cacheManager) {
         this.properties = properties;
         this.rzpRepo = rzpRepo;
         this.standardRepo = standardRepo;
-        counter = new AtomicLong();
         this.cacheManager = cacheManager;
+    }
+
+    @PostConstruct
+    public void init() {
+        callCounter = new CallCounter();
     }
 
     public List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) {
         checkRateLimit();
-        return standardRepo.getResponseByIco(ico);
+        List<AresStandardResponseDto> responseDtos = standardRepo.getResponseByIco(ico);
+        checkIfNotEmpty(responseDtos);
+        return responseDtos;
     }
 
-
-    public List<AresStandardResponseDto> getDtoResponseByCompanyName(Firma companyName) {
+    public List<AresStandardResponseDto> getDtoResponseByCompanyName(@Valid Firma companyName) {
         checkRateLimit();
-        return standardRepo.getResponseByCompanyName(companyName);
+        List<AresStandardResponseDto> responseDtos = standardRepo.getResponseByCompanyName(companyName);
+        checkIfNotEmpty(responseDtos);
+        return responseDtos;
     }
-
 
     public List<AresRzpResponseDto> getDtoRzpResponseByIco(@Valid Ico ico) {
         checkRateLimit();
-        return rzpRepo.getRzpResponse(ico);
+        List<AresRzpResponseDto> rzpResponseDtos = rzpRepo.getRzpResponse(ico);
+        checkIfNotEmpty(rzpResponseDtos);
+        return rzpResponseDtos;
     }
 
-    private void checkRateLimit() {
-        long count = counter.incrementAndGet();
-        long limit;
-        LocalTime now = LocalTime.now();
-
-        if (now.isAfter(properties.getEarlierTime()) && now.isBefore(properties.getLaterTime())) {
-            limit = properties.getLowerLimit();
-        } else {
-            limit = properties.getUpperLimit();
+    private void checkIfNotEmpty(List<? extends BaseResponseDto> responses) {
+        if (responses.isEmpty()) {
+            throw new RecordNotFoundException("There are no records for this query");
         }
-        if (count > limit) {
+    }
+
+    private synchronized void checkRateLimit() {
+        if (!callCounter.isFromInterval()) {
+            init();
+        }
+        long count = callCounter.incrementAndGet();
+        if (count > callCounter.limit) {
             throw new ApiRateExceededException("Too many API requests");
         }
     }
 
-    @Scheduled(cron = "0 0 8 * * ?")
-    @Scheduled(cron = "0 0 18 * * ?")
-    void resetCounter() {
-        counter.set(0L);
-    }
-
+    /*  @Scheduled(cron = "0 0 8 * * ?")
+      @Scheduled(cron = "0 0 18 * * ?")
+      void resetCounter() {
+          counter.set(0L);
+      }
+  */
     @Scheduled(cron = "0 0 0 * * ?")
     public void evictCache() {
         cacheManager.getCacheNames()
                 .forEach(cacheName -> Objects.requireNonNull(cacheManager.getCache(cacheName)).clear());
+    }
+
+    class CallCounter {
+        final long limit;
+        final LocalDateTime from;
+        final LocalDateTime to;
+        long counter;
+
+        public CallCounter() {
+            counter = 0L;
+            LocalTime timeNow = LocalTime.now();
+            LocalDate currentDate = LocalDate.now();
+            //current time is between 8 - 18 h
+            if (timeNow.isAfter(properties.getEarlierTime()) && timeNow.isBefore(properties.getLaterTime())) {
+                limit = properties.getUpperLimit();
+                from = LocalDateTime.of(currentDate, properties.getEarlierTime());
+                to = LocalDateTime.of(currentDate, properties.getLaterTime());
+            } else {
+                limit = properties.getLowerLimit();
+                //current time is before 8 h
+                if (timeNow.isBefore(properties.getEarlierTime())) {
+                    from = LocalDateTime.of(currentDate.minusDays(1L), properties.getLaterTime());
+                    to = LocalDateTime.of(currentDate, properties.getLaterTime());
+                } else {
+                    //current time is after 18 h
+                    from = LocalDateTime.of(currentDate, properties.getLaterTime());
+                    to = LocalDateTime.of(currentDate.plusDays(1L), properties.getEarlierTime());
+                }
+            }
+        }
+
+        public boolean isFromInterval() {
+            return LocalDateTime.now().isAfter(from) && LocalDateTime.now().isBefore(to);
+        }
+
+        public long incrementAndGet() {
+            ++counter;
+            return counter;
+        }
+
+        public LocalDateTime getFrom() {
+            return from;
+        }
+
+        public LocalDateTime getTo() {
+            return to;
+        }
+
+        public long getLimit() {
+            return limit;
+        }
+
+        public long getCounter() {
+            return counter;
+        }
+
+        public void setCounter(long counter) {
+            this.counter = counter;
+        }
     }
 }
