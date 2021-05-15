@@ -20,7 +20,7 @@ import java.util.List;
 
 @Validated
 @Repository
-public class AresStandardRepo extends BaseAresRepo{
+public class AresStandardRepo extends BaseAresRepo {
 
     final ConfigProperties properties;
     final AresStandardRequestFactory aresStandardRequestFactory;
@@ -38,10 +38,7 @@ public class AresStandardRepo extends BaseAresRepo{
     public List<AresStandardResponseDto> getResponseByIco(Ico ico, AresService.CallCounter callCounter) {
         checkRateLimit(callCounter);
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyIco(ico);
-        AresDotazy aresDotazy = aresStandardRequestFactory
-                .createAresDotazy(polozky,
-                        properties.getStandardProperties().getEmail(),
-                        properties.getStandardProperties().getMaxPocet());
+        AresDotazy aresDotazy = createRequest(polozky);
         List<Odpoved> responses = getOdpovedList(aresDotazy);
         return aresStandardTransformation.transformResponseToDto(responses);
     }
@@ -50,12 +47,17 @@ public class AresStandardRepo extends BaseAresRepo{
     public List<AresStandardResponseDto> getResponseByCompanyName(Firma companyName, AresService.CallCounter callCounter) {
         checkRateLimit(callCounter);
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyCompanyName(companyName);
-        AresDotazy aresDotazy = aresStandardRequestFactory
+        AresDotazy aresDotazy = createRequest(polozky);
+        List<Odpoved> responses = getOdpovedList(aresDotazy);
+        return aresStandardTransformation.transformResponseToDto(responses);
+    }
+
+    public AresDotazy createRequest(KlicovePolozky polozky) {
+        return aresStandardRequestFactory
                 .createAresDotazy(polozky,
                         properties.getStandardProperties().getEmail(),
                         properties.getStandardProperties().getMaxPocet());
-        List<Odpoved> responses = getOdpovedList(aresDotazy);
-        return aresStandardTransformation.transformResponseToDto(responses);
+
     }
 
     public List<Odpoved> getOdpovedList(AresDotazy aresDotazy) {

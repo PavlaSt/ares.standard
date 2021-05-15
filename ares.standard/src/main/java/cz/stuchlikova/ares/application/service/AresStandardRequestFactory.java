@@ -37,7 +37,6 @@ public class AresStandardRequestFactory {
                     "XmlGregorianCalendar failed" + e.getMessage());
         }
 
-
         aresDotazy.setDotazDatumCas(xcal);
         aresDotazy.setDotazPocet(1);
         aresDotazy.setDotazTyp(AresDotazTyp.STANDARD);
