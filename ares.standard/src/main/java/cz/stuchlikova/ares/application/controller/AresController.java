@@ -25,11 +25,13 @@ public class AresController {
 
     @RequestMapping(value = "/predmet", method = RequestMethod.GET)
     public List<AresRzpResponseDto> getRzpResponseByIco(@Valid @RequestParam("ico") Ico ico) {
+        ico.checkControlAlghorithm();
         return service.getDtoRzpResponseByIco(ico);
     }
 
     @RequestMapping(value = "/ico", method = RequestMethod.GET)
     public List<AresStandardResponseDto> getResponseByIco(@Valid @RequestParam("ico") Ico ico) {
+        ico.checkControlAlghorithm();
         return service.getDtoResponseByIco(ico);
     }
 

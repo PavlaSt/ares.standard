@@ -1,7 +1,10 @@
 package cz.stuchlikova.ares.application.controller;
 
+import javax.validation.ValidationException;
 import javax.validation.constraints.Pattern;
 import java.util.Objects;
+
+import static java.lang.Integer.parseInt;
 
 
 public class Ico {
@@ -34,5 +37,32 @@ public class Ico {
     @Override
     public int hashCode() {
         return Objects.hash(value);
+    }
+
+    public void checkControlAlghorithm() {
+        int subtotal = 0;
+        String[] icoArray = value.split("");
+        int lastDigit;
+
+        for (int i = 0; i < 7; i++) {
+            subtotal += (parseInt(icoArray[i]) * (8 - i));
+        }
+        subtotal = subtotal % 11;
+        lastDigit = 11 - subtotal;
+        switch (subtotal) {
+            case 1:
+                lastDigit = 0;
+                break;
+            case 0:
+                lastDigit = 1;
+                break;
+            case 10:
+                lastDigit = 1;
+                break;
+        }
+
+        if (parseInt(icoArray[7]) != lastDigit) {
+            throw new ValidationException("ICO does not match the control algorithm");
+        }
     }
 }

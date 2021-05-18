@@ -6,12 +6,17 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.validation.ConstraintViolationException;
+import javax.validation.ValidationException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<String> onValidationError(Exception ex) {
+        return new ResponseEntity<>("Something happened: " + ex.getMessage(), HttpStatus.NOT_ACCEPTABLE);
+    }
+    @ExceptionHandler(ValidationException.class)
+    public ResponseEntity<String> onAlghorithmValidationError(Exception ex) {
         return new ResponseEntity<>("Something happened: " + ex.getMessage(), HttpStatus.NOT_ACCEPTABLE);
     }
 
