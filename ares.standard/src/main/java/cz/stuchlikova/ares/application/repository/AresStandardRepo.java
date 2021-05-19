@@ -18,7 +18,7 @@ import java.util.List;
 
 @Validated
 @Repository
-public class AresStandardRepo extends BaseAresRepo {
+public class AresStandardRepo {
 
     final CallCounter callCounter;
     final ConfigProperties properties;
