@@ -1,13 +1,12 @@
 package cz.stuchlikova.ares.application.repository;
 
-import cz.stuchlikova.ares.application.exceptions.ApiRateExceededException;
-import cz.stuchlikova.ares.application.service.AresService;
+import cz.stuchlikova.ares.application.service.CallCounter;
 
 public abstract class BaseAresRepo {
 
 
 
-    synchronized void checkRateLimit(AresService.CallCounter callCounter) {
-        callCounter.checkOrThrow();//(() -> new ApiRateExceededException("Too many API requests"));
+    synchronized void checkRateLimit(CallCounter callCounter) {
+        callCounter.checkOrThrow();
     }
 }
