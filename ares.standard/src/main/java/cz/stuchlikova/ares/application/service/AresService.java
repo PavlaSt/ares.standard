@@ -6,6 +6,7 @@ import cz.stuchlikova.ares.application.controller.Ico;
 import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
 import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
 import cz.stuchlikova.ares.application.domain.BaseResponseDto;
+import cz.stuchlikova.ares.application.exceptions.ApiRateExceededException;
 import cz.stuchlikova.ares.application.exceptions.RecordNotFoundException;
 import cz.stuchlikova.ares.application.repository.AresRzpRepo;
 import cz.stuchlikova.ares.application.repository.AresStandardRepo;
@@ -21,6 +22,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Supplier;
 
 @Service
 @Validated
@@ -41,25 +43,22 @@ public class AresService {
 
     @PostConstruct
     public void init() {
-        callCounter = new CallCounter();
+        callCounter = new CallCounter(properties);
     }
 
     public List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) {
-        //checkRateLimit();
         List<AresStandardResponseDto> responseDtos = standardRepo.getResponseByIco(ico, callCounter);
         checkIfNotEmpty(responseDtos);
         return responseDtos;
     }
 
     public List<AresStandardResponseDto> getDtoResponseByCompanyName(@Valid Firma companyName) {
-        //checkRateLimit();
         List<AresStandardResponseDto> responseDtos = standardRepo.getResponseByCompanyName(companyName, callCounter);
         checkIfNotEmpty(responseDtos);
         return responseDtos;
     }
 
     public List<AresRzpResponseDto> getDtoRzpResponseByIco(@Valid Ico ico) {
-        //checkRateLimit();
         List<AresRzpResponseDto> rzpResponseDtos = rzpRepo.getRzpResponse(ico, callCounter);
         checkIfNotEmpty(rzpResponseDtos);
         return rzpResponseDtos;
@@ -71,16 +70,6 @@ public class AresService {
         }
     }
 
-    /*private synchronized void checkRateLimit() {
-        if (callCounter.isNotFromInterval()) {
-            init();
-        }
-        long count = callCounter.incrementAndGet();
-        if (count > callCounter.limit) {
-            throw new ApiRateExceededException("Too many API requests");
-        }
-    }*/
-
     @Scheduled(cron = "0 0 0 * * ?")
     public void evictCache() {
         cacheManager.getCacheNames()
@@ -88,33 +77,16 @@ public class AresService {
     }
 
     public class CallCounter {
-        long limit;
-        LocalDateTime from;
-        LocalDateTime to;
-        long counter;
+        private final ConfigProperties properties;
 
-        public CallCounter() {
-            init();
-            /*counter = 0L;
-            LocalTime timeNow = LocalTime.now();
-            LocalDate currentDate = LocalDate.now();
-            //current time is between 8 - 18 h
-            if (timeNow.isAfter(properties.getEarlierTime()) && timeNow.isBefore(properties.getLaterTime())) {
-                limit = properties.getUpperLimit();
-                from = LocalDateTime.of(currentDate, properties.getEarlierTime());
-                to = LocalDateTime.of(currentDate, properties.getLaterTime());
-            } else {
-                limit = properties.getLowerLimit();
-                //current time is before 8 h
-                if (timeNow.isBefore(properties.getEarlierTime())) {
-                    from = LocalDateTime.of(currentDate.minusDays(1L), properties.getLaterTime());
-                    to = LocalDateTime.of(currentDate, properties.getLaterTime());
-                } else {
-                    //current time is after 18 h
-                    from = LocalDateTime.of(currentDate, properties.getLaterTime());
-                    to = LocalDateTime.of(currentDate.plusDays(1L), properties.getEarlierTime());
-                }
-            }*/
+        private long limit;
+        private LocalDateTime from;
+        private LocalDateTime to;
+        private long counter;
+
+        public CallCounter(ConfigProperties properties) {
+            this.properties = properties;
+            resetAtributes();
         }
 
         public boolean isNotFromInterval() {
@@ -125,7 +97,8 @@ public class AresService {
             ++counter;
             return counter;
         }
-        public void init() {
+
+        public void resetAtributes() {
             counter = 0L;
             LocalTime timeNow = LocalTime.now();
             LocalDate currentDate = LocalDate.now();
@@ -145,6 +118,17 @@ public class AresService {
                     from = LocalDateTime.of(currentDate, properties.getLaterTime());
                     to = LocalDateTime.of(currentDate.plusDays(1L), properties.getEarlierTime());
                 }
+            }
+        }
+
+        public void checkOrThrow() { //Supplier<RuntimeException> exceptionSupplier
+            if (callCounter.isNotFromInterval()) {
+                callCounter.resetAtributes();
+            }
+            long count = callCounter.incrementAndGet();
+            if (count > callCounter.getLimit()) {
+                //throw new exceptionSupplier.get();
+                throw new ApiRateExceededException("Too many API requests");
             }
         }
 

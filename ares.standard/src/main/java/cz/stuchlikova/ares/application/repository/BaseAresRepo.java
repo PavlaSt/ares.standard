@@ -7,14 +7,7 @@ public abstract class BaseAresRepo {
 
 
 
-
     synchronized void checkRateLimit(AresService.CallCounter callCounter) {
-        if (callCounter.isNotFromInterval()) {
-            callCounter.init();
-        }
-        long count = callCounter.incrementAndGet();
-        if (count > callCounter.getLimit()) {
-            throw new ApiRateExceededException("Too many API requests");
-        }
+        callCounter.checkOrThrow();//(() -> new ApiRateExceededException("Too many API requests"));
     }
 }
