@@ -3,7 +3,7 @@ package cz.stuchlikova.ares.application.exceptions;
 import org.springframework.http.HttpStatus;
 
 public class MyAbstractException extends RuntimeException{
-    private final ErrorDescription description;
+    private final ErrorDescription errorDescription;
 
     public static class ErrorDescription {
         private final HttpStatus status;
@@ -25,10 +25,10 @@ public class MyAbstractException extends RuntimeException{
 
     public MyAbstractException(HttpStatus status, String message) {
         super(message);
-        this.description = new ErrorDescription(status, message);
+        this.errorDescription = new ErrorDescription(status, message);
     }
 
-    public ErrorDescription getDescription() {
-        return description;
+    public ErrorDescription getErrorDescription() {
+        return errorDescription;
     }
 }
