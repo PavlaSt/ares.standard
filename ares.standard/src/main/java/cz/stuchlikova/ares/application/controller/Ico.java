@@ -56,8 +56,6 @@ public class Ico {
                 lastDigit = 0;
                 break;
             case 0:
-                lastDigit = 1;
-                break;
             case 10:
                 lastDigit = 1;
                 break;
