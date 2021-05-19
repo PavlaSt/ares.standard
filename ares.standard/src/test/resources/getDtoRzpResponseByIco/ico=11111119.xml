@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><are:Ares_odpovedi xmlns:are="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_rzp/v_1.0.4" xmlns:dtt="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_datatypes/v_1.0.4" xmlns:udt="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/uvis_datatypes/v_1.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="Ares_odpoved" odpoved_datum_cas="2021-05-19T19:35:22" odpoved_pocet="1" odpoved_typ="Vypis_RZP" validation_XSLT="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_odpovedi.xsl" vystup_format="XML" xsi:schemaLocation="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_rzp/v_1.0.4 http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_rzp/v_1.0.4/ares_answer_rzp_v_1.0.4.xsd">
+    <are:Odpoved>
+        <dtt:Pomocne_ID>1</dtt:Pomocne_ID>
+        <dtt:Error>
+            <dtt:Error_kod>1</dtt:Error_kod>
+            <dtt:Error_text>
+                Chyba 71 - nenalezeno 11111119
+            </dtt:Error_text>
+        </dtt:Error>
+        <dtt:Vysledek_hledani>
+            <dtt:Kod>2</dtt:Kod>
+            <dtt:Text>Subjekt podle zadaného klíče nebyl nalezen</dtt:Text>
+        </dtt:Vysledek_hledani>
+        <dtt:Pocet_zaznamu>0</dtt:Pocet_zaznamu>
+    </are:Odpoved>
+</are:Ares_odpovedi>
