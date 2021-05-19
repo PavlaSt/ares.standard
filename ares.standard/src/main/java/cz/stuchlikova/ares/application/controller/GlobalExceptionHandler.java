@@ -1,5 +1,6 @@
-package cz.stuchlikova.ares.application.exceptions;
+package cz.stuchlikova.ares.application.controller;
 
+import cz.stuchlikova.ares.application.exceptions.MyAbstractException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
