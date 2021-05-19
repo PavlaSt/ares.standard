@@ -1,4 +1,4 @@
-package cz.stuchlikova.ares.application.service;
+package cz.stuchlikova.ares.application.repository;
 
 import cz.stuchlikova.ares.application.domain.AresRzpResponseDto;
 import cz.stuchlikova.ares.application.domain.ZivnostDto;

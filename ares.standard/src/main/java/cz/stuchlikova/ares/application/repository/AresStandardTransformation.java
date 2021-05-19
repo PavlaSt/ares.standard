@@ -1,4 +1,4 @@
-package cz.stuchlikova.ares.application.service;
+package cz.stuchlikova.ares.application.repository;
 
 import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
 import cz.stuchlikova.ares.application.exceptions.MaxNumberExceeded;
