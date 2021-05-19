@@ -20,12 +20,14 @@ import java.util.List;
 @Repository
 public class AresStandardRepo extends BaseAresRepo {
 
+    final CallCounter callCounter;
     final ConfigProperties properties;
     final AresStandardRequestFactory aresStandardRequestFactory;
     private final AresClient<AresOdpovedi, AresDotazy> client;
     private final AresStandardTransformation aresStandardTransformation;
 
-    public AresStandardRepo(AresClient<AresOdpovedi, AresDotazy> client, ConfigProperties properties) {
+    public AresStandardRepo(CallCounter callCounter, AresClient<AresOdpovedi, AresDotazy> client, ConfigProperties properties) {
+        this.callCounter = callCounter;
         this.client = client;
         this.properties = properties;
         this.aresStandardRequestFactory = new AresStandardRequestFactory();
@@ -33,8 +35,8 @@ public class AresStandardRepo extends BaseAresRepo {
     }
 
     @Cacheable("responses-by-ico")
-    public List<AresStandardResponseDto> getResponseByIco(Ico ico, CallCounter callCounter) {
-        checkRateLimit(callCounter);
+    public List<AresStandardResponseDto> getResponseByIco(Ico ico) {
+        callCounter.checkOrThrow();
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyIco(ico);
         AresDotazy aresDotazy = createRequest(polozky);
         List<Odpoved> responses = getOdpovedList(aresDotazy);
@@ -42,8 +44,8 @@ public class AresStandardRepo extends BaseAresRepo {
     }
 
     @Cacheable("responses-by-company")
-    public List<AresStandardResponseDto> getResponseByCompanyName(Firma companyName, CallCounter callCounter) {
-        checkRateLimit(callCounter);
+    public List<AresStandardResponseDto> getResponseByCompanyName(Firma companyName) {
+        callCounter.checkOrThrow();
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyCompanyName(companyName);
         AresDotazy aresDotazy = createRequest(polozky);
         List<Odpoved> responses = getOdpovedList(aresDotazy);

@@ -17,16 +17,17 @@ import java.util.List;
 
 @Validated
 @Repository
-public class AresRzpRepo extends BaseAresRepo{
+public class AresRzpRepo extends BaseAresRepo {
 
-
+    final CallCounter callCounter;
     final ConfigProperties properties;
     final AresRzpRequestFactory aresRzpRequestFactory;
     private final AresClient<AresOdpovedi, AresDotazy> client;
     private final AresRzpTransformation aresRzpTransformation;
 
 
-    public AresRzpRepo(AresClient<AresOdpovedi, AresDotazy> client, ConfigProperties properties) {
+    public AresRzpRepo(CallCounter callCounter, AresClient<AresOdpovedi, AresDotazy> client, ConfigProperties properties) {
+        this.callCounter = callCounter;
         this.client = client;
         this.properties = properties;
         aresRzpRequestFactory = new AresRzpRequestFactory();
@@ -34,8 +35,8 @@ public class AresRzpRepo extends BaseAresRepo{
     }
 
     @Cacheable("rzp")
-    public List<AresRzpResponseDto> getRzpResponse(@Valid Ico ico, CallCounter callCounter) {
-        checkRateLimit(callCounter);
+    public List<AresRzpResponseDto> getRzpResponse(@Valid Ico ico) {
+        callCounter.checkOrThrow();
         AresDotazy aresDotazyRZP = aresRzpRequestFactory
                 .createAresDotazyRZP(ico, properties.getRzpProperties().getEmail());
         List<OdpovedRZP> responsesRZP = getOdpovedRZPList(aresDotazyRZP);
