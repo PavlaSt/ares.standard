@@ -42,19 +42,19 @@ public class AresService {
     }
 
     public List<AresStandardResponseDto> getDtoResponseByIco(@Valid Ico ico) {
-        List<AresStandardResponseDto> responseDtos = standardRepo.getResponseByIco(ico, callCounter);
+        List<AresStandardResponseDto> responseDtos = standardRepo.getResponseByIco(ico);
         checkIfNotEmpty(responseDtos);
         return responseDtos;
     }
 
     public List<AresStandardResponseDto> getDtoResponseByCompanyName(@Valid Firma companyName) {
-        List<AresStandardResponseDto> responseDtos = standardRepo.getResponseByCompanyName(companyName, callCounter);
+        List<AresStandardResponseDto> responseDtos = standardRepo.getResponseByCompanyName(companyName);
         checkIfNotEmpty(responseDtos);
         return responseDtos;
     }
 
     public List<AresRzpResponseDto> getDtoRzpResponseByIco(@Valid Ico ico) {
-        List<AresRzpResponseDto> rzpResponseDtos = rzpRepo.getRzpResponse(ico, callCounter);
+        List<AresRzpResponseDto> rzpResponseDtos = rzpRepo.getRzpResponse(ico);
         checkIfNotEmpty(rzpResponseDtos);
         return rzpResponseDtos;
     }
