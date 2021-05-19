@@ -1,7 +1,6 @@
-package cz.stuchlikova.ares.application.service;
+package cz.stuchlikova.ares.application.repository;
 
 import cz.stuchlikova.ares.application.controller.Ico;
-import cz.stuchlikova.ares.application.exceptions.ChangeToXmlGregCalendarFailedException;
 import cz.stuchlikova.ares.application.stub.rzp.*;
 
 import javax.validation.Valid;
@@ -27,8 +26,7 @@ public class AresRzpRequestFactory {
         try {
             xcal = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
         } catch (DatatypeConfigurationException e) {
-            throw new ChangeToXmlGregCalendarFailedException("Conversion of GregorianCalendar data type to " +
-                    "XmlGregorianCalendar failed" + e.getMessage());
+            throw new RuntimeException("Unexpected error: " + e.getMessage());
         }
 
         aresDotazy.setDotazDatumCas(xcal);
