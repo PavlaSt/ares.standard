@@ -6,24 +6,19 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.validation.ConstraintViolationException;
-import javax.validation.ValidationException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<String> onValidationError(Exception ex) {
-        return new ResponseEntity<>("Something happened: " + ex.getMessage(), HttpStatus.NOT_ACCEPTABLE);
-    }
-    @ExceptionHandler(ValidationException.class)
-    public ResponseEntity<String> onAlghorithmValidationError(Exception ex) {
-        return new ResponseEntity<>("Something happened: " + ex.getMessage(), HttpStatus.NOT_ACCEPTABLE);
+    public ResponseEntity<MyAbstractException.ErrorDescription> onValidationError(Exception ex) {
+        return new ResponseEntity<>(new MyAbstractException.ErrorDescription(HttpStatus.NOT_ACCEPTABLE, ex.getMessage()), HttpStatus.NOT_ACCEPTABLE);
     }
 
     @ExceptionHandler(MyAbstractException.class)
-    public ResponseEntity<String> fileNotFoundError(MyAbstractException ex) {
-        return new ResponseEntity<>("Something happened: " + ex.getMessage(),
-                ex.getDescription().getStatus());
+    public ResponseEntity<MyAbstractException.ErrorDescription> fileNotFoundError(MyAbstractException ex) {
+        return new ResponseEntity<>(ex.getErrorDescription(),
+                ex.getErrorDescription().getStatus());
     }
 
 }

@@ -1,6 +1,8 @@
 package cz.stuchlikova.ares.application.controller;
 
-import javax.validation.ValidationException;
+import cz.stuchlikova.ares.application.exceptions.MyAbstractException;
+import org.springframework.http.HttpStatus;
+
 import javax.validation.constraints.Pattern;
 import java.util.Objects;
 
@@ -62,7 +64,8 @@ public class Ico {
         }
 
         if (parseInt(icoArray[7]) != lastDigit) {
-            throw new ValidationException("ICO does not match the control algorithm");
+            throw new MyAbstractException(HttpStatus.NOT_ACCEPTABLE,
+                    "ICO does not match the control algorithm");
         }
     }
 }
