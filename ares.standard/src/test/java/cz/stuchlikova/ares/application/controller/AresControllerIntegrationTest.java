@@ -27,11 +27,14 @@ public class AresControllerIntegrationTest {
     }
 
     @Test
-    public void getResponseByIco_non_existing() throws Exception {
+    public void getResponseByIco_uncomlying_ico() throws Exception {
         mockMvc.perform(get("/ico/?ico=12345678"))
-                .andExpect(status().isNotFound())
+                .andExpect(status().isNotAcceptable())
                 //.andExpect(content().contentType(MediaType.valueOf("text/plain;charset=UTF-8")))
-                .andExpect(content().string("Something happened: There are no records for this query"));
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("status").value("NOT_ACCEPTABLE"))
+                .andExpect(jsonPath("description").value("ICO does not match the control algorithm"));
+                //.andExpect(content().string("ICO does not match the control algorithm"));
     }
 
     @Test
