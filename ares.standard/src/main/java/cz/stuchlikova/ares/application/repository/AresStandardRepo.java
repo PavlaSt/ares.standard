@@ -5,9 +5,7 @@ import cz.stuchlikova.ares.application.connector.AresClient;
 import cz.stuchlikova.ares.application.controller.Firma;
 import cz.stuchlikova.ares.application.controller.Ico;
 import cz.stuchlikova.ares.application.domain.AresStandardResponseDto;
-import cz.stuchlikova.ares.application.service.AresService;
-import cz.stuchlikova.ares.application.service.AresStandardRequestFactory;
-import cz.stuchlikova.ares.application.service.AresStandardTransformation;
+import cz.stuchlikova.ares.application.service.CallCounter;
 import cz.stuchlikova.ares.application.stub.standard.AresDotazy;
 import cz.stuchlikova.ares.application.stub.standard.AresOdpovedi;
 import cz.stuchlikova.ares.application.stub.standard.KlicovePolozky;
@@ -35,7 +33,7 @@ public class AresStandardRepo extends BaseAresRepo {
     }
 
     @Cacheable("responses-by-ico")
-    public List<AresStandardResponseDto> getResponseByIco(Ico ico, AresService.CallCounter callCounter) {
+    public List<AresStandardResponseDto> getResponseByIco(Ico ico, CallCounter callCounter) {
         checkRateLimit(callCounter);
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyIco(ico);
         AresDotazy aresDotazy = createRequest(polozky);
@@ -44,7 +42,7 @@ public class AresStandardRepo extends BaseAresRepo {
     }
 
     @Cacheable("responses-by-company")
-    public List<AresStandardResponseDto> getResponseByCompanyName(Firma companyName, AresService.CallCounter callCounter) {
+    public List<AresStandardResponseDto> getResponseByCompanyName(Firma companyName, CallCounter callCounter) {
         checkRateLimit(callCounter);
         KlicovePolozky polozky = aresStandardRequestFactory.createAndSetPolozkyCompanyName(companyName);
         AresDotazy aresDotazy = createRequest(polozky);
