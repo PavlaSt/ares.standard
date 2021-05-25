@@ -22,7 +22,6 @@ public class CallCounter {
 
     public CallCounter(@Autowired ConfigProperties properties) {
         this.properties = properties;
-        resetAtributes();
     }
 
     public boolean isNotFromInterval() {
@@ -35,7 +34,7 @@ public class CallCounter {
     }
 
     @PostConstruct
-    public void resetAtributes() {
+    public void setAtributes() {
         counter = 0L;
         LocalTime timeNow = LocalTime.now();
         LocalDate currentDate = LocalDate.now();
@@ -58,13 +57,12 @@ public class CallCounter {
         }
     }
 
-    public void checkOrThrow() { //Supplier<RuntimeException> exceptionSupplier
+    public void checkOrThrow() {
         if (isNotFromInterval()) {
-            resetAtributes();
+            setAtributes();
         }
         long count = incrementAndGet();
         if (count > getLimit()) {
-            //throw new exceptionSupplier.get();
             throw new ApiRateExceededException("Too many API requests");
         }
     }
