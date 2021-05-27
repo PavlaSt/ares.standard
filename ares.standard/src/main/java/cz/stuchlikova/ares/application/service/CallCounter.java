@@ -20,7 +20,7 @@ public class CallCounter {
     private LocalDateTime to;
     private long counter;
 
-    public CallCounter(@Autowired ConfigProperties properties) {
+    public CallCounter(ConfigProperties properties) {
         this.properties = properties;
     }
 
